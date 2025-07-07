@@ -8,7 +8,7 @@ export default function WorldMapSection() {
   const dots = [
     { x: 100, y: 120 },
     { x: 330, y: 70 },
-    { x: 410, y: 100 }, // center
+    { x: 410, y: 100 },
     { x: 470, y: 110 },
     { x: 650, y: 250 },
     { x: 200, y: 200 },
@@ -103,7 +103,7 @@ export default function WorldMapSection() {
               cx={dot.x}
               cy={dot.y}
               r="5"
-              fill="#117F60"
+              fill={dot.x === 470 && dot.y === 110 ? "#e47a5a" : "#117F60"}
               stroke="#fff"
               strokeWidth="2"
             />

@@ -1,16 +1,26 @@
+import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 
 export default function HeroSection() {
+  const locale = useLocale();
+
+  const t = useTranslations("homepage");
   return (
     <section className="relative flex flex-col xl:max-w-[70%] mx-auto md:flex-row items-center justify-between min-h-[85vh] bg-blue-whale w-full overflow-hidden">
       <div
         data-aos="fade-right"
         className="md:flex-1 flex flex-col md:justify-center md:items-start z-10 mt-6 md:mt-0"
       >
-        <h1 className="text-2xl md:text-5xl font-bold text-white mb-4 font-roboto md:text-left text-center">
-          Invest in the DHS
-          <br />
-          Way to Trade
+        <h1
+          className={`${
+            locale === "ar" ? "leading-[55px]" : ""
+          } text-2xl md:text-5xl font-bold text-white mb-4 font-roboto ${
+            locale === "ar" ? "md:text-right" : "md:text-left"
+          }  text-center`}
+        >
+          {t("herosection.title1_1")}
+          <span className="text-[#e47a5a]">{t("herosection.title1_3")}</span>
+          <span className="inline">{t("herosection.title1_2")}</span>
         </h1>
         <p className="text-white/80 mb-8 font-roboto text-center md:text-left max-w-md">
           What looked like a small patch of purple grass, above five feet

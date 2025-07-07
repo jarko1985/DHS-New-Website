@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -60,11 +61,12 @@ export default function Header() {
         </ul>
       </nav>
 
-      {/* Sign-in + hamburger */}
+      {/* Sign-in + hamburger + language switcher */}
       <div className="flex items-center gap-3">
         {/* <button className="rounded-md bg-[#E47A5A] px-6 py-2 font-semibold text-white transition-colors duration-200 hover:bg-elf-green">
           Sign in
         </button> */}
+        <LanguageSwitcher />
         <button
           onClick={() => setOpen((p) => !p)}
           aria-label="Toggle navigation"
