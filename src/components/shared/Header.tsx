@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLocation } from "@/context/LocationContext";
+import { toast } from "sonner";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -17,6 +19,7 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   // Close menu on outside click
   useEffect(() => {
@@ -28,6 +31,16 @@ export default function Header() {
     if (open) document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [open]);
+
+  useEffect(() => {
+    if (location) {
+      toast("Your Current IP Address", {
+        description: location.ip + " " + location.country,
+        position: "top-right",
+        style: {},
+      });
+    }
+  }, [location]);
 
   return (
     <header className="relative xl:max-w-[70%] mx-auto flex items-center justify-between px-4 xl:px-0 py-4 z-40">
@@ -67,6 +80,7 @@ export default function Header() {
           Sign in
         </button> */}
         <LanguageSwitcher />
+
         <button
           onClick={() => setOpen((p) => !p)}
           aria-label="Toggle navigation"

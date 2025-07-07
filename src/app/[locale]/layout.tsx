@@ -6,6 +6,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { CookieConsent } from "@/components/cookies/CookieConsent";
+import { Providers } from "./providers";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "DHS Exchange",
@@ -27,11 +29,14 @@ export default async function RootLayout({
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body className={`antialiased`}>
         <NextIntlClientProvider>
-          <AOSWrapper>
-            {children}
-            <CookieConsent />
-          </AOSWrapper>
-          <Footer />
+          <Providers>
+            <AOSWrapper>
+              {children}
+              <CookieConsent />
+              <Toaster />
+            </AOSWrapper>
+            <Footer />
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
