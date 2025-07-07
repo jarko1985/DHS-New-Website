@@ -12,6 +12,28 @@ import { Toaster } from "@/components/ui/sonner";
 export const metadata: Metadata = {
   title: "DHS Exchange",
   description: "We Value Your Trust!",
+  openGraph: {
+    title: "DHS - Way to Trade",
+    description:
+      "Connect to global liquidity pools, trade securely across continents, and experience real-time access to the world's leading digital assets.",
+    url: "https://dhs-vert.vercel.app/en",
+    type: "website",
+    images: [
+      {
+        url: "https://dhs-vert.vercel.app/images/dhs_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "DHS Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DHS - Way to Trade",
+    description:
+      "Connect to global liquidity pools, trade securely across continents, and experience real-time access to the world's leading digital assets.",
+    images: ["https://dhs-vert.vercel.app/images/dhs_logo.png"],
+  },
 };
 
 export default async function RootLayout({
