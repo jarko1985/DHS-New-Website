@@ -71,13 +71,13 @@ export default function HeroSection() {
       {/* Right: Blended Image */}
       <div
         data-aos="fade-left"
-        className="md:flex-[2] relative md:h-[650px] h-[490px] w-full md:block"
+        className="md:flex-[2] relative md:h-[650px] sm:h-[500px] h-[350px] w-full md:block"
       >
         <Image
           src="/images/home_bg.png"
           alt="Hero Background"
           fill
-          className="object-contain mix-blend-lighten opacity-90"
+          className="object-contain mix-blend-lighten opacity-90 md:h-[650px]! h-auto!"
           priority
         />
       </div>
