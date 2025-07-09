@@ -7,20 +7,21 @@ import toast from "react-hot-toast";
 export default function HeroSection() {
   const [email, setEmail] = useState("");
   const locale = useLocale();
+  const isArabic = locale === "ar";
 
-  const t = useTranslations("homepage");
+  const t = useTranslations("homepage.herosection");
   const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email.trim()) {
-      toast.error("Please enter your email address.");
+      toast.error(t("subscribe_error_empty"));
       return;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      toast.error("Please enter a valid email address.");
+      toast.error(t("subscribe_error_invalid"));
       return;
     }
-    toast.success("Thank you!");
+    toast.success(t("subscribe_success"));
     setEmail("");
   };
   return (
@@ -36,14 +37,18 @@ export default function HeroSection() {
             locale === "ar" ? "md:text-right" : "md:text-left"
           }  text-center`}
         >
-          {t("herosection.title1_1")}
-          <span className="text-[#e47a5a]">{t("herosection.title1_3")}</span>
-          <span className="inline">{t("herosection.title1_2")}</span>
+          {t("title1_1")}
+          <span className="text-[#e47a5a]">{t("title1_3")}</span>
+          <span className="inline">{t("title1_2")}</span>
         </h1>
-        <p className="text-white/80 mb-8 font-roboto text-center md:text-left max-w-md">
-          What looked like a small patch of purple grass, above five feet
-          square, was moving across the sand in their direction.
-        </p>
+        <div
+          className={`text-white/80 text-normal mb-8 font-roboto text-center ${
+            isArabic ? "md:text-right" : "md:text-left"
+          } max-w-md`}
+        >
+          <p>{t("crypto_with_clarity")}</p>
+          <p>{t("dhs_safe_honest")}</p>
+        </div>
         <form
           className="flex sm:flex-row flex-col gap-4 justify-center md:justify-start mx-auto sm:mx-0 w-[90%] sm:w-full "
           onSubmit={handleSubscribe}
@@ -52,14 +57,14 @@ export default function HeroSection() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            placeholder="example@email.com"
+            placeholder={t("email_placeholder")}
             className="rounded-full px-4 py-2 bg-transparent border border-white/50 text-white placeholder-white/60 focus:outline-none focus:border-elf-green min-w-0"
           />
           <button
             type="submit"
             className="text-white ramp-shine-bg px-6 py-2 rounded-full font-semibold transition-colors duration-200"
           >
-            Subscribe
+            {t("subscribe")}
           </button>
         </form>
       </div>

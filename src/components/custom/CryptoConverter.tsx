@@ -13,6 +13,7 @@ import {
   SiDogecoin,
 } from "react-icons/si";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 /* --------------------------------------------------------------------------
  * Config
@@ -61,6 +62,7 @@ export default function CryptoConverter() {
   const [currency, setCurrency] = useState<string>("usd");
   const [showCoin, setShowCoin] = useState(false);
   const [showCurrency, setShowCurrency] = useState(false);
+  const t = useTranslations("homepage.converter");
 
   /* ----------------------------------------------------------------------
    * Fetch price data
@@ -89,7 +91,9 @@ export default function CryptoConverter() {
     <section className="mx-auto" data-aos="fade-left">
       <div className="w-full mx-auto lg:mx-0  rounded-2xl bg-blue-whale p-6 text-white shadow-xl border border-elf-green">
         {/* Amount --------------------------------------------------------- */}
-        <label className="block text-sm text-white/70 mb-1">Amount</label>
+        <label className="block text-sm text-white/70 mb-1">
+          {t("amount")}
+        </label>
         <div className="flex items-center gap-3">
           <input
             type="text"
@@ -119,7 +123,7 @@ export default function CryptoConverter() {
         <div className="relative mt-8">
           {/* Coin */}
           <Dropdown
-            label="Select Coin"
+            label={t("select_coin")}
             open={showCoin}
             setOpen={setShowCoin}
             button={<CoinOption {...coinObj} selected />}
@@ -138,7 +142,7 @@ export default function CryptoConverter() {
           {/* Currency */}
           <Dropdown
             className="mt-4"
-            label="Select Currency"
+            label={t("select_currency")}
             open={showCurrency}
             setOpen={setShowCurrency}
             button={<CurrencyOption {...currencyObj} selected />}
@@ -164,7 +168,7 @@ export default function CryptoConverter() {
           className="mt-10 rounded-xl bg-elf-green p-4 text-sm font-medium flex justify-between items-center lg:flex-row flex-col"
         >
           {isLoading ? (
-            "Loading price…"
+            t("loading_price")
           ) : (
             <>
               <span className="text-white text-base font-semibold">
@@ -172,7 +176,9 @@ export default function CryptoConverter() {
                 {formatFiat(converted, currency.toUpperCase())}
               </span>
               <span className="text-white/80 text-xs">
-                Last updated at {new Date().toUTCString().slice(17, 22)} UTC
+                {t("last_updated", {
+                  time: new Date().toUTCString().slice(17, 22),
+                })}
               </span>
             </>
           )}

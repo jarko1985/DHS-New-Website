@@ -5,17 +5,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 const navLinks = [
-  { name: "Home", href: "/" },
+  { name: "home", href: "/" },
   // { name: "About", href: "/about" },
   // { name: "FAQ", href: "#" },
-  { name: "Contact", href: "/contact" },
+  { name: "contact", href: "/contact" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("Header");
 
   // Close menu on outside click
   useEffect(() => {
@@ -54,7 +56,7 @@ export default function Header() {
                   href={link.href}
                   className="transition-colors duration-200 hover:text-elf-green"
                 >
-                  {link.name}
+                  {t(link.name)}
                 </Link>
               </li>
             ))}
@@ -94,7 +96,7 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   className="block px-6 py-3 text-white transition-colors hover:bg-[#e47a5a]"
                 >
-                  {link.name}
+                  {t(link.name)}
                 </Link>
               </li>
             ))}

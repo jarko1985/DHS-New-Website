@@ -17,8 +17,10 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ConflictOfInterestPage() {
+  const t = useTranslations("conflictOfInterest");
   return (
     <section className="bg-blue-whale">
       <div className="xl:max-w-[70%] mx-auto px-4 xl:px-0 py-8 text-mercury ">
@@ -26,12 +28,9 @@ export default function ConflictOfInterestPage() {
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-white mb-8 pl-6 relative">
             <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-elf-green rounded-sm"></span>
-            Conflict of Interest Manual
+            {t("hero_title")}
           </h2>
-          <p className="text-xl text-mercury/80">
-            Establishing policies and procedures for identifying and managing
-            conflicts of interest
-          </p>
+          <p className="text-xl text-mercury/80">{t("hero_desc")}</p>
         </section>
 
         {/* Document Control Section */}
@@ -39,51 +38,51 @@ export default function ConflictOfInterestPage() {
           <Card className="bg-blue-whale/80 border-elf-green">
             <CardHeader>
               <CardTitle className="text-2xl text-elf-green">
-                1. Document Control
+                {t("document_control")}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <h3 className="text-xl text-mercury font-semibold mb-4 mt-6">
-                Document Information
+                {t("document_information")}
               </h3>
               <Table className="border text-mercury border-elf-green/50">
                 <TableBody>
                   <TableRow>
                     <TableCell className="font-medium border border-elf-green/50">
-                      Document Name
+                      {t("document_name")}
                     </TableCell>
                     <TableCell className="border border-elf-green/50">
-                      Conflict of Interest Manual
+                      {t("document_name_value")}
                     </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium border border-elf-green/50">
-                      Unit
+                      {t("unit")}
                     </TableCell>
                     <TableCell className="border border-elf-green/50">
-                      Compliance Officer
+                      {t("unit_value")}
                     </TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
 
               <h3 className="text-xl text-mercury font-semibold mb-4 mt-8">
-                Document Approval History
+                {t("document_approval_history")}
               </h3>
               <Table className="border text-mercury border-elf-green/50">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Date
+                      {t("date")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Name
+                      {t("name")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Position/Title
+                      {t("position_title")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Signature
+                      {t("signature")}
                     </TableHead>
                   </TableRow>
                 </TableHeader>
@@ -98,22 +97,22 @@ export default function ConflictOfInterestPage() {
               </Table>
 
               <h3 className="text-xl text-mercury font-semibold mb-4 mt-8">
-                Document Edit/Review History
+                {t("document_edit_review_history")}
               </h3>
               <Table className="border border-elf-green/50">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Version
+                      {t("version")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Date
+                      {t("date")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Comments
+                      {t("comments")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Prepared/Revised by
+                      {t("prepared_revised_by")}
                     </TableHead>
                   </TableRow>
                 </TableHeader>
@@ -128,16 +127,16 @@ export default function ConflictOfInterestPage() {
               </Table>
 
               <h3 className="text-xl text-mercury font-semibold mb-4 mt-8">
-                Distribution of Final/Updated Document
+                {t("distribution_final_updated")}
               </h3>
               <Table className="border  border-elf-green/50">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Name
+                      {t("name")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Position/Title
+                      {t("position_title")}
                     </TableHead>
                   </TableRow>
                 </TableHeader>
@@ -157,57 +156,45 @@ export default function ConflictOfInterestPage() {
           <Card className="bg-blue-whale/80 border-elf-green">
             <CardHeader>
               <CardTitle className="text-2xl text-elf-green">
-                2. Glossary/Abbreviations
+                {t("glossary")}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-6 text-mercury">
-                In this Manual, except where the context otherwise demands, the
-                following words and expressions shall have the following
-                meaning:
-              </p>
+              <p className="mb-6 text-mercury">{t("glossary_desc")}</p>
               <Table className="border border-elf-green/50">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Abbreviation
+                      {t("abbreviation")}
                     </TableHead>
                     <TableHead className="border text-mercury border-elf-green/50">
-                      Definition
+                      {t("definition")}
                     </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow>
                     <TableCell className="font-medium border text-mercury border-elf-green/50">
-                      Board
+                      {t("board")}
                     </TableCell>
                     <TableCell className="border text-mercury border-elf-green/50">
-                      Board of Directors
+                      {t("board_of_directors")}
                     </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium border text-mercury border-elf-green/50">
-                      VARA
+                      {t("vara")}
                     </TableCell>
                     <TableCell className="border text-mercury border-elf-green/50">
-                      Dubai's Virtual Assets Regulatory Authority
+                      {t("vara_desc")}
                     </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell className="font-medium border text-mercury border-elf-green/50">
-                      Company
+                      {t("company")}
                     </TableCell>
                     <TableCell className="border text-mercury border-elf-green/50">
-                      Direct Honest Safe International Exchange FZE
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border text-mercury border-elf-green/50">
-                      UAE
-                    </TableCell>
-                    <TableCell className="border text-mercury border-elf-green/50">
-                      United Arab Emirates
+                      {t("company_desc")}
                     </TableCell>
                   </TableRow>
                 </TableBody>

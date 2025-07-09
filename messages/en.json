@@ -3,7 +3,29 @@
     "herosection": {
       "title1_1": "Invest in the ",
       "title1_3": " DHS ",
-      "title1_2": "Way to Trade"
+      "title1_2": "Way to Trade",
+      "crypto_with_clarity": "Crypto with clarity.",
+      "dhs_safe_honest": "DHS is your safe, honest exchange in the UAE. Trade with confidence. Grow with purpose.",
+      "subscribe": "Subscribe",
+      "email_placeholder": "example@email.com",
+      "subscribe_success": "Thank you!",
+      "subscribe_error_empty": "Please enter your email address.",
+      "subscribe_error_invalid": "Please enter a valid email address."
+    },
+    "worldmap": {
+      "global_network": "GLOBAL NETWORK",
+      "available_across_world": "Available across the World",
+      "worldmap_desc": "Connect to global liquidity pools, trade securely across continents, and experience real-time access to the world's leading digital assets—wherever you are."
+    },
+    "calculator": {
+      "calculator_title": "Crypto Currency Converter"
+    },
+    "converter": {
+      "amount": "Amount",
+      "select_coin": "Select Coin",
+      "select_currency": "Select Currency",
+      "loading_price": "Loading price…",
+      "last_updated": "Last updated at {time} UTC"
     }
   },
   "LanguageSwitcher": {
@@ -27,5 +49,359 @@
     "phone_error": "Phone number must be at least 10 digits.",
     "subject_error": "Subject must be at least 5 characters.",
     "message_error": "Message must be at least 10 characters."
+  },
+  "Header": {
+    "home": "Home",
+    "contact": "Contact",
+    "sign_in": "Sign in"
+  },
+  "Footer": {
+    "resources": "Resources",
+    "conflict_of_interest": "Conflict of Interest",
+    "privacy_policy": "Privacy Policy",
+    "risk_disclosure": "Risk Disclosure",
+    "terms_and_conditions": "Terms and Conditions",
+    "whistleblowing_policy": "Whistleblowing Policy",
+    "join_newsletter": "Join our newsletter",
+    "newsletter_desc": "DHS strives to make a difference in the exchange world by focusing...",
+    "subscribe": "Subscribe",
+    "copyright": "©2025 DHS All rights reserved."
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "description": "Please fill in the below information, Our Customer service team will contact you at the earliest"
+  },
+  "conflictOfInterest": {
+    "hero_title": "Conflict of Interest Manual",
+    "hero_desc": "Establishing policies and procedures for identifying and managing conflicts of interest",
+    "document_control": "1. Document Control",
+    "document_information": "Document Information",
+    "document_name": "Document Name",
+    "document_name_value": "Conflict of Interest Manual",
+    "unit": "Unit",
+    "unit_value": "Compliance Officer",
+    "document_approval_history": "Document Approval History",
+    "date": "Date",
+    "name": "Name",
+    "position_title": "Position/Title",
+    "signature": "Signature",
+    "document_edit_review_history": "Document Edit/Review History",
+    "version": "Version",
+    "comments": "Comments",
+    "prepared_revised_by": "Prepared/Revised by",
+    "distribution_final_updated": "Distribution of Final/Updated Document",
+    "glossary": "2. Glossary/Abbreviations",
+    "glossary_desc": "In this Manual, except where the context otherwise demands, the following words and expressions shall have the following meaning:",
+    "abbreviation": "Abbreviation",
+    "definition": "Definition",
+    "board": "Board",
+    "board_of_directors": "Board of Directors",
+    "vara": "VARA",
+    "vara_desc": "Dubai's Virtual Assets Regulatory Authority",
+    "company": "Company",
+    "company_desc": "The Company",
+    "introduction": "3. Introduction",
+    "manual_purpose": "3.1 Manual Purpose",
+    "manual_purpose_desc1": "This Conflict-of-Interest Manual (the 'Manual') Establishes the internal policies, procedures, and requirements of Mc. Coin Virtual Assets L.L.C ('the Company') with respect to conflicts of interest. The Company is committed to treating its clients fairly and requires its staff to conduct themselves with the highest standards of integrity. Failure to identify and appropriately manage conflicts of interest could result in inappropriate or adverse consequences for the clients, Investors, Company, and staff.",
+    "manual_purpose_desc2": "Owing to the nature of the Company's business activities, circumstances may arise in which competing interests create actual or potential conflicts of interest. A conflict of interest is deemed to exist when the pursuit of one party's interests could reasonably be expected to compromise, impair, or place at a disadvantage the interests of another.",
+    "manual_application": "Manual Application",
+    "manual_application_list": [
+      "This Manual provides a set of guidelines for the governance around conflicts of interest and control of the Company. This Manual lays down the flow of authority, responsibility, and accountability of the Board of Directors (the 'Board') and Senior Management. In particular, the Company shall use all reasonable efforts to avoid conflicts of interest between any of the following:",
+      "Their Group.",
+      "The Company.",
+      "The Board of the Company.",
+      "The staff of the Company.",
+      "The clients of the Company.",
+      "The Investors of the Company.",
+      "This Manual ensures to manage various conflicts of interest, including perceived conflict and potential conflict.",
+      "This Manual outlines the Company's framework for identifying and managing conflicts of interest and sets out the principles in relation to the identification, documentation, management, and escalation of conflicts of interest, including examples of where such conflicts of interest may arise within the Company.",
+      "This Manual ensures to minimize the risk of unfair treatment of clients and third parties (any natural or judicial person other than staff, clients and other persons associated with the Company), to prevent inappropriate use of confidential information or the Company's position to gain an advantage.",
+      "This Manual aims to protect the Company from any serious sanctions, reputational damage litigation, loss of licenses and financial penalties."
+    ],
+    "manual_understanding": "3.2 Manual Understanding",
+    "manual_understanding_desc": "This Manual is applicable to the Company's Board and all its staff. All staff must fulfill their roles and responsibilities with respect to this Manual.",
+    "manual_review": "3.3 Manual Review",
+    "manual_review_list": [
+      "This Manual shall be reviewed at least annually, or as directed by the Board, to ensure it remains current and compliant with any material changes in the Company's operations or applicable regulatory requirements. All amendments must be properly documented and approved prior to implementation. Staff will be duly notified of any material updates.",
+      "Any breaches to this Manual shall be escalated to the Compliance function."
+    ],
+    "manual_owner": "3.4 Manual Owner",
+    "manual_owner_list": [
+      "This Manual shall be owned by the Compliance Officer.",
+      "This Manual shall be approved and issued by the Board.",
+      "Any exceptions to this Manual shall be approved by the Board before their application."
+    ],
+    "manual_disclaimer": "3.5 Disclaimer",
+    "manual_disclaimer_desc": "This Manual was prepared for the purpose of the VARA license application. The content of this Manual may be updated to address the business and regulatory requirements as and when they become available, during the implementation phase of the Company, prior to the launch of the Company.",
+    "guiding_principles": "4. Guiding Principles around Conflict of Interest",
+    "general_principles": "4.1 General Principles",
+    "staff_specific_principles": "4.2 Staff Specific Principles",
+    "conflict_management": "5. Conflict of Interest Management",
+    "identification": "5.1 Identification",
+    "identification_desc": "Within the Company, conflicts of interest may arise in a range of circumstances. Staff are expected to be capable of identifying potential conflicts in order to ensure they are managed appropriately and in accordance with this Manual. Common areas where conflicts of interest may typically arise include, but are not limited to:",
+    "identification_list": [
+      "Nepotism: Favoring relatives or personal friends because of their relationship rather than their abilities.",
+      "Gifts and Entertainment: The transfer of something with the expectation of receiving something in return. Refer to the Anti-Bribery and Corruption Policy.",
+      "Self-dealing: It commonly occurs when the fiduciary — the director, officer, or controlling shareholder — acts unfairly within his or her own company for personal gain and leads to a disproportionate benefit.",
+      "Outside employment: Activities that conflict with a staff's official duties or result in a staff's failure to meet the minimum standards of on-the-job productivity or quality.",
+      "Bribery/kickbacks: The practice of offering something, usually money, in order to gain an illicit advantage.",
+      "Current or prior relationships: Strategic partners and High Net Worth Individuals (HNWIs) with positions at, and connections to, public issuers.",
+      "Services: Interest in the outcome of a service provided to a customer or in the outcome of a transaction carried out on behalf of a customer, which is distinct from that of the customer."
+    ],
+    "escalation": "5.2 Escalation",
+    "escalation_desc": "Should a conflict of interest be identified, it shall be managed promptly and fairly through the following escalation process:",
+    "escalation_list": [
+      "The conflict shall be reported to the staff immediate supervisor detailing the existence and nature of the conflict.",
+      "Supervisors/Senior Management at the Company shall be responsible for assessing the actual or potential conflicts of interest and determining, after consulting relevant control functions, the best course of action, including further escalation to a higher authority.",
+      "Senior Management shall notify the Compliance Officer of the conflict of interest, along with details of the case.",
+      "The staff shall have an opportunity to provide justification.",
+      "The Compliance Officer shall assess and approve cases of conflicts of interest and shall consult the CEO or other Senior Management, as deemed fit, while taking a decision on the case.",
+      "For possible conflict cases involving the Compliance Officer, the cases shall be reported to the CEO.",
+      "The Board shall be the approving authority for cases involving the CEO.",
+      "Once the matter is resolved, the appropriate course of action shall be taken and all details shall be documented for future reference., including updating the conflicts of interest register."
+    ],
+    "conflicts_register": "5.3 Conflicts of Interest Register",
+    "conflicts_register_list": [
+      "A record of the documentation and course of action shall be maintained by the Compliance function.",
+      "The Compliance Officer shall record the details of the conflicts of interest and measures taken to prevent or manage the interest in such a register."
+    ],
+    "management_control": "5.4 Management and Control",
+    "management_control_desc": "The Company shall take all reasonable steps to ensure that conflicts of interest do not adversely affect the interests of its clients, the Company itself, its investors, shareholders, or other stakeholders. This shall be achieved through the identification, prevention, and effective management of such conflicts. To manage conflicts of interest, the Company may employ various measures—either individually or in combination—including, but not limited to, the following:",
+    "conflict_checks": "5.4.1 Conflict Checks",
+    "conflict_checks_list": [
+      "Conflict checks shall be performed on potential contracts/agreements/partners to identify any conflicts of interest, prior to signing legally binding documentation to offer services to a Client which may have conflicting interests with the Company, or the Company's existing clients. Such conflicts of interest include, but is not limited to:",
+      "Vendor Selection.",
+      "Outsourcing.",
+      "Conflict checks shall be performed on staff' personal activities and interests to identify any potential or actual conflict with the Group, the Company, the Board, other staff, clients, or Investors, before joining the Company by the HR. This includes conflict checks on staff's:",
+      "Direct family members (who are spouses, children, spouses of children, parents).",
+      "Political affiliations.",
+      "Gifts and hospitality to be offered or intended to be received."
+    ],
+    "disclosures": "5.4.2 Disclosures",
+    "disclosures_list": [
+      "All staff must disclose any existing/potential conflicts of interest, including:",
+      "Existing or potential relative working in the Company even if separated or working in a different department.",
+      "Directorship or significant shareholding in other companies resulting in conflict of interest.",
+      "Any interest in a partnership, will or trust.",
+      "Directorship in any corporate arrangement.",
+      "Any role or position of responsibility which may conflict with the interests of the Company.",
+      "Disclosure shall take place as soon as the staff identifies that there may be a conflict.",
+      "Newly hired staff shall disclose to HR all conflicts during the hiring process so that they can be discussed with and approved by the relevant departments."
+    ],
+    "gifts_entertainment": "5.4.3 Personal Gifts and Entertainment",
+    "gifts_entertainment_desc": "A conflict of interest may arise where a staff receives or offers a gift or entertainment that constitutes an inappropriate incentive for the staff, the Company, third party representative, a Client or Vendor to act in a certain way. The Company shall not permit the offering or acceptance of gifts or entertainment by a staff unless it is reasonable, proportionate and for a legitimate business purpose. Please refer to the Anti-bribery and Corruption Policy.",
+    "outside_business": "5.4.4 Outside Business Interest",
+    "outside_business_desc": "staff' interests outside of their role at the Company may conflict with the interests of the Company or the Company's clients and therefore are required to be managed to maintain the integrity of the Company and its staff. Additionally, outside business interest may expose staff to confidential information of a client or potential client of the Company, resulting in a conflict of interest. Please refer to the Anti-bribery and Corruption Policy.",
+    "segregation_duties": "5.4.5 Segregation of Duties",
+    "segregation_duties_desc": "The Company shall maintain a clear structural segregation between business functions and infrastructure functions to ensure the independent operation of business activities and risk management functions. Furthermore, the Company shall implement and uphold an internal control environment based on the 'Three Lines Model' framework. This framework defines and reinforces risk management, control, and reporting responsibilities across the organization in a consistent and integrated manner. It also requires the independence of key control functions, including Compliance, Risk, and Internal Audit, to ensure effective oversight and accountability.",
+    "vendors_third_party": "5.4.6 Vendors and Third-Party Representatives",
+    "vendors_third_party_list": [
+      "The Company shall carry out due diligence on vendors and third-party representatives as part of their onboarding process and shall have contractual arrangements in place to protect the interests of the Company and its clients.",
+      "Conflicts of interest may arise with regards to vendors and third-party representatives where, for example, a staff involved in the procurement or hiring process has a close relationship with a particular vendor or third-party representative.",
+      "Staff shall be expected to identify, escalate and manage potential conflicts of interest accordingly. It shall be the staff' responsibility to report and escalate all matters that might reasonably be expected to impact their independence and objectivity, or otherwise interfere with their respective duties to the Company or its clients or give rise to a perception of a conflict of interest.",
+      "Furthermore, the Company shall seek to manage actual or potential Vendor relationships, which are also actual or potential client relationships independently and on an arm's length basis. The rules of engagements between the Company, Vendors and clients must be set out, so as to manage actual or potential conflicts of interest."
+    ],
+    "escalation_2": "5.4.7 Escalation",
+    "escalation_2_desc": "The Company shall operate escalation and resolution procedures for conflicts of interest (Client related or otherwise). staff must follow the internal escalation process prescribed as described in Section 4.",
+    "whistleblowing": "5.4.8 Whistleblowing",
+    "whistleblowing_desc": "The Company shall provide appropriate channels for the reporting/whistleblowing of conflicts of interest within the Company where a staff considers this to be the appropriate channel to draw the matter to the attention of the Company. The Company's Whistleblowing Policy shall set forth the principles for staff to report any concerns or suspicions regarding possible violations of laws, rules or regulations or possible violations of the Company's policies, standards or procedures, including the Company's values & beliefs.",
+    "breaches": "6. Breaches, Escalations and Sanctions",
+    "breaches_list": [
+      "Any breach or violation whether advertent or inadvertent, of the Conflict-of-Interest Manual shall be reported without delay to Compliance function.",
+      "Breaches of the Manual could lead to the following consequences:",
+      "Loss of clients.",
+      "Client litigation.",
+      "Sanctions from the regulator.",
+      "Disciplinary action or potential dismissal at the discretion of Human Resources.",
+      "Breaches reported must remain confidential and contained to avoid increasing the severity of the breach."
+    ],
+    "training": "7. Training and Awareness",
+    "training_list": [
+      "All staff shall undergo mandatory training relevant to their role, in respect to this Manual.",
+      "Attendance of training shall be monitored for performance evaluation purposes.",
+      "Non-compliance shall lead to violation of this Manual and shall be escalated to business line manager and Compliance function for consequent disciplinary action, if deemed necessary by Compliance function."
+    ],
+    "annexure": "8. Annexure",
+    "annexure_desc": "Examples of conflicts of interest scenarios that may occur in the Company:",
+    "annexure_table_headers": ["Category", "Type", "Description"],
+    "annexure_table_rows": [
+      [
+        "Staff vs Client",
+        "Information Dissemination",
+        "Conflicts relating to the use of clients' confidential information."
+      ],
+      [
+        "Staff vs Client",
+        "Cross-selling products",
+        "Conflicts of interest may arise between the Company, a staff and a client if the staff engages to the detriment of a client in cross-selling activities or providing multiple services/products to the client, which are not in the best interest of the client, principally to generate higher fees or revenue on behalf of the Company."
+      ],
+      [
+        "The Company vs staff",
+        "Family / Close Personal Relationship",
+        "Conflicts of interest may arise between the Company, a staff, a client, or a vendor if a staff deals with individuals who are family members or close personal relationships in the course of conducting business for, or on behalf of, the Company. These dealings may compromise or call into question the staff's judgment, ability to act objectively or properly discharge their duties and responsibilities owed to the Company and/or clients. This may give rise to the risk of reputational damage to the Company, including the risk of, or appearance of, impropriety."
+      ],
+      [
+        "Client vs the Company",
+        "Gifts and entertainment received",
+        "A conflict of interest may arise between staff and the Company, a client or a third party if a staff receives gifts and/or entertainment that may inappropriately incentivize the staff to act in a way that may conflict with the interests of the Company, the client and/or the third party."
+      ]
+    ],
+    "back_to_top": "Back to Top"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "subtitle": "for Direct Honest Safe International Exchange FZE",
+    "version": "Version 01",
+    "last_updated": "Last updated: June 10, 2024",
+    "intro_title": "Introduction",
+    "intro_p1": "At <em>Direct Honest Safe International Exchange FZE</em> (\"Direct Honest Safe International Exchange FZE\", \"we\", \"our\", or \"us\"), we are committed to respecting your privacy and safeguarding the personal data you provide when using our services.",
+    "intro_p2": "This Privacy Policy outlines how we collect, store, process, and protect your personal information in compliance with the latest <em>Financial Action Task Force (FATF) recommendations</em>, the <em>UAE Data Protection Law (2021)</em>, and the <em>Virtual Assets Regulatory Authority (VARA)</em> regulations.",
+    "intro_p3": "We are dedicated to maintaining transparency regarding how we handle your personal information and ensuring that we adhere to global standards for privacy, security, and legal compliance.",
+    "intro_p4": "By using our services, you consent to the practices described in this Privacy Policy. If you disagree with any part of this policy, we recommend that you refrain from using our services.",
+    "section1_title": "1. Information We Collect",
+    "section1_desc": "We collect the following types of personal information to provide our services, comply with regulatory obligations, and improve your user experience:",
+    "section1_personal_id_title": "Personal Identification Information:",
+    "section1_personal_id_list": [
+      "Full Name: First and last name",
+      "Date of Birth: To ensure you meet age-related requirements",
+      "Nationality: For KYC (Know Your Customer) and regulatory compliance",
+      "Contact Information: Email address, phone number, physical address"
+    ],
+    "section1_financial_title": "Financial Information:",
+    "section1_financial_list": [
+      "Bank Details: Including bank account numbers and payment methods",
+      "Payment Information: Credit card details, payment history, and virtual asset wallet addresses",
+      "Transaction History: Details of virtual asset purchases, sales, transfers, and exchanges"
+    ],
+    "section1_identity_title": "Identity Verification Information (for KYC/AML compliance):",
+    "section1_identity_list": [
+      "Government-Issued IDs: Passport, national ID card, or driving license",
+      "Proof of Address: Utility bills, bank statements, or official documents",
+      "Biometric Data: If required for identity verification (e.g., facial recognition, fingerprints)"
+    ],
+    "section1_device_title": "Device and Usage Data:",
+    "section1_device_list": [
+      "IP Address: To detect and prevent fraud, and to improve security",
+      "Browser and Device Information: Including device type, operating system, and web browser",
+      "Cookies and Tracking Data: For analytics, user experience improvement, and personalization"
+    ],
+    "section2_title": "2. How We Use Your Information",
+    "section2_services_title": "A. To Provide Our Services:",
+    "section2_services_list": [
+      "Facilitate your access to and use of our platform",
+      "Process transactions involving virtual assets and related activities (purchases, transfers, exchanges)",
+      "Provide account management and customer support"
+    ],
+    "section2_legal_title": "B. To Comply with Legal and Regulatory Requirements:",
+    "section2_legal_list": [
+      "Know Your Customer (KYC): Collect and verify your identity to prevent fraud and comply with AML (Anti-Money Laundering) and CTF (Counter-Terrorism Financing) obligations as per FATF and VARA regulations.",
+      "AML & CTF Compliance: Monitor transactions for signs of suspicious activity and report any unusual or potentially illicit activities to the appropriate regulatory bodies, as required by UAE law and FATF guidelines.",
+      "Transaction Monitoring: Conduct ongoing surveillance of your financial activity to detect and prevent money laundering or terrorist financing.",
+      "Regulatory Reporting: Share your data with regulatory authorities if required by law or under legal processes such as subpoenas or court orders."
+    ],
+    "section2_security_title": "C. To Improve Security:",
+    "section2_security_list": [
+      "Enhance the security of your account by identifying and mitigating potential threats or breaches",
+      "Use encryption to protect sensitive personal and financial data",
+      "Implement fraud detection systems"
+    ],
+    "section2_communication_title": "D. To Communicate with You:",
+    "section2_communication_list": [
+      "Send you essential notifications (e.g., transaction confirmations, account activity, system updates)",
+      "Provide updates about our services, promotions, or news, only if you have opted in for marketing communications"
+    ],
+    "section3_title": "3. Data Retention Policy",
+    "section3_desc": "We retain your personal data only for as long as is necessary to fulfill the purposes set out in this Privacy Policy, and to the extent required to comply with applicable legal, regulatory, and contractual obligations:",
+    "section3_identity_title": "Identity Verification Data",
+    "section3_identity_desc": "KYC documents and verification data will be retained for a minimum of <strong>five (5) years</strong> after the termination of our relationship with you, in compliance with FATF's recommendation on record-keeping for AML/CTF purposes.",
+    "section3_transaction_title": "Transaction Records",
+    "section3_transaction_desc": "We retain data related to virtual asset transactions, including wallet addresses, transaction amounts, and dates, for a minimum of <strong>five (5) years</strong> as required by UAE law and VARA regulations.",
+    "section3_account_title": "Account Information",
+    "section3_account_desc": "Account data may be retained until you request deletion or termination of your account, subject to legal retention requirements.",
+    "section4_title": "4. Sharing and Disclosure of Your Information",
+    "section4_desc": "We may share your personal data in the following scenarios:",
+    "section4_service_title": "A. Service Providers:",
+    "section4_service_desc": "We may engage third-party service providers to support various aspects of our business operations, including but not limited to payment processing, customer support, fraud prevention, and identity verification. These service providers may be granted access to your personal information strictly on a need-to-know basis and solely for the purpose of performing their designated functions on our behalf, in accordance with applicable data protection laws and contractual safeguards.",
+    "section4_regulatory_title": "B. Regulatory Authorities and Law Enforcement:",
+    "section4_regulatory_desc": "We may disclose your information to UAE regulatory bodies, including VARA, the UAE Central Bank, or other governmental agencies, if required by law or to comply with legal obligations such as AML/CTF regulations. This may also include disclosures to law enforcement agencies if requested under applicable legal processes.",
+    "section4_business_title": "C. Business Transactions:",
+    "section4_business_desc": "In the event of a merger, acquisition, or sale of assets, your personal information may be transferred as part of the transaction. We will take reasonable steps to ensure that any acquiring or successor entity complies with the terms of this Privacy Policy and applicable data protection laws.",
+    "section4_legal_title": "D. Other Legal Compliance:",
+    "section4_legal_desc": "We may disclose your personal data in cases where it is necessary to protect our legal rights, defend against legal claims, or fulfill our obligations under applicable laws or regulations.",
+    "section5_title": "5. Security of Your Data",
+    "section5_desc": "We implement robust security measures to protect your personal data:",
+    "section5_encryption_title": "Encryption",
+    "section5_encryption_desc": "Sensitive data such as financial and identity information is encrypted both during transmission and while stored.",
+    "section5_access_title": "Access Control",
+    "section5_access_desc": "Access to your personal data is restricted to authorized personnel only, and we use multi-factor authentication (MFA) to enhance account security.",
+    "section5_audit_title": "Regular Audits",
+    "section5_audit_desc": "We perform regular security audits and assessments to identify and mitigate any vulnerabilities.",
+    "section5_notice_title": "Security Notice",
+    "section5_notice_desc": "While we take reasonable measures to safeguard your personal information, no security system is 100% secure. We cannot guarantee the absolute security of your data.",
+    "section6_title": "6. Your Rights Under UAE Data Protection Law",
+    "section6_desc": "As per the UAE Data Protection Law (2021) and other applicable regulations, you have the following rights:",
+    "section6_rights": [
+      {
+        "title": "Right to Access",
+        "desc": "You may request access to the personal data we hold about you."
+      },
+      {
+        "title": "Right to Rectification",
+        "desc": "You have the right to correct any inaccurate or incomplete data."
+      },
+      {
+        "title": "Right to Deletion",
+        "desc": "You may request that we delete your personal data, subject to legal retention obligations."
+      },
+      {
+        "title": "Right to Object or Restrict Processing",
+        "desc": "You may object to the processing of your personal data or request restrictions on how it is used."
+      },
+      {
+        "title": "Right to Data Portability",
+        "desc": "You may request a copy of your data in a structured, commonly used, and machine-readable format."
+      },
+      {
+        "title": "Right to Withdraw Consent",
+        "desc": "Where we rely on consent for processing, you can withdraw your consent at any time."
+      }
+    ],
+    "section6_rights_cta": "To exercise any of these rights, please contact us at the contact details provided in Section 10.",
+    "section7_title": "7. Cookies and Tracking Technologies",
+    "section7_desc": "We use cookies and similar tracking technologies to improve your experience on our platform. Cookies enable us to:",
+    "section7_list": [
+      "Remember your preferences",
+      "Provide personalized services",
+      "Analyze site usage",
+      "Improve our platform's functionality"
+    ],
+    "section7_cookie_title": "Cookie Management",
+    "section7_cookie_desc": "By continuing to use our platform, you consent to our use of cookies as outlined in this Privacy Policy. You can manage or disable cookies through your browser settings; however, please be aware that disabling cookies may impact certain features and the overall functionality of the platform.",
+    "section8_title": "8. Compliance with FATF, UAE, and VARA Regulations",
+    "section8_desc": "As a licensed virtual asset service provider, Direct Honest Safe International Exchange FZE adheres to the Financial Action Task Force (FATF) guidelines on Anti-Money Laundering (AML) and Counter-Terrorism Financing (CTF). This includes:",
+    "section8_kyc_title": "Know Your Customer (KYC)",
+    "section8_kyc_desc": "We collect and verify your identity, address, and other relevant details before allowing you to transact on our platform.",
+    "section8_monitoring_title": "Transaction Monitoring",
+    "section8_monitoring_desc": "We continuously monitor transactions for suspicious activity and comply with FATF's requirements on reporting such activities.",
+    "section8_aml_title": "AML & CTF Procedures",
+    "section8_aml_desc": "We use advanced tools and processes to detect and prevent money laundering and financing of terrorism in alignment with FATF's 40 recommendations.",
+    "section8_vara_title": "Compliance with VARA Regulations",
+    "section8_vara_desc": "As per VARA's guidelines, we ensure that virtual asset services we provide are compliant with UAE regulations for data protection, financial security, and consumer protection.",
+    "section9_title": "9. Changes to This Privacy Policy",
+    "section9_desc": "We reserve the right to update or amend this Privacy Policy from time to time to reflect changes in:",
+    "section9_list": [
+      "Our business practices",
+      "Legal requirements",
+      "Technological advancements",
+      "Regulatory obligations"
+    ],
+    "section9_updates_title": "Policy Updates",
+    "section9_updates_desc": "Any updates will be posted on this page, and the effective date will be revised accordingly. Please check this page periodically for the latest information. Your continued use of our services after any changes constitutes your acceptance of the updated Privacy Policy.",
+    "section10_title": "10. Contact Us",
+    "section10_desc": "If you have any questions regarding this Privacy Policy or the processing of your personal data, or if you wish to exercise any of your rights under this policy, please contact us at:",
+    "section10_email": "Email: compliance@dhscrypto.com",
+    "section10_website": "Website: www.dhs.exchange",
+    "section10_phone": "Phone: 0585798074",
+    "back_to_top": "Back to Top"
   }
 }

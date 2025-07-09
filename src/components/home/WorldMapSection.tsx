@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function WorldMapSection() {
   // Dot positions (x, y) on the map image
@@ -33,6 +34,8 @@ export default function WorldMapSection() {
 
   // State to control which lines are visible
   const [visible, setVisible] = useState(Array(connections.length).fill(false));
+
+  const t = useTranslations("homepage.worldmap");
 
   useEffect(() => {
     let timeouts: NodeJS.Timeout[] = [];
@@ -68,21 +71,19 @@ export default function WorldMapSection() {
           data-aos="fade-up"
           className="block text-elf-green tracking-widest text-sm font-bold mb-2"
         >
-          GLOBAL NETWORK
+          {t("global_network")}
         </span>
         <h2
           data-aos="fade-up"
           className="text-lg md:text-4xl font-bold text-white mb-4 font-roboto"
         >
-          Available across the World
+          {t("available_across_world")}
         </h2>
         <p
           data-aos="fade-up"
           className="text-white/80 font-roboto md:max-w-2xl mx-auto text-sm max-w-md"
         >
-          Connect to global liquidity pools, trade securely across continents,
-          and experience real-time access to the world's leading digital
-          assets—wherever you are.
+          {t("worldmap_desc")}
         </p>
       </div>
       <div className="relative w-full max-w-7xl mx-auto md:h-[600px] h-[400px]">
