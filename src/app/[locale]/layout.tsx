@@ -7,7 +7,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { CookieConsent } from "@/components/cookies/CookieConsent";
 import { Providers } from "./providers";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "react-hot-toast";
+import Header from "@/components/shared/Header";
 
 export const metadata: Metadata = {
   title: "DHS Exchange",
@@ -53,6 +54,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Providers>
             <AOSWrapper>
+              <Header />
               {children}
               <CookieConsent />
               <Toaster />

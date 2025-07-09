@@ -86,11 +86,8 @@ export default function CryptoConverter() {
   /* -------------------------------------------------------------------- */
 
   return (
-    <section className="mx-auto xl:max-w-[70%] mt-12">
-      <h1 className="text-[#FFF] md:text-3xl text-lg px-6 text-center mb-6 font-semibold">
-        Crypto Currency Converter
-      </h1>
-      <div className="w-[90%] mx-auto lg:mx-0 lg:w-full rounded-2xl bg-blue-whale p-6 text-white shadow-xl border border-elf-green">
+    <section className="mx-auto" data-aos="fade-left">
+      <div className="w-full mx-auto lg:mx-0  rounded-2xl bg-blue-whale p-6 text-white shadow-xl border border-elf-green">
         {/* Amount --------------------------------------------------------- */}
         <label className="block text-sm text-white/70 mb-1">Amount</label>
         <div className="flex items-center gap-3">
@@ -164,7 +161,7 @@ export default function CryptoConverter() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 120, delay: 0.15 }}
-          className="mt-10 rounded-xl bg-elf-green p-4 text-sm font-medium flex justify-between items-center sm:flex-row flex-col"
+          className="mt-10 rounded-xl bg-elf-green p-4 text-sm font-medium flex justify-between items-center lg:flex-row flex-col"
         >
           {isLoading ? (
             "Loading price…"
@@ -174,7 +171,7 @@ export default function CryptoConverter() {
                 {amount} {coinObj.symbol} ={" "}
                 {formatFiat(converted, currency.toUpperCase())}
               </span>
-              <span className="float-right text-white/80 text-xs">
+              <span className="text-white/80 text-xs">
                 Last updated at {new Date().toUTCString().slice(17, 22)} UTC
               </span>
             </>

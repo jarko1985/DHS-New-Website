@@ -1,0 +1,31 @@
+import ContactForm from "@/components/forms/ContactForm";
+import Header from "@/components/shared/Header";
+import Image from "next/image";
+import React from "react";
+
+const page = () => {
+  return (
+    <section className="bg-blue-whale">
+      <section className="mx-auto xl:w-[70%] pt-12">
+        <h1 className="text-[#e2dedc] lg:text-4xl text-xl text-center pb-4">
+          Contact Us
+        </h1>
+        <p className="text-[#e2dedc] text-center lg:text-xl text-lg pb-12">
+          Please fill in the below information, Our Customer service team will
+          contact you at the earliest
+        </p>
+        <ContactForm />
+        <div className="full mt-12 relative h-[600px]">
+          <Image
+            fill
+            src="/images/contact_image.webp"
+            alt="Patten Image"
+            className="object-contain w-full"
+          />
+        </div>
+      </section>
+    </section>
+  );
+};
+
+export default page;

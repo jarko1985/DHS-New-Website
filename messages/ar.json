@@ -9,5 +9,23 @@
   "LanguageSwitcher": {
     "en": "الإنجليزية",
     "ar": "العربية"
+  },
+  "Contact": {
+    "full_name": "الاسم الكامل",
+    "enter_your_full_name": "أدخل اسمك الكامل",
+    "email": "البريد الإلكتروني",
+    "enter_your_email": "أدخل بريدك الإلكتروني",
+    "phone": "رقم الهاتف",
+    "enter_your_phone_number": "أدخل رقم هاتفك",
+    "subject": "الموضوع",
+    "enter_the_subject": "أدخل الموضوع",
+    "message": "الرسالة",
+    "enter_your_message": "أدخل رسالتك",
+    "send_message": "إرسال الرسالة",
+    "name_error": "يجب أن يكون الاسم على الأقل حرفين.",
+    "email_error": "يرجى إدخال بريد إلكتروني صالح.",
+    "phone_error": "يجب أن يكون رقم الهاتف على الأقل 10 أرقام.",
+    "subject_error": "يجب أن يكون الموضوع على الأقل 5 أحرف.",
+    "message_error": "يجب أن تكون الرسالة على الأقل 10 أحرف."
   }
 }

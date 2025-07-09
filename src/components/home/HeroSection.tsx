@@ -1,12 +1,30 @@
+"use client";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function HeroSection() {
+  const [email, setEmail] = useState("");
   const locale = useLocale();
 
   const t = useTranslations("homepage");
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    toast.success("Thank you!");
+    setEmail("");
+  };
   return (
-    <section className="relative flex flex-col xl:max-w-[70%] mx-auto md:flex-row items-center justify-between min-h-[85vh] bg-blue-whale w-full overflow-hidden">
+    <section className="relative flex flex-col xl:max-w-[70%] px-4 xl:px-0 mx-auto md:flex-row items-center justify-between min-h-[85vh] bg-blue-whale w-full overflow-hidden">
       <div
         data-aos="fade-right"
         className="md:flex-1 flex flex-col md:justify-center md:items-start z-10 mt-6 md:mt-0"
@@ -26,14 +44,24 @@ export default function HeroSection() {
           What looked like a small patch of purple grass, above five feet
           square, was moving across the sand in their direction.
         </p>
-        <div className="flex flex-col md:flex-row justify-center md:justify-start gap-4 md:mb-12 mt-12 md:mt-0 mx-auto md:mx-0 w-[80%] md:w-auto">
-          <button className="px-6 py-2 md:text-lg text-xs bg-transparent border border-white text-white rounded-md font-semibold hover:bg-elf-green hover:border-elf-green transition-colors duration-200">
-            Button
+        <form
+          className="flex sm:flex-row flex-col gap-4 justify-center md:justify-start mx-auto sm:mx-0 w-[90%] sm:w-full "
+          onSubmit={handleSubscribe}
+        >
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="example@email.com"
+            className="rounded-full px-4 py-2 bg-transparent border border-white/50 text-white placeholder-white/60 focus:outline-none focus:border-elf-green min-w-0"
+          />
+          <button
+            type="submit"
+            className="text-white ramp-shine-bg px-6 py-2 rounded-full font-semibold transition-colors duration-200"
+          >
+            Subscribe
           </button>
-          <button className="px-6 py-2 bg-elf-green text-white md:text-lg text-xs rounded-md font-semibold hover:bg-elf-green/80 transition-colors duration-200">
-            Another Button
-          </button>
-        </div>
+        </form>
       </div>
       {/* Right: Blended Image */}
       <div

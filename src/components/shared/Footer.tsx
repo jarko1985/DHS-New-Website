@@ -3,30 +3,22 @@ import Link from "next/link";
 
 const menuColumns = [
   {
-    title: "Item title",
-    items: ["Something", "Something", "Something", "Something"],
+    title: "Resources",
+    items: [
+      { label: "Conflict of Interest", link: "/conflict-of-interest" },
+      { label: "Privacy Policy", link: "/privacy-policy" },
+      { label: "Risk Disclosure", link: "/risk-disclosure" },
+      { label: "Terms and Conditions", link: "/terms-and-conditions" },
+      { label: "Whistleblowing Policy", link: "/whistleblowing-policy" },
+    ],
   },
-  {
-    title: "Item title",
-    items: ["Something", "Something", "Something", "Something"],
-  },
-  {
-    title: "Item title",
-    items: ["Something", "Something"],
-  },
-];
-
-const policyLinks = [
-  { name: "Privacy Policy", href: "#" },
-  { name: "Terms & Conditions", href: "#" },
-  { name: "Item", href: "#" },
 ];
 
 export default function Footer() {
   return (
     <footer className="bg-blue-whale w-full pt-8 pb-2">
       <div className="xl:max-w-[70%] px-4 xl:px-0 mx-auto">
-        <div className="border-t border-b border-white/20 py-8 flex flex-col md:flex-row gap-8 md:gap-0">
+        <div className="border-t border-b border-white/20 py-8 flex flex-col md:flex-row justify-between gap-8 md:gap-0">
           {/* Left: Logo and Newsletter */}
           <div className="md:w-3/5 flex flex-col md:gap-4 justify-between">
             <div className="relative min-w-[100px] h-[60px] mx-auto md:mx-0">
@@ -61,17 +53,21 @@ export default function Footer() {
               </form>
             </div>
           </div>
-          {/* Right: Menu Columns */}
-          <div className="md:w-2/5 grid grid-cols-3 gap-8 justify-items-center md:justify-items-start">
+          <div className="md:w-1/5 gap-8 justify-items-center md:justify-items-start">
             {menuColumns.map((col, idx) => (
               <div key={idx}>
-                <h4 className="text-white font-bold text-base mb-2 font-roboto">
+                <h4 className="text-white font-bold text-base mb-2 font-roboto text-center">
                   {col.title}
                 </h4>
-                <ul className="space-y-1">
+                <ul className="space-y-3">
                   {col.items.map((item, i) => (
-                    <li key={i} className="text-white/70 text-sm font-roboto">
-                      {item}
+                    <li
+                      key={i}
+                      className="text-white/70 text-sm font-roboto space-y-2 text-center"
+                    >
+                      <Link href={item.link} className="hover:underline">
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -80,21 +76,10 @@ export default function Footer() {
           </div>
         </div>
         {/* Bottom: Copyright and Policy Links */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center py-4">
           <span className="text-white/60 text-xs">
             ©2025 DHS All rights reserved.
           </span>
-          <div className="flex gap-6 my-6">
-            {policyLinks.map((link, idx) => (
-              <Link
-                key={idx}
-                href={link.href}
-                className="text-white/70 text-xs hover:underline"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

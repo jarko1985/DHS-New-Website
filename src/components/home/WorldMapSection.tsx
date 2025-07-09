@@ -63,6 +63,28 @@ export default function WorldMapSection() {
 
   return (
     <section className="relative flex flex-col items-center justify-center pb-16 md:pt-6 bg-blue-whale w-full overflow-hidden">
+      <div className="text-center py-12">
+        <span
+          data-aos="fade-up"
+          className="block text-elf-green tracking-widest text-sm font-bold mb-2"
+        >
+          GLOBAL NETWORK
+        </span>
+        <h2
+          data-aos="fade-up"
+          className="text-lg md:text-4xl font-bold text-white mb-4 font-roboto"
+        >
+          Available across the World
+        </h2>
+        <p
+          data-aos="fade-up"
+          className="text-white/80 font-roboto md:max-w-2xl mx-auto text-sm max-w-md"
+        >
+          Connect to global liquidity pools, trade securely across continents,
+          and experience real-time access to the world's leading digital
+          assets—wherever you are.
+        </p>
+      </div>
       <div className="relative w-full max-w-7xl mx-auto md:h-[600px] h-[400px]">
         {/* World map image as base layer */}
         <Image
@@ -109,28 +131,6 @@ export default function WorldMapSection() {
             />
           ))}
         </svg>
-      </div>
-      <div className="text-center absolute z-20 bottom-0">
-        <span
-          data-aos="fade-up"
-          className="block text-elf-green tracking-widest text-sm font-bold mb-2"
-        >
-          GLOBAL NETWORK
-        </span>
-        <h2
-          data-aos="fade-up"
-          className="text-lg md:text-4xl font-bold text-white mb-4 font-roboto"
-        >
-          Available across the World
-        </h2>
-        <p
-          data-aos="fade-up"
-          className="text-white/80 font-roboto md:max-w-2xl mx-auto text-sm max-w-md"
-        >
-          Connect to global liquidity pools, trade securely across continents,
-          and experience real-time access to the world's leading digital
-          assets—wherever you are.
-        </p>
       </div>
     </section>
   );

@@ -28,9 +28,9 @@ export default function LanguageSwitcher() {
           key={lang.code}
           onClick={() => handleSwitch(lang.code)}
           className={clsx(
-            "px-2 py-1 rounded-full font-bold text-xs transition-all duration-200 focus:outline-none",
+            "px-2 py-1 rounded-full font-bold text-xs transition-all duration-200 focus:outline-none cursor-pointer",
             lang.code === currentLocale
-              ? "bg-elf-green text-white shadow"
+              ? "bg-[#e47a5a] text-white shadow"
               : "text-elf-green hover:bg-elf-green/20"
           )}
           aria-current={lang.code === currentLocale ? "true" : undefined}

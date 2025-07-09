@@ -5,7 +5,7 @@
 @theme {
   --color-blue-whale: #0d1635;
   --color-elf-green: #117f60;
-  --color-mercury: #117f60;
+  --color-mercury: #e2dedc;
   --color-blue: #0f1415;
   --color-negative: #272c2d;
   --color-positive: #4b4f51;
@@ -88,6 +88,20 @@
 }
 .animate-bounce-dot {
   animation: bounce-dot 1.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
 }
 
 @theme inline {
@@ -204,4 +218,22 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.ramp-shine-bg {
+  background: linear-gradient(
+    90deg,
+    #b22f26 0%,
+    #e47a5a 50%,
+    #b22f26 100%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  transition: background-position 0.7s;
+}
+
+.ramp-shine-bg:hover {
+  background-position: 100% 0%;
 }

@@ -9,5 +9,23 @@
   "LanguageSwitcher": {
     "en": "English",
     "ar": "Arabic"
+  },
+  "Contact": {
+    "full_name": "Full Name",
+    "enter_your_full_name": "Enter your full name",
+    "email": "Email",
+    "enter_your_email": "Enter your email address",
+    "phone": "Phone",
+    "enter_your_phone_number": "Enter your phone number",
+    "subject": "Subject",
+    "enter_the_subject": "Enter the subject",
+    "message": "Message",
+    "enter_your_message": "Enter your message",
+    "send_message": "Send Message",
+    "name_error": "Name must be at least 2 characters.",
+    "email_error": "Please enter a valid email address.",
+    "phone_error": "Phone number must be at least 10 digits.",
+    "subject_error": "Subject must be at least 5 characters.",
+    "message_error": "Message must be at least 10 characters."
   }
 }
