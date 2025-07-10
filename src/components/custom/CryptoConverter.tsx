@@ -12,6 +12,12 @@ import {
   SiLitecoin,
   SiDogecoin,
 } from "react-icons/si";
+import {
+  FaDollarSign,
+  FaEuroSign,
+  FaPoundSign,
+  FaMoneyBillWave,
+} from "react-icons/fa";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -252,6 +258,14 @@ function CoinOption({
   onClick,
   selected,
 }: Coin & { onClick?: () => void; selected?: boolean }) {
+  // Map coin id to background color
+  const bgMap: Record<string, string> = {
+    bitcoin: "bg-yellow-400",
+    ethereum: "bg-blue-500",
+    tether: "bg-green-500",
+    litecoin: "bg-gray-400",
+    dogecoin: "bg-orange-400",
+  };
   return (
     <li
       onClick={onClick}
@@ -260,7 +274,13 @@ function CoinOption({
         selected ? "" : "hover:bg-[#2A2A2A]"
       )}
     >
-      <Icon size={22} />
+      <span
+        className={`inline-flex items-center justify-center rounded-full w-8 h-8 ${
+          bgMap[name.toLowerCase()] || "bg-gray-300"
+        }`}
+      >
+        <Icon size={22} color="#222" />
+      </span>
       <span>{name}</span>
       <span className="ml-auto text-white/50">{symbol}</span>
     </li>
@@ -273,6 +293,13 @@ function CurrencyOption({
   onClick,
   selected,
 }: Currency & { onClick?: () => void; selected?: boolean }) {
+  // Map currency code to icon component
+  const iconMap: Record<string, React.ReactNode> = {
+    usd: <FaDollarSign className="text-xl text-green-500" />,
+    eur: <FaEuroSign className="text-xl text-blue-500" />,
+    aed: <FaMoneyBillWave className="text-xl text-emerald-600" />,
+    gbp: <FaPoundSign className="text-xl text-purple-500" />,
+  };
   return (
     <li
       onClick={onClick}
@@ -281,6 +308,9 @@ function CurrencyOption({
         selected ? "" : "hover:bg-[#2A2A2A]"
       )}
     >
+      <span>
+        {iconMap[code] || <FaMoneyBillWave className="text-xl text-gray-400" />}
+      </span>
       <span>{name}</span>
       <span className="ml-auto text-white/50 uppercase">{code}</span>
     </li>

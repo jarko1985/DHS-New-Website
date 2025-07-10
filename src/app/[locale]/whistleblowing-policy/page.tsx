@@ -15,8 +15,13 @@ import {
   BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 const WhistleblowingPolicyPage = () => {
+  const t = useTranslations("whistleblowingPolicy");
+  const locale = useLocale();
+  const isArabic = locale === "ar";
   return (
     <div className="min-h-screen bg-blue-whale text-mercury">
       {/* Gradient header */}
@@ -32,13 +37,19 @@ const WhistleblowingPolicyPage = () => {
         >
           <div className="flex items-center gap-4 mb-6">
             <div>
-              <h2 className="md:text-3xl text-xl font-bold text-white mb-8 pl-6 relative">
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-elf-green rounded-sm"></span>
-                WHISTLEBLOWING POLICY
+              <h2
+                className={`md:text-3xl text-xl font-bold text-white mb-8 ${
+                  isArabic ? "pr-6" : "pl-6"
+                }  relative`}
+              >
+                <span
+                  className={`absolute ${
+                    isArabic ? "right-0" : "left-0"
+                  }  top-1/2 -translate-y-1/2 w-1 h-8 bg-elf-green rounded-sm`}
+                ></span>
+                {t("title")}
               </h2>
-              <p className="text-lg opacity-90 mt-1 pl-6">
-                Direct Honest Safe International Exchange FZE
-              </p>
+              <p className="text-lg opacity-90 mt-1 pl-6">{t("subtitle")}</p>
             </div>
           </div>
         </motion.div>
@@ -53,141 +64,82 @@ const WhistleblowingPolicyPage = () => {
           {/* Section 1 - Introduction */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <FileText className="w-5 h-5" />
-              <span>1. Introduction</span>
+              <span>{t("sections.introduction")}</span>
             </h2>
-
             <div className="space-y-6">
+              {/* 1.1 Background */}
               <div>
-                <h3 className="text-xl font-medium mb-4">1.1 Background</h3>
-                <p className="mb-4">
-                  The Company shall be committed towards adhering to the highest
-                  standards of governance, openness, transparency, honesty,
-                  integrity, accountability and ethical, moral & legal conduct
-                  of business operations. The Company shall create an open,
-                  transparent and a safe working environment where its staff
-                  shall be encouraged to report any irregularities within the
-                  Company, in good faith.
-                </p>
-                <p className="mb-4">
-                  The Whistleblowing right is granted to a staff to speak out
-                  when he or she believes that there are good reasons to believe
-                  that an instruction received, an operation being studied or,
-                  more generally, a situation has arisen that is not compliant
-                  with the rules governing the Company.
-                </p>
+                <h3 className="text-xl font-medium mb-4">
+                  1.1 {t("introduction.backgroundTitle")}
+                </h3>
+                <p className="mb-4">{t("introduction.background1")}</p>
+                <p className="mb-4">{t("introduction.background2")}</p>
                 <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6">
-                  <p className="font-medium">
-                    All Company staff may exercise their right to whistleblowing
-                    in relation to actions they become aware of, either directly
-                    or indirectly, in the course of their professional duties.
-                    This right must be exercised responsibly and not be misused
-                    for purposes of defamation, denigration, or vilification.
-                    Any reports received will be investigated confidentially by
-                    the designated recipient.
-                  </p>
+                  <p className="font-medium">{t("introduction.background3")}</p>
                 </div>
               </div>
-
+              {/* 1.2 Objective */}
               <div>
-                <h3 className="text-xl font-medium mb-4">1.2 Objective</h3>
-                <p className="mb-4">
-                  a) The Whistleblowing Policy ("Policy") aims to enable the
-                  Company's staff to report the following incidents:
-                </p>
+                <h3 className="text-xl font-medium mb-4">
+                  1.2 {t("introduction.objectiveTitle")}
+                </h3>
+                <p className="mb-4">{t("introduction.objectiveA")}</p>
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Accounting irregularities</li>
-                    <li>Violations of regulations/breach of statutory laws</li>
-                    <li>Harassment</li>
-                    <li>Conflicts of interest</li>
-                    <li>Corruption</li>
-                    <li>Falsification/destruction of company records</li>
-                    <li>Workplace violence</li>
-                    <li>Discrimination</li>
-                    <li>Release of proprietary information</li>
+                    {Array.from({ length: 9 }).map((_, i) => (
+                      <li key={i}>
+                        {t(`introduction.objectiveA_list${i + 1}`)}
+                      </li>
+                    ))}
                   </ul>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>Covering up deficiencies in internal controls</li>
-                    <li>Embezzlement and frauds</li>
-                    <li>Client privacy violations</li>
-                    <li>Unacceptable practices</li>
-                    <li>Market Misconduct</li>
-                    <li>Misrepresentation of facts</li>
-                    <li>Health and safety risk</li>
-                    <li>Abuse of power or authority</li>
-                    <li>Misuse of Company's assets</li>
+                    {Array.from({ length: 9 }).map((_, i) => (
+                      <li key={i + 9}>
+                        {t(`introduction.objectiveA_list${i + 10}`)}
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <p className="mb-4">b) This Policy provides for:</p>
+                <p className="mb-4">{t("introduction.objectiveB")}</p>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
-                  <li>
-                    An independent and secure avenue for Whistle-blowers to
-                    raise concerns
-                  </li>
-                  <li>
-                    Safeguarding and protecting the Whistle-blowers from
-                    possible retaliation
-                  </li>
-                  <li>Proper management and reporting</li>
+                  {Array.from({ length: 3 }).map((_, i) => (
+                    <li key={i}>{t(`introduction.objectiveB_list${i + 1}`)}</li>
+                  ))}
                 </ul>
               </div>
-
+              {/* 1.3 Functional Scope and Applicability */}
               <div>
                 <h3 className="text-xl font-medium mb-4">
-                  1.3 Functional Scope and Applicability
+                  1.3 {t("introduction.scopeTitle")}
                 </h3>
-                <p className="mb-4">
-                  a) This Policy is applicable to the Company's Board, Senior
-                  Management team, and all its staff (including contractual and
-                  seconded staff).
-                </p>
-                <p className="mb-4">
-                  b) This Policy applies exclusively to events and individuals
-                  that may cause harm to the Company's staff, the Company
-                  itself, or its reputation, and does not extend protections to
-                  the Whistleblower personally. Accordingly, any complaints or
-                  grievances falling outside this scope shall not be addressed
-                  under this Policy.
-                </p>
+                <p className="mb-4">{t("introduction.scopeA")}</p>
+                <p className="mb-4">{t("introduction.scopeB")}</p>
               </div>
-
+              {/* 1.4 Policy Governance */}
               <div>
                 <h3 className="text-xl font-medium mb-4">
-                  1.4 Policy Governance
+                  1.4 {t("introduction.governanceTitle")}
                 </h3>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
-                  <li>The Policy shall be owned by the Compliance Officer</li>
-                  <li>The Policy shall be approved and issued by the Board</li>
-                  <li>
-                    The Policy shall be reviewed at least annually or as
-                    directed by the Board
-                  </li>
-                  <li>
-                    Any exceptions to this Policy shall be approved by the Board
-                  </li>
-                  <li>
-                    Staff shall be notified of material changes to the Policy
-                  </li>
-                  <li>
-                    Any breaches to this Policy shall be escalated to the
-                    Compliance Function
-                  </li>
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <li key={i}>{t(`introduction.governance${i + 1}`)}</li>
+                  ))}
                 </ul>
               </div>
-
+              {/* 1.5 Disclaimer */}
               <div>
-                <h3 className="text-xl font-medium mb-4">1.5 Disclaimer</h3>
+                <h3 className="text-xl font-medium mb-4">
+                  1.5 {t("introduction.disclaimerTitle")}
+                </h3>
                 <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6">
                   <p className="font-medium">
-                    This Policy was prepared for the purpose of license
-                    application. The content of this Policy may be updated to
-                    address the business and regulatory requirements as and when
-                    they become available, during the implementation phase of
-                    the Company, prior to the launch of the business.
+                    {t("introduction.disclaimerNote")}
                   </p>
                 </div>
               </div>
@@ -197,16 +149,15 @@ const WhistleblowingPolicyPage = () => {
           {/* Section 2 - Key Principles */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <Scale className="w-5 h-5" />
-              <span>2. Key Principles</span>
+              <span>{t("sections.keyPrinciples")}</span>
             </h2>
-            <p className="mb-6">
-              The Whistleblowing Policy of the Company shall be based on the
-              following principles:
-            </p>
+            <p className="mb-6">{t("principles.intro")}</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6">
                 <div className="flex items-start gap-3 mb-3">
@@ -214,12 +165,10 @@ const WhistleblowingPolicyPage = () => {
                     <User className="w-4 h-4 text-elf-green" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Ethical Behavior</h4>
-                    <p>
-                      All staff shall demonstrate honesty, transparency,
-                      integrity, and due care in fulfilling their
-                      responsibilities
-                    </p>
+                    <h4 className="font-medium mb-1">
+                      {t("principles.ethicalBehavior")}
+                    </h4>
+                    <p>{t("principles.ethicalDescription")}</p>
                   </div>
                 </div>
               </div>
@@ -230,11 +179,10 @@ const WhistleblowingPolicyPage = () => {
                     <ShieldAlert className="w-4 h-4 text-elf-green" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Good Faith Reporting</h4>
-                    <p>
-                      The Company encourages staff to report suspected or actual
-                      wrongful conduct in good faith
-                    </p>
+                    <h4 className="font-medium mb-1">
+                      {t("principles.goodFaith")}
+                    </h4>
+                    <p>{t("principles.goodFaithDescription")}</p>
                   </div>
                 </div>
               </div>
@@ -245,11 +193,10 @@ const WhistleblowingPolicyPage = () => {
                     <Lock className="w-4 h-4 text-elf-green" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Confidentiality</h4>
-                    <p>
-                      Sensitivity, discretion, and confidentiality will be given
-                      to whistleblowing reports
-                    </p>
+                    <h4 className="font-medium mb-1">
+                      {t("principles.confidentiality")}
+                    </h4>
+                    <p>{t("principles.confidentialityDescription")}</p>
                   </div>
                 </div>
               </div>
@@ -260,11 +207,10 @@ const WhistleblowingPolicyPage = () => {
                     <Gavel className="w-4 h-4 text-elf-green" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">No Retaliation</h4>
-                    <p>
-                      Any form of retaliation against Whistleblowers is strictly
-                      prohibited
-                    </p>
+                    <h4 className="font-medium mb-1">
+                      {t("principles.noRetaliation")}
+                    </h4>
+                    <p>{t("principles.noRetaliationDescription")}</p>
                   </div>
                 </div>
               </div>
@@ -274,57 +220,35 @@ const WhistleblowingPolicyPage = () => {
           {/* Section 3 - Reporting an Incident */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5" />
-              <span>3. Reporting an Incident</span>
+              <span>{t("sections.reportingIncident")}</span>
             </h2>
             <div className="space-y-6">
-              <p className="mb-4">
-                a) A 'Whistle-blower' shall report any reasonable concern,
-                including but not limited to the events captured in Section 1 of
-                this Policy.
-              </p>
-              <p className="mb-4">
-                b) The Company shall set up a dedicated email account to enable
-                the reporting of whistleblowing cases.
-              </p>
-              <p className="mb-4">
-                c) The Compliance Function shall undertake the responsibility of
-                managing the account as well as communicating the use of this
-                account to all stakeholders of the Company.
-              </p>
+              <p className="mb-4">{t("reporting.a")}</p>
+              <p className="mb-4">{t("reporting.b")}</p>
+              <p className="mb-4">{t("reporting.c")}</p>
               <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6 mb-6">
-                <h4 className="font-medium mb-3">Required Report Details:</h4>
+                <h4 className="font-medium mb-3">
+                  {t("reporting.requiredDetails")}
+                </h4>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Reporting date of the activity</li>
-                  <li>Name of the activity</li>
-                  <li>Details of the involved parties</li>
-                  <li>Details of the suspected allegation</li>
-                  <li>How the issues were detected</li>
-                  <li>Other relevant information</li>
+                  {t
+                    .raw("reporting.requiredList")
+                    .map((item: string, idx: number) => (
+                      <li key={idx}>{item}</li>
+                    ))}
                 </ul>
               </div>
-              <p className="mb-4">
-                e) In case the concern is against a Compliance staff,
-                Whistle-blower shall directly send an email to the Chief
-                Internal Audit Officer.
-              </p>
-              <p className="mb-4">
-                f) The report shall contain sufficient information to
-                substantiate the concern and to enable a smooth investigation
-                process.
-              </p>
-              <p className="mb-4">
-                g) The Compliance Function shall perform an initial review and
-                route the concerns to the relevant stakeholders (Case Manager).
-              </p>
+              <p className="mb-4">{t("reporting.e")}</p>
+              <p className="mb-4">{t("reporting.f")}</p>
+              <p className="mb-4">{t("reporting.g")}</p>
               <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6">
-                <p className="font-medium">
-                  h) In all cases, a Whistle-blower has the full freedom to
-                  report any incident to VARA directly.
-                </p>
+                <p className="font-medium">{t("reporting.h")}</p>
               </div>
             </div>
           </motion.section>
@@ -332,92 +256,52 @@ const WhistleblowingPolicyPage = () => {
           {/* Section 4 - Investigation */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <Gavel className="w-5 h-5" />
-              <span>4. Investigation</span>
+              <span>{t("sections.investigation")}</span>
             </h2>
 
             <div className="space-y-6">
-              <p className="mb-4">
-                a) Whistleblowing investigations shall be managed by the
-                stakeholders, also called Case Manager, mentioned in Section 3
-                of this Policy.
-              </p>
+              <p className="mb-4">{t("investigation.a")}</p>
 
               <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6 mb-6">
-                <h4 className="font-medium mb-3">Working Group Composition:</h4>
+                <h4 className="font-medium mb-3">
+                  {t("investigation.workingGroupTitle")}
+                </h4>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <strong>Workplace Misconduct</strong> - Human Resources
-                    Department
-                  </li>
-                  <li>
-                    <strong>Fraud including financial Misconduct</strong> - Risk
-                    Function
-                  </li>
-                  <li>
-                    <strong>Bribery/Corruption</strong> - Compliance Function
-                  </li>
-                  <li>
-                    <strong>Regulatory Misconduct</strong> - Compliance Function
-                  </li>
-                  <li>
-                    <strong>Data and Security</strong> - Technology Department
-                  </li>
+                  <li>{t("investigation.workingGroupList1")}</li>
+                  <li>{t("investigation.workingGroupList2")}</li>
+                  <li>{t("investigation.workingGroupList3")}</li>
+                  <li>{t("investigation.workingGroupList4")}</li>
+                  <li>{t("investigation.workingGroupList5")}</li>
                 </ul>
               </div>
 
-              <p className="mb-4">
-                c) In dealing with suspected misconduct, reasonable care will be
-                taken to avoid baseless allegations, premature notice to persons
-                suspected of misconduct, and disclosure of suspected misconduct
-                to persons not involved with the investigation.
-              </p>
+              <p className="mb-4">{t("investigation.c")}</p>
 
-              <p className="mb-4">
-                d) Staff are required to cooperate fully in any official
-                investigation, audit, or similar request.
-              </p>
+              <p className="mb-4">{t("investigation.d")}</p>
 
-              <p className="mb-4">
-                e) The investigation process may include meetings with the staff
-                member to discuss the reported concerns. While absolute proof of
-                wrongdoing is not required, the staff member must present
-                reasonable grounds supporting their concerns.
-              </p>
+              <p className="mb-4">{t("investigation.e")}</p>
 
               <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6 mb-6">
-                <p className="font-medium">
-                  f) The Case Manager will keep the Whistleblower informed about
-                  the status of the reported concern and the approach taken to
-                  address it. However, a balance will be maintained between the
-                  Whistleblower's legitimate interest in receiving updates and
-                  the need to preserve the confidentiality of the investigation
-                  process.
-                </p>
+                <p className="mb-4">{t("investigation.f")}</p>
               </div>
 
-              <p className="mb-4">
-                g) If the allegation does not have sufficient evidence or merit,
-                the allegation shall be dismissed. The Whistleblower shall be
-                informed in cases of dismissal and the rationale for dismissal
-                shall be documented for data retention and audit trail.
-              </p>
+              <p className="mb-4">{t("investigation.g")}</p>
 
               <div className="flex items-start gap-4">
                 <div className="bg-elf-green/20 p-2 rounded-full mt-1">
                   <AlertTriangle className="w-4 h-4 text-elf-green" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Investigation Timeline</h4>
-                  <p>
-                    h) The investigations shall be conducted within (10) working
-                    days from the date of the concern being raised. The timeline
-                    may vary depending on the nature of the case being
-                    considered.
-                  </p>
+                  <h4 className="font-medium mb-1">
+                    {t("investigation.timelineTitle")}
+                  </h4>
+                  <p>{t("investigation.timelineDescription")}</p>
                 </div>
               </div>
             </div>
@@ -426,63 +310,32 @@ const WhistleblowingPolicyPage = () => {
           {/* Section 5 - Management Information */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <FileText className="w-5 h-5" />
-              <span>5. Management Information</span>
+              <span>{t("sections.managementInformation")}</span>
             </h2>
 
             <div className="space-y-6">
-              <p className="mb-4">
-                a) The Compliance Officer shall oversee the management of all
-                Whistleblowing cases.
-              </p>
-
-              <p className="mb-4">
-                b) The Compliance Officer shall be responsible for providing all
-                investigation recommendations, unless the concern raised is
-                against a Compliance staff, in which case, the Chief Internal
-                Audit Officer shall be responsible for providing the
-                recommendations.
-              </p>
-
-              <p className="mb-4">
-                c) The Human Resources representative shall undertake
-                disciplinary actions against the person being investigated if
-                the allegation is found to be true and valid.
-              </p>
-
+              <p className="mb-4">{t("management.a")}</p>
+              <p className="mb-4">{t("management.b")}</p>
+              <p className="mb-4">{t("management.c")}</p>
               <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6 mb-6">
-                <p className="font-medium">
-                  d) The Compliance Function shall maintain a record of all
-                  Whistleblowing cases including those that were dismissed for
-                  reporting purposes. They shall exercise due diligence to
-                  ensure the accuracy of the reporting by providing all
-                  necessary details related to the case reported and attaching
-                  all documents evidencing the whistleblowing case.
-                </p>
+                <p className="font-medium">{t("management.d")}</p>
               </div>
-
-              <p className="mb-4">
-                e) The Compliance Officer shall be responsible for the reporting
-                of whistleblowing cases (including dismissed cases) to the CEO
-                on a periodical basis.
-              </p>
-
+              <p className="mb-4">{t("management.e")}</p>
               <div className="flex items-start gap-4">
                 <div className="bg-elf-green/20 p-2 rounded-full mt-1">
-                  <BookOpen className="w-4 h-4 text-elf-green" />
+                  <BookOpen className="w-5 h-4 text-elf-green" />
                 </div>
                 <div>
-                  <h4 className="font-medium mb-1">Data Retention</h4>
-                  <p>
-                    f) Summary details and statistical information and data
-                    relating to the types of reports received and corrective
-                    measures taken shall be maintained for a minimum of 5 years
-                    from the closing of the investigation, except stated
-                    otherwise by the local law.
-                  </p>
+                  <h4 className="font-medium mb-1">
+                    {t("management.dataRetention")}
+                  </h4>
+                  <p>{t("management.dataRetentionDescription")}</p>
                 </div>
               </div>
             </div>
@@ -491,113 +344,69 @@ const WhistleblowingPolicyPage = () => {
           {/* Section 6 - Safeguards */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <ShieldAlert className="w-5 h-5" />
-              <span>6. Safeguards</span>
+              <span>{t("sections.safeguards")}</span>
             </h2>
 
             <div className="space-y-8">
               <div>
                 <h3 className="text-xl font-medium mb-4">
-                  a) Whistle-blower protection
+                  a) {t("safeguards.protectionTitle")}
                 </h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    A staff who acts as a Whistle-blower is protected against
-                    unfair termination and unfair prejudicial employment
-                    practices.
-                  </li>
-                  <li>
-                    No adverse action shall be taken against any Whistle-blower
-                    in good faith.
-                  </li>
-                  <li>
-                    A staff who has filed a report under this Policy shall be
-                    appropriately protected from any negative impact.
-                  </li>
-                  <li>
-                    Appropriate measures shall be taken against anyone under
-                    control of the Company, who victimizes (or attempts to) a
-                    Whistle-blower.
-                  </li>
-                  <li>
-                    In case a Whistle-blower suspects retaliation, they may
-                    raise their concern to the Head of Human Resources.
-                  </li>
+                  <li>{t("safeguards.protectionList1")}</li>
+                  <li>{t("safeguards.protectionList2")}</li>
+                  <li>{t("safeguards.protectionList3")}</li>
+                  <li>{t("safeguards.protectionList4")}</li>
+                  <li>{t("safeguards.protectionList5")}</li>
                 </ul>
                 <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6 mt-4">
                   <p className="font-medium">
-                    Any retaliation, including but not limited to threat of
-                    physical harm, loss of job, punitive work assignments, or
-                    reduced salary or wages, will be promptly investigated by
-                    the 'Working Group'.
+                    {t("safeguards.retaliationNotice")}
                   </p>
                 </div>
               </div>
-
               <div>
-                <h3 className="text-xl font-medium mb-4">b) Confidentiality</h3>
+                <h3 className="text-xl font-medium mb-4">
+                  b) {t("safeguards.confidentialityTitle")}
+                </h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    Protected disclosures and investigatory records shall be
-                    kept confidential to the extent possible.
-                  </li>
-                  <li>
-                    All reports received shall be verified in an appropriate
-                    manner and acted upon in confidence.
-                  </li>
+                  <li>{t("safeguards.confidentialityList1")}</li>
+                  <li>{t("safeguards.confidentialityList2")}</li>
                 </ul>
                 <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6 mt-4">
                   <p className="font-medium">
-                    The Company will do its best to protect the identity of the
-                    whistle-blower. It must be appreciated that the
-                    investigation process may reveal the source of the
-                    information.
+                    {t("safeguards.identityProtectionNote")}
                   </p>
                 </div>
               </div>
-
               <div>
                 <h3 className="text-xl font-medium mb-4">
-                  c) False Allegations
+                  c) {t("safeguards.falseAllegationsTitle")}
                 </h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    If a Whistle-blower makes a genuine allegation in good faith
-                    which is confirmed as untrue, no action shall be taken
-                    against them.
-                  </li>
-                  <li>
-                    If a Whistle-blower intentionally and knowingly makes false
-                    accusations, he/she shall be subject to disciplinary
-                    measures or legal action.
-                  </li>
+                  <li>{t("safeguards.falseAllegationsList1")}</li>
+                  <li>{t("safeguards.falseAllegationsList2")}</li>
                 </ul>
               </div>
-
               <div>
                 <h3 className="text-xl font-medium mb-4">
-                  d) Anonymous Allegations
+                  d) {t("safeguards.anonymousTitle")}
                 </h3>
-                <p className="mb-4">
-                  The Company encourages a Whistle-blower to disclose his/ her
-                  name in reporting the allegation. Concerns expressed
-                  anonymously are much less powerful but will nevertheless be
-                  considered.
-                </p>
+                <p className="mb-4">{t("safeguards.anonymousDescription")}</p>
                 <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6">
                   <h4 className="font-medium mb-2">
-                    Factors for considering anonymous reports:
+                    {t("safeguards.anonymousTitle")}
                   </h4>
                   <ul className="list-disc pl-6 space-y-2">
-                    <li>The seriousness of the issues raised</li>
-                    <li>The credibility of the concern</li>
-                    <li>
-                      The likelihood of confirming the allegation from other
-                      sources
-                    </li>
+                    <li>{t("safeguards.anonymousFactors1")}</li>
+                    <li>{t("safeguards.anonymousFactors2")}</li>
+                    <li>{t("safeguards.anonymousFactors3")}</li>
                   </ul>
                 </div>
               </div>
@@ -607,11 +416,13 @@ const WhistleblowingPolicyPage = () => {
           {/* Section 7 - Training and Awareness */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
             <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
               <BookOpen className="w-5 h-5" />
-              <span>7. Training and Awareness</span>
+              <span>{t("sections.trainingAwareness")}</span>
             </h2>
 
             <div className="space-y-6">
@@ -620,11 +431,7 @@ const WhistleblowingPolicyPage = () => {
                   <User className="w-4 h-4 text-elf-green" />
                 </div>
                 <div>
-                  <p>
-                    a) The Company's staff shall receive training with respect
-                    to Whistleblowing as part of the annual mandatory learning
-                    modules.
-                  </p>
+                  <p>{t("training.trainingNote")}</p>
                 </div>
               </div>
 
@@ -633,13 +440,7 @@ const WhistleblowingPolicyPage = () => {
                   <Mail className="w-4 h-4 text-elf-green" />
                 </div>
                 <div>
-                  <p>
-                    b) A culture of awareness shall be established across the
-                    Company, through periodic communications to all staff via
-                    email or verbal communications, flyers/posters, screen
-                    displays, and other means, as deemed appropriate by the
-                    Company.
-                  </p>
+                  <p>{t("training.awarenessNote")}</p>
                 </div>
               </div>
             </div>
@@ -648,17 +449,19 @@ const WhistleblowingPolicyPage = () => {
           {/* Contact Information */}
           <motion.section
             whileHover={{ x: 5 }}
-            className="border-l-4 border-elf-green pl-6 mb-12"
+            className={`${
+              isArabic ? "border-r-4 pr-6" : "border-l-4 pl-6"
+            }  border-elf-green  mb-12 hover:border-[#e47a5a]`}
           >
-            <h2 className="text-2xl font-semibold mb-6">Reporting Contact</h2>
+            <h2 className="text-2xl font-semibold mb-6">
+              {t("sections.contact")}
+            </h2>
             <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6">
               <div className="flex items-center gap-4 mb-4">
                 <Mail className="w-5 h-5 text-elf-green" />
-                <span>Email: [whistleblowing@dhscrypto.com]</span>
+                <span>{t("contactEmail")}</span>
               </div>
-              <p className="text-sm opacity-80">
-                All reports will be treated with strict confidentiality
-              </p>
+              <p className="text-sm opacity-80">{t("confidentialNote")}</p>
             </div>
           </motion.section>
         </motion.div>
@@ -672,10 +475,10 @@ const WhistleblowingPolicyPage = () => {
         >
           <Button
             variant="outline"
-            className="border-elf-green text-elf-green hover:bg-elf-green/10"
+            className="border-elf-green text-elf-green hover:bg-elf-green/10 hover:text-mercury cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            Back to Top <ChevronRight className="ml-2 h-4 w-4" />
+            {t("sections.backToTop")} <ChevronRight className="ml-2 h-4 w-4" />
           </Button>
         </motion.div>
       </div>
