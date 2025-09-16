@@ -1,0 +1,263 @@
+'use client';
+import { useTranslations } from 'next-intl';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useState, useEffect } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Loader2, Mail, CheckCircle } from 'lucide-react';
+import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useLocale } from 'next-intl';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
+// Create schema function that accepts translations
+const createFormSchema = (t: any) =>
+  z.object({
+    email: z.string().email(t('validations.email_invalid')),
+  });
+
+export default function ForgotPasswordPage() {
+  const t = useTranslations('forgotPassword');
+  const isArabic = useLocale() === 'ar';
+  const [loading, setLoading] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+  const [sentEmail, setSentEmail] = useState('');
+  const [resendCountdown, setResendCountdown] = useState(0);
+  const [canResend, setCanResend] = useState(true);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: zodResolver(createFormSchema(t)) });
+
+  // Countdown timer effect
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (resendCountdown > 0) {
+      timer = setTimeout(() => {
+        setResendCountdown(resendCountdown - 1);
+      }, 1000);
+    } else if (resendCountdown === 0 && !canResend) {
+      setCanResend(true);
+    }
+    return () => clearTimeout(timer);
+  }, [resendCountdown, canResend]);
+
+  const startCountdown = () => {
+    setResendCountdown(60); // 1 minute
+    setCanResend(false);
+  };
+
+  const handleResend = async () => {
+    if (!canResend) return;
+
+    try {
+      setLoading(true);
+
+      const response = await fetch('/api/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: sentEmail }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        startCountdown();
+        toast.success(t('emailSent'));
+      } else {
+        toast.error(result.message || t('emailNotFound'));
+      }
+    } catch (err: any) {
+      console.error('Forgot password error:', err);
+      toast.error(err.message || t('errorSending'));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const onSubmit = async (data: any) => {
+    try {
+      setLoading(true);
+
+      const response = await fetch('/api/forgot-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: data.email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setEmailSent(true);
+        setSentEmail(data.email);
+        startCountdown();
+        toast.success(t('emailSent'));
+      } else {
+        toast.error(result.message || t('emailNotFound'));
+      }
+    } catch (err: any) {
+      console.error('Forgot password error:', err);
+      toast.error(err.message || t('errorSending'));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (emailSent) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#07153B] text-white px-4">
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+          className="w-full max-w-md p-8 space-y-6 shadow-2xl backdrop-blur-sm rounded-lg"
+          style={{
+            background:'linear-gradient(90deg, #b22f26, #e47a5a, #b22f26)',
+            boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.3)',
+            border: '1px solid rgba(149, 117, 205, 0.15)',
+          }}
+        >
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <CheckCircle className="w-8 h-8 text-green-600" />
+            </div>
+
+            <h1 className="text-2xl font-bold text-blue-whale">{t('emailSentTitle')}</h1>
+
+            <p className="text-white text-sm">{t('emailSentMessage')}</p>
+
+            <p className="text-blue-whale font-medium text-sm break-all">{sentEmail}</p>
+
+            <p className="text-white text-xs">{t('checkSpam')}</p>
+          </div>
+
+          <div className="space-y-4">
+            <Button
+              onClick={handleResend}
+              variant="outline"
+              disabled={!canResend || loading}
+              className="w-full border-[#FFF] bg-blue-whale text-[#FFF] hover:text-blue-whale hover:border-blue-whale disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
+              {!canResend
+                ? `${t('resendIn')} ${resendCountdown}s`
+                : loading
+                ? t('sending')
+                : t('sendAnother')}
+            </Button>
+
+            {canResend && (
+              <Button
+                onClick={() => {
+                  setEmailSent(false);
+                  setSentEmail('');
+                  setResendCountdown(0);
+                  setCanResend(true);
+                }}
+                variant="outline"
+                className="w-full border-slate-600 text-blue-whale"
+              >
+                {t('tryDifferentEmail')}
+              </Button>
+            )}
+
+            <Link href={`/${isArabic ? 'ar' : 'en'}/login`} className="block w-full">
+              <Button className="w-full bg-[#117f60] text-white transition-all duration-200">
+                {t('backToLogin')}
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-blue-whale text-white px-4">
+      <motion.div
+        initial={{ y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        className="w-full max-w-md p-8 space-y-6 shadow-2xl backdrop-blur-sm rounded-lg"
+        style={{
+          background: 'linear-gradient(90deg, #b22f26, #e47a5a, #b22f26)',
+          boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.3)',
+          border: '1px solid rgba(149, 117, 205, 0.15)',
+        }}
+      >
+        {/* Back button */}
+        {isArabic ? (
+          <Link
+            href={`/${isArabic ? 'ar' : 'en'}/login`}
+            className="flex items-center text-sm text-white hover:text-white transition-colors"
+            style={{
+              direction: isArabic ? 'rtl' : 'ltr',
+            }}
+          >
+            <FaArrowRight className="ml-1 w-4 h-4" />
+            {t('backToLogin')}
+          </Link>
+        ) : (
+          <Link
+            href={`/${isArabic ? 'ar' : 'en'}/login`}
+            className="flex items-center text-sm text-white hover:text-white transition-colors"
+            style={{
+              direction: isArabic ? 'rtl' : 'ltr',
+            }}
+          >
+            <FaArrowLeft className="mr-1 w-4 h-4" />
+            {t('backToLogin')}
+          </Link>
+        )}
+
+        <div className="text-center space-y-2">
+          <div className="w-16 h-16 bg-[#117f60]/20 rounded-full flex items-center justify-center mx-auto">
+            <Mail className="w-8 h-8 text-[#117f60]" />
+          </div>
+
+          <h1 className="text-2xl font-bold text-white">{t('title')}</h1>
+
+          <p className="text-blue-whale font-semibold text-sm">{t('subtitle')}</p>
+        </div>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+          <div className="flex flex-col gap-2">
+            <label className="text-white font-medium">{t('emailLabel')}</label>
+            <Input
+              type="email"
+              placeholder={t('emailPlaceholder')}
+              {...register('email')}
+              className="bg-[#e2dedc] border-slate-600 text-white placeholder:text-blue-whale placeholder:italic"
+            />
+            {errors.email && <p className="text-blue-whale text-sm">{errors.email.message}</p>}
+          </div>
+
+          <Button
+            className="w-full bg-[#117f60] transition-all duration-200"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
+            {loading ? t('sending') : t('sendButton')}
+          </Button>
+
+          <div className="text-center">
+            <Link
+              href={`/${isArabic ? 'ar' : 'en'}/login`}
+              className="text-white text-sm hover:text-white transition-colors"
+            >
+              {t('rememberPassword')}{' '}
+              <span className="text-[#117f60] underline">{t('signIn')}</span>
+            </Link>
+          </div>
+        </form>
+      </motion.div>
+    </div>
+  );
+}

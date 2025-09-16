@@ -5,13 +5,58 @@ import { useLocale } from "next-intl";
 
 const menuColumns = [
   {
-    title: "resources",
+    title: "DHS",
     items: [
-      { label: "conflict_of_interest", link: "/conflict-of-interest" },
-      { label: "privacy_policy", link: "/privacy-policy" },
+      { label: "homepage", link: "/" },
+      { label: "exchange", link: "/exchange" },
+      { label: "about-us", link: "/about" },
+    ],
+  },
+  {
+    title: "user_account",
+    items: [
+      { label: "signup", link: "/signup" },
+      { label: "signin", link: "/login" },
+      { label: "trading", link: "/trading" },
+    ],
+  },
+  {
+    title: "legal_compliance",
+    items: [
       { label: "risk_disclosure", link: "/risk-disclosure" },
+      { label: "privacy_policy", link: "/privacy-policy" },
       { label: "terms_and_conditions", link: "/terms-and-conditions" },
+      { label: "conflict_of_interest", link: "/conflict-of-interest" },
       { label: "whistleblowing_policy", link: "/whistleblowing-policy" },
+      { label: "complaints_handling", link: "/complaints-handling" },
+      { label: "aml_ctf_policy", link: "/aml-ctf-policy" },
+    ],
+  },
+  {
+    title: "transparency_disclosures",
+    items: [
+      { label: "fees_charges", link: "/fees-charges" },
+      { label: "custody_safeguarding", link: "/custody-safeguarding" },
+      { label: "public_disclosures", link: "/public-disclosures" },
+      { label: "token_listing", link: "/token-listing" },
+      { label: "governance_management", link: "/governance-management" },
+    ],
+  },
+  {
+    title: "support_engagement",
+    items: [
+      { label: "contact_us", link: "/contact" },
+      { label: "complaints_dispute", link: "/complaints-dispute" },
+      { label: "faq", link: "/faq" },
+      { label: "newsletter_blog", link: "/newsletter-blog" },
+      { label: "support_tickets", link: "/support-tickets" },
+    ],
+  },
+  {
+    title: "security",
+    items: [
+      { label: "data_protection", link: "/data-protection" },
+      { label: "system_status", link: "/system-status" },
     ],
   },
 ];
@@ -25,7 +70,7 @@ export default function Footer() {
       <div className="xl:max-w-[70%] px-4 xl:px-0 mx-auto">
         <div className="border-t border-b border-white/20 py-8 flex flex-col md:flex-row justify-between gap-8 md:gap-0">
           {/* Left: Logo and Newsletter */}
-          <div className="md:w-3/5 flex flex-col md:gap-4 justify-between">
+          <div className="flex flex-col md:gap-4 justify-around">
             <div className="relative min-w-[100px] h-[60px] mx-auto md:mx-0">
               {/* Placeholder logo */}
               <Image
@@ -65,7 +110,17 @@ export default function Footer() {
               </form>
             </div>
           </div>
-          <div className="md:w-1/5 gap-8 justify-items-center md:justify-items-start">
+          <div className="relative w-[400px] h-full flex justify-center items-center">
+          <Image 
+            src="/images/banner_img.png" 
+            alt="Footer Divider" 
+            width={400} 
+            height={200} 
+            className="object-cover mt-8" 
+          />
+          </div>
+        </div> 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 justify-items-center my-4">
             {menuColumns.map((col, idx) => (
               <div key={idx}>
                 <h4 className="text-white font-bold text-base mb-2 font-roboto text-center">
@@ -86,7 +141,6 @@ export default function Footer() {
               </div>
             ))}
           </div>
-        </div>
         {/* Bottom: Copyright and Policy Links */}
         <div className="flex flex-col md:flex-row justify-between items-center py-4">
           <span className="text-white/60 text-xs">{t("copyright")}</span>

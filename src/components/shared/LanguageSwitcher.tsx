@@ -21,7 +21,7 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 shadow-md border border-white/20">
+    <div className="flex items-center gap-2 bg-white/10 rounded-full px-3 py-2 shadow-md border border-white/20">
       <Globe className="w-5 h-5 text-elf-green mr-1" />
       {languages.map((lang) => (
         <button

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import UserAvatar from "./UserAvatar";
 import { useTranslations } from "next-intl";
 
 const navLinks = [
@@ -63,11 +64,9 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Sign-in + hamburger + language switcher */}
+        {/* User Avatar + Language Switcher + Mobile Menu */}
         <div className="flex items-center gap-3">
-          {/* <button className="rounded-md bg-[#E47A5A] px-6 py-2 font-semibold text-white transition-colors duration-200 hover:bg-elf-green">
-          Sign in
-        </button> */}
+          <UserAvatar />
           <LanguageSwitcher />
 
           <button

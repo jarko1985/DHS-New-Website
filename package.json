@@ -9,20 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.1.1",
+    "@auth/mongodb-adapter": "^3.10.0",
+    "@azure/identity": "^4.12.0",
+    "@azure/msal-node": "^3.7.3",
+    "@hookform/resolvers": "^5.2.1",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
-    "@radix-ui/react-switch": "^1.2.5",
+    "@radix-ui/react-switch": "^1.2.6",
     "@radix-ui/react-tabs": "^1.1.12",
     "@types/aos": "^3.0.7",
+    "@types/next-auth": "^3.13.0",
     "aos": "^2.3.4",
+    "bcryptjs": "^3.0.2",
     "class-variance-authority": "^0.7.1",
+    "cloudinary": "^2.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.0",
     "lucide-react": "^0.525.0",
+    "mongoose": "^8.18.1",
+    "multer": "^2.0.2",
     "next": "15.3.4",
+    "next-auth": "^5.0.0-beta.29",
     "next-intl": "^4.3.4",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
@@ -32,15 +41,21 @@
     "react-icons": "^5.5.0",
     "swr": "^2.3.4",
     "tailwind-merge": "^3.3.1",
+    "xlsx": "^0.18.5",
     "zod": "^3.25.75"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@types/multer": "^2.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "tailwindcss": "^4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
+  },
+  "overrides": {
+    "react-is": "^19.0.0-rc-69d4b800-20241021"
   }
 }

@@ -6,6 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { CookieConsent } from "@/components/cookies/CookieConsent";
+import { ClientProviders } from './client-providers'
 import { Providers } from "./providers";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/shared/Header";
@@ -52,7 +53,7 @@ export default async function RootLayout({
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body className={`antialiased`}>
         <NextIntlClientProvider>
-          <Providers>
+          <ClientProviders>
             <AOSWrapper>
               <Header />
               {children}
@@ -60,7 +61,7 @@ export default async function RootLayout({
               <Toaster />
             </AOSWrapper>
             <Footer />
-          </Providers>
+          </ClientProviders>
         </NextIntlClientProvider>
       </body>
     </html>
