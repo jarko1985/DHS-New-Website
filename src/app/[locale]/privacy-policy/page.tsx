@@ -109,52 +109,36 @@ const PrivacyPolicyPage = () => {
                 <h3 className="text-xl font-medium mb-4">
                   {t("section1_personal_id_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section1_personal_id_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section1_personal_id_list")}
+                </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-medium mb-4">
                   {t("section1_financial_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section1_financial_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section1_financial_list")}
+                </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-medium mb-4">
                   {t("section1_identity_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section1_identity_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section1_identity_list")}
+                </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-medium mb-4">
                   {t("section1_device_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section1_device_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section1_device_list")}
+                </p>
               </div>
             </div>
           </motion.section>
@@ -176,52 +160,36 @@ const PrivacyPolicyPage = () => {
                 <h3 className="text-xl font-medium mb-3">
                   {t("section2_services_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section2_services_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section2_services_list")}
+                </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-medium mb-3">
                   {t("section2_legal_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section2_legal_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section2_legal_list")}
+                </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-medium mb-3">
                   {t("section2_security_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section2_security_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section2_security_list")}
+                </p>
               </div>
 
               <div>
                 <h3 className="text-xl font-medium mb-3">
                   {t("section2_communication_title")}
                 </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("section2_communication_list")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("section2_communication_list")}
+                </p>
               </div>
             </div>
           </motion.section>
@@ -402,21 +370,9 @@ const PrivacyPolicyPage = () => {
             <p className="mb-6">{t("section6_desc")}</p>
 
             <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6 mb-6">
-              <div className="space-y-4">
-                {t
-                  .raw("section6_rights")
-                  .map((item: { title: string; desc: string }, idx: number) => (
-                    <div className="flex items-start gap-4" key={idx}>
-                      <div className="bg-elf-green/20 p-2 rounded-full mt-1">
-                        <Check className="w-4 h-4 text-elf-green" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium mb-1">{item.title}</h4>
-                        <p>{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-              </div>
+              <p className="text-mercury/90 leading-relaxed">
+                {t("section6_rights")}
+              </p>
             </div>
 
             <p className="font-medium">{t("section6_rights_cta")}</p>
@@ -436,11 +392,9 @@ const PrivacyPolicyPage = () => {
 
             <p className="mb-6">{t("section7_desc")}</p>
 
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              {t.raw("section7_list").map((item: string, idx: number) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
+            <p className="text-mercury/90 leading-relaxed mb-6">
+              {t("section7_list")}
+            </p>
 
             <div className="bg-blue-whale/50 border border-mercury/20 rounded-lg p-6">
               <div className="flex items-start gap-4">
@@ -530,11 +484,9 @@ const PrivacyPolicyPage = () => {
 
             <p className="mb-6">{t("section9_desc")}</p>
 
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              {t.raw("section9_list").map((item: string, idx: number) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
+            <p className="text-mercury/90 leading-relaxed mb-6">
+              {t("section9_list")}
+            </p>
 
             <div className="bg-blue-whale/50 border border-[--color-mercury]/20 rounded-lg p-6">
               <div className="flex items-start gap-4">
@@ -589,7 +541,7 @@ const PrivacyPolicyPage = () => {
         >
           <Button
             variant="outline"
-            className="border-elf-green text-elf-green hover:bg-elf-green/10 hover:text-mercury cursor-pointer"
+            className="border-elf-green text-elf-green hover:bg-[#e47a5a] hover:text-mercury cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {t("back_to_top")} <ChevronRight className="ml-2 h-4 w-4" />

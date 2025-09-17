@@ -298,7 +298,7 @@ const TermsAndConditionsPage = () => {
         >
           <Button
             variant="outline"
-            className="border-elf-green text-elf-green hover:bg-elf-green/10 hover:text-white cursor-pointer"
+            className="border-elf-green text-elf-green hover:bg-[#e47a5a] hover:text-white cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Back to Top <ChevronRight className="ml-2 h-4 w-4" />

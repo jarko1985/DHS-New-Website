@@ -29,7 +29,7 @@ const menuColumns = [
       { label: "conflict_of_interest", link: "/conflict-of-interest" },
       { label: "whistleblowing_policy", link: "/whistleblowing-policy" },
       { label: "complaints_handling", link: "/complaints-handling" },
-      { label: "aml_ctf_policy", link: "/aml-ctf-policy" },
+      { label: "aml_ctf_policy", link: "/ctf-policy" },
     ],
   },
   {

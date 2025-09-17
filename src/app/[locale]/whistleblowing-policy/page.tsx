@@ -92,25 +92,33 @@ const WhistleblowingPolicyPage = () => {
                 <p className="mb-4">{t("introduction.objectiveA")}</p>
                 <div className="grid md:grid-cols-2 gap-4 mb-4">
                   <ul className="list-disc pl-6 space-y-2">
-                    {Array.from({ length: 9 }).map((_, i) => (
-                      <li key={i}>
-                        {t(`introduction.objectiveA_list${i + 1}`)}
-                      </li>
-                    ))}
+                    <li>{t("introduction.objectiveA_list1")}</li>
+                    <li>{t("introduction.objectiveA_list2")}</li>
+                    <li>{t("introduction.objectiveA_list3")}</li>
+                    <li>{t("introduction.objectiveA_list4")}</li>
+                    <li>{t("introduction.objectiveA_list5")}</li>
+                    <li>{t("introduction.objectiveA_list6")}</li>
+                    <li>{t("introduction.objectiveA_list7")}</li>
+                    <li>{t("introduction.objectiveA_list8")}</li>
+                    <li>{t("introduction.objectiveA_list9")}</li>
                   </ul>
                   <ul className="list-disc pl-6 space-y-2">
-                    {Array.from({ length: 9 }).map((_, i) => (
-                      <li key={i + 9}>
-                        {t(`introduction.objectiveA_list${i + 10}`)}
-                      </li>
-                    ))}
+                    <li>{t("introduction.objectiveA_list10")}</li>
+                    <li>{t("introduction.objectiveA_list11")}</li>
+                    <li>{t("introduction.objectiveA_list12")}</li>
+                    <li>{t("introduction.objectiveA_list13")}</li>
+                    <li>{t("introduction.objectiveA_list14")}</li>
+                    <li>{t("introduction.objectiveA_list15")}</li>
+                    <li>{t("introduction.objectiveA_list16")}</li>
+                    <li>{t("introduction.objectiveA_list17")}</li>
+                    <li>{t("introduction.objectiveA_list18")}</li>
                   </ul>
                 </div>
                 <p className="mb-4">{t("introduction.objectiveB")}</p>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
-                  {Array.from({ length: 3 }).map((_, i) => (
-                    <li key={i}>{t(`introduction.objectiveB_list${i + 1}`)}</li>
-                  ))}
+                  <li>{t("introduction.objectiveB_list1")}</li>
+                  <li>{t("introduction.objectiveB_list2")}</li>
+                  <li>{t("introduction.objectiveB_list3")}</li>
                 </ul>
               </div>
               {/* 1.3 Functional Scope and Applicability */}
@@ -127,9 +135,12 @@ const WhistleblowingPolicyPage = () => {
                   1.4 {t("introduction.governanceTitle")}
                 </h3>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
-                  {Array.from({ length: 6 }).map((_, i) => (
-                    <li key={i}>{t(`introduction.governance${i + 1}`)}</li>
-                  ))}
+                  <li>{t("introduction.governance1")}</li>
+                  <li>{t("introduction.governance2")}</li>
+                  <li>{t("introduction.governance3")}</li>
+                  <li>{t("introduction.governance4")}</li>
+                  <li>{t("introduction.governance5")}</li>
+                  <li>{t("introduction.governance6")}</li>
                 </ul>
               </div>
               {/* 1.5 Disclaimer */}
@@ -236,13 +247,9 @@ const WhistleblowingPolicyPage = () => {
                 <h4 className="font-medium mb-3">
                   {t("reporting.requiredDetails")}
                 </h4>
-                <ul className="list-disc pl-6 space-y-2">
-                  {t
-                    .raw("reporting.requiredList")
-                    .map((item: string, idx: number) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                </ul>
+                <p className="text-mercury/90 leading-relaxed">
+                  {t("reporting.requiredList")}
+                </p>
               </div>
               <p className="mb-4">{t("reporting.e")}</p>
               <p className="mb-4">{t("reporting.f")}</p>
@@ -475,7 +482,7 @@ const WhistleblowingPolicyPage = () => {
         >
           <Button
             variant="outline"
-            className="border-elf-green text-elf-green hover:bg-elf-green/10 hover:text-mercury cursor-pointer"
+            className="border-elf-green text-elf-green hover:bg-[#e47a5a] hover:text-mercury cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             {t("sections.backToTop")} <ChevronRight className="ml-2 h-4 w-4" />

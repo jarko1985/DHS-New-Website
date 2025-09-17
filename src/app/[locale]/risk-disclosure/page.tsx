@@ -84,13 +84,9 @@ const RiskDisclosurePage = () => {
             <p className="mb-6">{t("section1_specific_risks")}</p>
             <p className="mb-6">{t("section1_value")}</p>
             <p className="mb-6">{t("section1_potential_risks_intro")}</p>
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              {t
-                .raw("section1_potential_risks_list")
-                .map((item: string, idx: number) => (
-                  <li key={idx}>{item}</li>
-                ))}
-            </ul>
+            <p className="text-mercury/90 leading-relaxed mb-6">
+              {t("section1_potential_risks_list")}
+            </p>
             <p className="mb-6">{t("section1_simultaneous")}</p>
             <p className="mb-6">{t("section1_arising")}</p>
             <div className="space-y-4">
@@ -641,7 +637,7 @@ const RiskDisclosurePage = () => {
         >
           <Button
             variant="outline"
-            className="border-elf-green text-elf-green hover:bg-elf-green/10 hover:text-mercury cursor-pointer"
+            className="border-elf-green text-elf-green hover:bg-[#e47a5a] hover:text-mercury cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Back to Top <ChevronRight className="ml-2 h-4 w-4" />
