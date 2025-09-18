@@ -954,5 +954,110 @@
       "boardOversight": "Board Oversight: The Board reviews AML/CTF controls annually.",
       "policyReview": "Policy Review: This policy is reviewed at least once per year, or sooner if required by changes in law or VARA guidance."
     }
+  },
+  "complaintPolicy": {
+    "title": "Complaints Handling Policy",
+    "subtitle": "DHS Limited is committed to providing an excellent customer experience and ensuring customer satisfaction with our products and services.",
+    "sections": {
+      "introduction": "Introduction",
+      "objectiveScope": "Objective and Scope",
+      "definedTerms": "Defined Terms & Policy Scope",
+      "complaintsRegister": "Complaints Register",
+      "handlingComplaint": "Handling a Complaint",
+      "responseClosure": "Response and Closure",
+      "reportingRetention": "Reporting of Complaints and Records Retention",
+      "educationTraining": "Education and Training",
+      "appendix": "Appendix"
+    },
+    "introduction": {
+      "description": "DHS Limited (\"DHS\") is committed to providing an excellent customer experience and ensuring customer satisfaction with our products and services. We have established a Complaints Handling Policy to ensure all complaints and feedback from customers, potential customers and previous customers are handled as effectively as possible. If properly managed, the ongoing information gathering, resolution and analysis of complaints can provide the DHS team with opportunities to gather valuable customer feedback to enhance our products and service and improve customer satisfaction. Our customers are entitled to make a complaint to us and receive responses and resolution in a timely manner. The policy and procedures outlined below describe our process for the handling of verbal and written complaints."
+    },
+    "objectiveScope": {
+      "description": "To ensure that all complaints received are handled fairly by the application of a transparent and accessible Complaint Handling Procedures, consistently applied throughout DHS (\"the Company\"). This policy applies to all past, current and prospective customers of the Company for all products and services offered by the firm in the United Arab Emirates. It sets out the Company's approach with respect to the receipt, recording, acknowledgements, investigation, escalation, resolution and reporting of complaints received from, or on behalf of, existing or past customers."
+    },
+    "definedTerms": {
+      "businessUnit": "Business Unit",
+      "businessUnitDesc": "A product or service group unit inside of DHS.",
+      "businessSeniorManagement": "Business Senior Management",
+      "businessSeniorManagementDesc": "A member of the DHS Board of Directors or Director of the relevant business unit.",
+      "feedback": "Feedback",
+      "feedbackDesc": "Any customer communication, verbal or written, that is not an expression of dissatisfaction can be recorded and shared internally as a separate information flow from the complaints process. Feedback or inquiry of a non-complaint nature will be recorded and shared as a separate item from complaints that are reported to the regulator.",
+      "managementInfo": "Management Information",
+      "managementInfoDesc": "The reporting of information about customer complaints both from the Complaints log, customer service staff and compliance team investigation, and systems information. The information for any regulatory reports will be shared with the Company's Board of Directors at least monthly.",
+      "complaintDefinition": "Definition of a Complaint",
+      "complaintDefinitionDesc": "Any expression of dissatisfaction, whether oral or written, and whether justified or not, on behalf of a customer, with any product or service offered by DHS. This may include:",
+      "complaintDefinitionList1": "Failure to offer a service, dissatisfaction with the provision or delivery of services, or dissatisfaction with any contact with DHS personnel in connection with provision of a service; or",
+      "complaintDefinitionList2": "Any complaint involving the possible failure of a product to meet any of the specifications for the product; (b) any dissatisfaction with the design, package or labeling of the product; or (c) any adverse event that may involve the quality of the product, including lack of effect, infection or request for testing.",
+      "resolution": "Definition of Resolution",
+      "resolutionDesc": "A complaint is considered resolved when the customer has indicated an acceptance of a response by DHS. In most cases, the response or acceptance is required to be in writing. In instances where a complaint is considered minor (secondary in extent, importance, or degree), the response and/or acceptance can be made verbally."
+    },
+    "complaintsRegister": {
+      "description": "DHS is required to track all complaints through their entire lifecycle. Compliance will be responsible for ensuring that the responses to customers and management reporting both meet the VARA regulatory reporting requirements. The complaints information should be recorded in a systematic manner so that it can be easily accessed for management and regulatory reporting purposes. It will also enable comparative, thematic and pattern analysis if there are many complaints. Compliance, Risk Management, Finance and Internal Audit will all have access to the log as required for their reviews."
+    },
+    "handlingComplaint": {
+      "websiteAccess": "Website Access",
+      "websiteAccessDesc": "Customers can access DHS Complaint Register on the website: [x] or by email to the following address: [x].",
+      "emailAccess": "Email Access",
+      "emailAccessDesc": "Complaints must be acknowledged, by the complaint handler, in writing within 5 working days of receipt of the complaint.",
+      "processSteps": "Process Steps",
+      "step1": "All Complaints must be promptly recorded in the Complaints log held in Customer Service by a DHS member of staff.",
+      "step2": "The DHS member of staff must notify the designated Complaints Officer in Customer Service. To this policy, \"promptly\" means within 24 hours of receipt.",
+      "step3": "The log should indicate whether an acknowledgement and final response will be sent to the customer.",
+      "step4": "The written acknowledgement sent to the customer should meet the following criteria: Confirm receipt of the complaint by DHS, indicate a response or update will be provided within 10 business days, and provide the name, title and contact information of the DHS team member handling the complaint."
+    },
+    "responseClosure": {
+      "timeline": "Response Timeline",
+      "acknowledgment": "Acknowledgment within 5 working days",
+      "response": "Response within 20 working days",
+      "resolution": "Resolution Process",
+      "resolutionDesc": "DHS shall respond in writing to a customer complaint within 20 working days of receiving the complaint, explaining their position and how they propose to deal with the complaint.",
+      "closureCriteria": "Closure Criteria",
+      "criteria1": "A complainant has indicated, in writing, their acceptance of the DHS response",
+      "criteria2": "A complainant has not responded to a resolution letter within 20 working days",
+      "criteria3": "Where our internal complaint handling procedure has been exhausted"
+    },
+    "reportingRetention": {
+      "regulatoryReporting": "Regulatory Reporting",
+      "regulatoryReportingDesc": "DHS will submit to the VARA as and when requested, report summarizing the following:",
+      "reportingItems": "Reporting Items",
+      "item1": "The number of complaints received",
+      "item2": "The substance of the complaints",
+      "item3": "The number of days it took to acknowledge and to respond to the complaints",
+      "item4": "The status of the complaint, including whether resolved or not, and whether redress was provided",
+      "retentionPeriod": "Retention Period",
+      "retentionDesc": "The regulatory document retention requirements should be strictly adhered to, with retention of complaints records and related resolution information for a minimum of 8 years from the date of receipt of a complaint."
+    },
+    "educationTraining": {
+      "description": "DHS must implement a comprehensive training program to ensure that all customer service complaints representatives and related member of staff undergo regular complaints handling awareness training.",
+      "trainingSchedule": "Training Schedule",
+      "initialTraining": "Initial Training",
+      "initialTrainingDesc": "Within three months of joining",
+      "annualTraining": "Annual Training",
+      "annualTrainingDesc": "On an annual basis",
+      "tracking": "Training Tracking",
+      "tracking1": "Training attendance and completion must be tracked on an individual level",
+      "tracking2": "Overdue training followed up and escalated appropriately",
+      "tracking3": "The Compliance Officer shall receive reports on overdue and outstanding training on a periodic basis"
+    },
+    "appendix": {
+      "description": "The appendix contains detailed forms and procedures for complaint handling, including complainant information, complaint details, resolution tracking, and sign-off procedures for complaints officers.",
+      "complainantName": "Name of complainant:",
+      "dateTimeReceived": "Date and time complaint was received:",
+      "writtenDetails": "Has complainant been asked to provide details in writing?",
+      "yesNo": "Yes/No",
+      "writtenDetailsNote": "*(if no, this is to be requested before action can be taken)",
+      "complaintDetails": "Precise details of complaint:",
+      "materialNature": "Is the complaint material in nature?",
+      "customerType": "Is the complaint from a historic or new customer?",
+      "timescaleAgreed": "Has a timescale to resolve the complaint been agreed with the complainant? If so, by when?",
+      "notifiedOfficer": "If the answer to either question above is Yes, Has the complaint been notified to the Complaints Officer",
+      "complaintResolved": "Has the complaint been resolved? (provide brief details)",
+      "proceduralChanges": "Are any procedural changes necessary to avoid recurrence of the matter complained of?",
+      "changesImplemented": "If yes, have these changes have been implemented? (provide brief details)",
+      "confirmation": "I confirm the complaint has been treated in accordance with our procedures.",
+      "signed": "Signed:",
+      "date": "Date:",
+      "complaintsOfficer": "(Complaints Officer)"
+    }
   }
 }

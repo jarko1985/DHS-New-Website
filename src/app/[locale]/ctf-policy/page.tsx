@@ -37,18 +37,18 @@ const CtfPolicyPage = () => {
           <div className="flex items-center gap-4 mb-6">
             <div>
               <h2
-                className={`md:text-3xl text-xl font-bold text-white mb-8 ${
+                className={`md:text-3xl text-xl font-bold text-white mb-8 text-center md:text-left ${
                   isArabic ? "pr-6" : "pl-6"
                 } relative`}
               >
                 <span
                   className={`absolute ${
                     isArabic ? "right-0" : "left-0"
-                  } top-1/2 -translate-y-1/2 w-1 h-8 bg-elf-green rounded-sm`}
+                  } top-1/2 -translate-y-1/2 w-1 h-8 bg-elf-green rounded-sm md:block hidden`}
                 ></span>
                 {t("title")}
               </h2>
-              <p className="text-lg opacity-90 mt-1">{t("subtitle")}</p>
+              <p className="text-lg opacity-90 mt-1 text-center md:text-left">{t("subtitle")}</p>
             </div>
           </div>
         </motion.div>
@@ -60,17 +60,17 @@ const CtfPolicyPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 p-8 hover:text-[#e47a5a] group border border-elf-green hover:border-[#e47a5a]"
+            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 md:p-8 p-2 hover:text-[#e47a5a] group border border-elf-green hover:border-[#e47a5a]"
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-elf-green">
+            <h2 className="text-2xl font-semibold md:mb-6 mb-2 flex items-center gap-2 text-elf-green">
               <Target className="w-5 h-5" />
               <span>{t("sections.purpose")}</span>
             </h2>
-            <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-6 shadow-lg shadow-elf-green/10">
+            <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-6 p-2 shadow-lg shadow-elf-green/10">
               <p className="text-mercury/90 leading-relaxed group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                 {t("purpose.description")}
               </p>
-            </div>
+            </div>  
           </motion.div>
 
           {/* 2. Scope */}
@@ -78,14 +78,14 @@ const CtfPolicyPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 p-8 hover:text-[#e47a5a] group border border-elf-green hover:border-[#e47a5a]"
+            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 md:p-8 p-2 hover:text-[#e47a5a] group border border-elf-green hover:border-[#e47a5a]"
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-elf-green">
+            <h2 className="text-2xl font-semibold md:mb-6 mb-2 flex items-center gap-2 text-elf-green">
               <Globe className="w-5 h-5" />
               <span>{t("sections.scope")}</span>
             </h2>
             <div className="space-y-4">
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-6 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-6 p-2 shadow-lg shadow-elf-green/10">
                 <p className="text-mercury/90 leading-relaxed mb-4 group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("scope.description")}
                 </p>
@@ -103,34 +103,34 @@ const CtfPolicyPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 p-8 group border border-elf-green hover:border-[#e47a5a]" 
+            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 md:p-8 p-2 group border border-elf-green hover:border-[#e47a5a]" 
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-elf-green">
+            <h2 className="text-2xl font-semibold md:mb-6 mb-2 flex items-center gap-2 text-elf-green">
               <Shield className="w-5 h-5" />
               <span>{t("sections.coreMeasures")}</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("coreMeasures.cdd")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("coreMeasures.monitoring")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("coreMeasures.sanctions")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("coreMeasures.sar")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("coreMeasures.training")}
                 </h4>
@@ -143,50 +143,50 @@ const CtfPolicyPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 p-8 group border border-elf-green hover:border-[#e47a5a]"
+            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 md:p-8 p-2 group border border-elf-green hover:border-[#e47a5a]"
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-elf-green">
+            <h2 className="text-2xl font-semibold md:mb-6 mb-2 flex items-center gap-2 text-elf-green">
               <Lock className="w-5 h-5" />
               <span>{t("sections.dataProtection")}</span>
             </h2>
             <div className="space-y-4">
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-6 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-6 p-2 shadow-lg shadow-elf-green/10">
                 <p className="text-mercury/90 leading-relaxed mb-6 group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("dataProtection.description")}
                 </p>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                   <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                     {t("dataProtection.minimization")}
                   </h4>
                 </div>
-                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                   <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                     {t("dataProtection.consent")}
                   </h4>
                 </div>
-                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                   <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                     {t("dataProtection.encryption")}
                   </h4>
                 </div>
-                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">  
+                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">  
                   <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                     {t("dataProtection.accessControl")}
                   </h4>
                 </div>
-                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                   <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                     {t("dataProtection.updates")}
                   </h4>
                 </div>
-                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                   <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                     {t("dataProtection.breachResponse")}
                   </h4>
                 </div>
-                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+                <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                   <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                     {t("dataProtection.vendorCompliance")}
                   </h4>
@@ -200,29 +200,29 @@ const CtfPolicyPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 p-8 group border border-elf-green hover:border-[#e47a5a]"
+            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 md:p-8 p-2 group border border-elf-green hover:border-[#e47a5a]"
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-elf-green"> 
+            <h2 className="text-2xl font-semibold md:mb-6 mb-2 flex items-center gap-2 text-elf-green"> 
               <Database className="w-5 h-5" />
               <span>{t("sections.dataRetention")}</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("dataRetention.duration")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("dataRetention.purposeLimitation")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("dataRetention.transparency")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("dataRetention.dataCategories")}
                 </h4>
@@ -235,24 +235,24 @@ const CtfPolicyPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 p-8 group border border-elf-green hover:border-[#e47a5a]"
+            className="bg-blue-whale/30 backdrop-blur-sm rounded-xl shadow-2xl shadow-elf-green/20 md:p-8 p-2 group border border-elf-green hover:border-[#e47a5a]"
           >
-            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 text-elf-green">
+            <h2 className="text-2xl font-semibold md:mb-6 mb-2 flex items-center gap-2 text-elf-green">
               <Building className="w-5 h-5" />
               <span>{t("sections.governance")}</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("governance.complianceOfficer")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("governance.boardOversight")}
                 </h4>
               </div>
-              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg p-4 shadow-lg shadow-elf-green/10">
+              <div className="bg-blue-whale/40 backdrop-blur-sm rounded-lg md:p-4 p-2 shadow-lg shadow-elf-green/10">
                 <h4 className="font-medium mb-2 text-white group-hover:text-[#e47a5a] group-hover:translate-x-2 transition-all duration-300">
                   {t("governance.policyReview")}
                 </h4>
