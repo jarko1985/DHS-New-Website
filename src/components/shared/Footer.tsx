@@ -2,64 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
-
-const menuColumns = [
-  {
-    title: "DHS",
-    items: [
-      { label: "homepage", link: "/" },
-      { label: "exchange", link: "/exchange" },
-      { label: "about-us", link: "/about" },
-    ],
-  },
-  {
-    title: "user_account",
-    items: [
-      { label: "signup", link: "/signup" },
-      { label: "signin", link: "/login" },
-      { label: "trading", link: "/trading" },
-    ],
-  },
-  {
-    title: "legal_compliance",
-    items: [
-      { label: "risk_disclosure", link: "/risk-disclosure" },
-      { label: "privacy_policy", link: "/privacy-policy" },
-      { label: "terms_and_conditions", link: "/terms-and-conditions" },
-      { label: "conflict_of_interest", link: "/conflict-of-interest" },
-      { label: "whistleblowing_policy", link: "/whistleblowing-policy" },
-      { label: "complaints_handling", link: "/complaint-policy" },
-      { label: "aml_ctf_policy", link: "/ctf-policy" },
-    ],
-  },
-  {
-    title: "transparency_disclosures",
-    items: [
-      { label: "fees_charges", link: "/fees-charges" },
-      { label: "custody_safeguarding", link: "/custody-safeguarding" },
-      { label: "public_disclosures", link: "/public-disclosures" },
-      { label: "token_listing", link: "/token-listing" },
-      { label: "governance_management", link: "/governance-management" },
-    ],
-  },
-  {
-    title: "support_engagement",
-    items: [
-      { label: "contact_us", link: "/contact" },
-      { label: "complaints_dispute", link: "/complaints-dispute" },
-      { label: "faq", link: "/faq" },
-      { label: "newsletter_blog", link: "/newsletter-blog" },
-      { label: "support_tickets", link: "/support-tickets" },
-    ],
-  },
-  {
-    title: "security",
-    items: [
-      { label: "data_protection", link: "/data-protection" },
-      { label: "system_status", link: "/system-status" },
-    ],
-  },
-];
+import { footerMenuColumns } from "@/data/menuColumns";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -121,7 +64,7 @@ export default function Footer() {
           </div>
         </div> 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 justify-items-center my-4">
-            {menuColumns.map((col, idx) => (
+            {footerMenuColumns.map((col, idx) => (
               <div key={idx}>
                 <h4 className="text-white font-bold text-base mb-2 font-roboto text-center">
                   {t(col.title)}
