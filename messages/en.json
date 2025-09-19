@@ -1061,5 +1061,97 @@
       "date": "Date:",
       "complaintsOfficer": "(Complaints Officer)"
     }
+  },
+  "PublicDisclosures": {
+    "hero": {
+      "title": "Public Disclosures",
+      "description": "DHS Exchange is committed to transparency. This page provides mandatory public disclosures in accordance with the Dubai Virtual Assets Regulatory Authority (VARA) and UAE regulations."
+    },
+    "accordion": {
+      "companyInfo": {
+        "title": "1. Company & License Information",
+        "entityName": "Entity Name:",
+        "entityNameValue": "Direct Honest Safe International Exchange FZE (\"DHS Exchange\")",
+        "incorporatedIn": "Incorporated in:",
+        "incorporatedInValue": "Dubai, United Arab Emirates",
+        "regulator": "Regulator:",
+        "regulatorValue": "Dubai Virtual Assets Regulatory Authority (VARA)",
+        "licenseNumber": "License Number:",
+        "licenseNumberValue": "Pending",
+        "registeredOffice": "Registered Office:",
+        "registeredOfficeValue": "Office 901, Lake Central Tower, Marasi Drive, Business Bay, Dubai, UAE"
+      },
+      "businessActivities": {
+        "title": "2. Business Activities",
+        "primaryService": "Primary Service:",
+        "primaryServiceValue": "Operation of a virtual asset exchange (spot trading only)",
+        "prohibited": "Prohibited:",
+        "prohibitedValue": "Futures, lending, staking",
+        "custodyPartner": "Custody Partner:",
+        "custodyPartnerValue": "Hextrust"
+      },
+      "conflictOfInterest": {
+        "title": "3. Conflicts of Interest",
+        "description1": "DHS maintains a Conflict of Interest Policy to manage actual, potential, or perceived conflicts.",
+        "description2": "A Conflict Register is maintained and reviewed by the Compliance Officer."
+      },
+      "fees": {
+        "title": "4. Fees & Pricing",
+        "description": "All trading, deposit, and withdrawal fees are available on the",
+        "feesLink": "Fees & Charges",
+        "descriptionEnd": "page. No hidden spreads."
+      },
+      "assetInformation": {
+        "title": "5. Asset Information",
+        "tokenName": "Token name and symbol",
+        "issuanceDate": "Issuance date and history",
+        "marketCap": "Market capitalization",
+        "supply": "Circulating vs. total supply",
+        "auditStatus": "Smart contract audit status",
+        "priceHistory": "Price history and volatility",
+        "liquidityNote": "Liquidity is sourced via institutional partners."
+      },
+      "custodySafeguarding": {
+        "title": "6. Custody & Safeguarding",
+        "description1": "Client assets are held with Hextrust and segregated from DHS operational funds.",
+        "description2": "Proof-of-reserves reports and third-party attestations will be published on a periodic basis."
+      },
+      "complaintsDispute": {
+        "title": "7. Complaints & Dispute Resolution",
+        "description1": "Clients may raise complaints through DHS Exchange's internal complaints process.",
+        "description2": "Escalation paths include the Compliance Officer, Senior Management, and ultimately VARA if unresolved."
+      },
+      "governanceManagement": {
+        "title": "8. Governance & Management",
+        "description1": "DHS Exchange will publish profiles of its Board of Directors, CEO, Compliance Officer, and other senior executives.",
+        "description2": "These disclosures will include relevant experience and regulatory responsibilities."
+      },
+      "regulatoryReporting": {
+        "title": "9. Regulatory Reporting & Updates",
+        "description": "DHS Exchange will publish updates on:",
+        "item1": "Regulatory filings or notices",
+        "item2": "Changes to license status",
+        "item3": "Material updates to policies impacting clients"
+      }
+    },
+    "notes": {
+      "badge": "Important Notice",
+      "title": "Regulatory Disclosure",
+      "subtitle": "Stay informed about our commitment to transparency and regulatory compliance",
+      "regulatoryUpdates": {
+        "title": "Regulatory Updates",
+        "description": "All information is subject to update based on regulatory changes or licensing status. DHS Exchange is committed to publishing updates as they become available."
+      },
+      "lastUpdated": {
+        "title": "Last Updated",
+        "date": "September 19, 2025",
+        "version": "Version 1.0"
+      },
+      "cta": {
+        "question": "Questions about our disclosures?",
+        "subtitle": "Contact our compliance team for more information",
+        "button": "Contact Us"
+      }
+    }
   }
 }
