@@ -40,7 +40,7 @@ export const footerMenuColumns: MenuColumn[] = [
   {
     title: "transparency_disclosures",
     items: [
-      { label: "fees_charges", link: "/fees-charges" },
+      { label: "fees_charges", link: "/fees" },
       { label: "custody_safeguarding", link: "/custody-of-assets" },
       { label: "public_disclosures", link: "/public-disclosures" },
       { label: "token_listing", link: "/token-listing" },
