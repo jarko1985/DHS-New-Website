@@ -7,12 +7,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { footerMenuColumns } from "@/data/menuColumns";
 import LanguageSwitcher from "./LanguageSwitcher";
 import UserAvatar from "./UserAvatar";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const navLinks = [
   { name: "home", href: "/" },
-  // { name: "About", href: "/about" },
-  // { name: "FAQ", href: "#" },
   { name: "contact", href: "/contact" },
 ];
 
@@ -22,6 +20,8 @@ export default function Header() {
   const triggerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("Header");
   const tFooter = useTranslations("Footer");
+  const locale = useLocale();
+  const isArabic = locale === "ar";
 
   // Touch gesture handling
   useEffect(() => {
@@ -95,19 +95,6 @@ export default function Header() {
     }
   };
 
-  // Handle anchor link clicks
-  const handleAnchorClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
-      event.preventDefault();
-      if (href.length > 1) {
-        const scrollToNode = document.querySelector(href);
-        if (scrollToNode) {
-          smoothScrollTo(scrollToNode);
-          setIsMenuOpen(false);
-        }
-      }
-    }
-  };
 
   return (
     <>
@@ -148,21 +135,7 @@ export default function Header() {
             <UserAvatar />
             <LanguageSwitcher />
             
-            {/* Mobile Menu Button in Header */}
-            {/* <button
-              onClick={() => setIsMenuOpen(prev => !prev)}
-              className="md:block hidden p-2 text-white hover:bg-white/10 rounded-md transition-colors group"
-              aria-label="Toggle mobile menu"
-            >
-              <div className="w-6 h-6 relative flex items-center justify-center">
-              
-                <span className="block w-5 h-0.5 bg-white" />
-                
-                <span className="absolute left-0 w-full h-0.5 bg-white top-[-7px] origin-left transition-all duration-300 group-hover:w-1/2 group-hover:top-[-3px] group-hover:rotate-[-30deg]" />
-               
-                <span className="absolute left-0 w-full h-0.5 bg-white top-[7px] origin-left transition-all duration-300 group-hover:w-1/2 group-hover:top-[3px] group-hover:rotate-[30deg]" />
-              </div>
-            </button> */}
+            
           </div>
         </div>
       </header>
@@ -171,7 +144,7 @@ export default function Header() {
       <div 
         ref={triggerRef}
         onClick={() => setIsMenuOpen(prev => !prev)}
-        className="fixed cursor-pointer z-[50] w-12 h-12 rounded-full top-5 right-4 bg-[#e47a5a] flex justify-center items-center hover:scale-110 transition-transform duration-200 md:hidden group"
+        className={`fixed cursor-pointer z-[50] w-12 h-12 rounded-full top-5 ${isArabic ? 'left-4' : 'right-4'} bg-[#e47a5a] flex justify-center items-center hover:scale-110 transition-transform duration-200 md:hidden group`}
       >
         {/* middle line */}
         <span className="block w-1/2 h-0.5 bg-white relative">
@@ -185,8 +158,12 @@ export default function Header() {
       {/* Mobile Menu */}
       <nav 
         ref={menuRef}
-        className={`fixed top-0 left-0 w-[100%]  h-full z-[45] bg-[#0b132b] flex flex-col gap-2 p-4 transform transition-transform duration-300 md:hidden ${
-          isMenuOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full'
+        className={`fixed top-0 w-[100%] ${isArabic ? 'left-0' : 'right-0'} h-full z-[45] bg-[#0b132b] flex flex-col gap-2 p-4 transform transition-transform duration-300 md:hidden ${
+          isMenuOpen 
+            ? 'translate-x-0 shadow-2xl' 
+            : isArabic 
+              ? '-translate-x-full' 
+              : 'translate-x-full'
         }`}
       >
         {/* Logo and Auth CTA */}

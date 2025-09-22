@@ -1154,4 +1154,59 @@
       }
     }
   }
+  ,
+  "tokenListing": {
+    "hero": {
+      "badge": "Policy & Governance",
+      "title": "Token Listing & Asset Admission Policy",
+      "description": "DHS Exchange is committed to ensuring that all digital assets available for trading meet regulatory standards, security requirements, and transparency obligations under the Dubai Virtual Assets Regulatory Authority (VARA).",
+      "tag1": "Regulatory alignment",
+      "tag2": "Security reviews",
+      "tag3": "Transparency"
+    },
+    "purpose": {
+      "title": "1. Purpose",
+      "desc": "This policy sets out the principles and procedures DHS Exchange applies when admitting a new token or virtual asset for trading. The aim is to protect clients, ensure market integrity, and comply with VARA regulations."
+    },
+    "criteria": {
+      "title": "2. Admission Criteria",
+      "intro": "Before any token is listed, DHS Exchange evaluates the following factors:",
+      "item1": "Regulatory Compliance: Token must not be prohibited under UAE law or VARA guidance.",
+      "item2": "Security Review: Smart contract audits (if applicable) and protocol security assessments.",
+      "item3": "Market Demand: Liquidity, trading volume, and relevance to DHS clients.",
+      "item4": "Transparency: Availability of clear information on token issuance, supply, and governance.",
+      "item5": "Risk Assessment: Consideration of volatility, concentration risks, and potential for market manipulation."
+    },
+    "disclosure": {
+      "title": "3. Information Disclosure",
+      "intro": "For each listed token, DHS Exchange will provide clients with:",
+      "item1": "Token name and ticker symbol",
+      "item2": "Date of issuance",
+      "item3": "Circulating and total supply (with % in circulation)",
+      "item4": "Market capitalization (circulating and fully diluted)",
+      "item5": "Smart contract audit status and date (if applicable)",
+      "item6": "Price history"
+    },
+    "monitoring": {
+      "title": "4. Ongoing Monitoring",
+      "intro1": "Tokens are subject to continuous review to ensure they remain compliant and aligned with DHS standards.",
+      "intro2": "DHS may suspend or delist any token if:",
+      "item1": "Regulatory restrictions are imposed",
+      "item2": "Security vulnerabilities are discovered",
+      "item3": "Liquidity falls below acceptable thresholds",
+      "item4": "The project fails to maintain transparency with its community"
+    },
+    "liquidity": {
+      "title": "5. Liquidity Provision",
+      "desc": "DHS Exchange integrates liquidity from institutional partners (Binance, Crypto.com,…) while ensuring full VARA compliance. This approach guarantees deep liquidity, reliable pricing, and best execution for clients."
+    },
+    "protection": {
+      "title": "6. Client Protection",
+      "desc": "DHS Exchange does not guarantee the future value of any token and reminds clients that digital assets are volatile and high-risk investments."
+    },
+    "review": {
+      "title": "7. Policy Review",
+      "desc": "This policy will be reviewed annually or as required by VARA. Updates will be published on the DHS website."
+    }
+  }
 }

@@ -53,7 +53,7 @@ export default function Footer() {
               </form>
             </div>
           </div>
-          <div className="relative w-[400px] h-full flex justify-center items-center">
+          <div className="relative md:w-[400px] h-full flex justify-center items-center">
           <Image 
             src="/images/banner_img.png" 
             alt="Footer Divider" 
