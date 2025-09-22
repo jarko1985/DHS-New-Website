@@ -18,7 +18,7 @@ export default function TokenListingPage() {
     const t = useTranslations("tokenListing");
     const locale = useLocale();
     const isArabic = locale === "ar";
-    return (
+  return (
         <main className="bg-blue-whale text-mercury min-h-screen relative overflow-hidden" dir={isArabic ? "rtl" : "ltr"}>
             {/* Gradient header */}
             <div className="w-full h-2" style={{ background: "var(--color-ramp)" }} />
@@ -154,7 +154,7 @@ export default function TokenListingPage() {
                         </div>
                     </section>
                 </div>
-            </div>
+    </div>
         </main>
-    );
+  );
 }

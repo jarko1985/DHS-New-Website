@@ -1208,5 +1208,52 @@
       "title": "7. Policy Review",
       "desc": "This policy will be reviewed annually or as required by VARA. Updates will be published on the DHS website."
     }
+  },
+  "systemStatus": {
+    "hero": {
+      "title": "System Status & Resilience",
+      "description": "DHS Exchange is built for reliability. We are committed to keeping our platform available, resilient, and transparent. This page provides real-time system status updates and outlines the measures we take to ensure uninterrupted service.",
+      "statusBadge": "All Systems Operational"
+    },
+    "sections": {
+      "realTimeStatus": {
+        "title": "Real-Time Status",
+        "content": "DHS Exchange maintains an uptime target of 99.9% for trading and wallet services. You can monitor availability of:",
+        "tradingEngine": "Trading Engine",
+        "walletServices": "Wallet Deposits & Withdrawals",
+        "authentication": "Authentication & Login",
+        "apiServices": "API Services"
+      },
+      "incidentReporting": {
+        "title": "Incident Reporting",
+        "content": "Transparency is key. We report incidents in real time, including:",
+        "nature": "Nature of the incident",
+        "services": "Services impacted",
+        "resolution": "Estimated resolution time",
+        "postMortem": "For major incidents, post-mortems are published with root causes and mitigation steps."
+      },
+      "resilienceMeasures": {
+        "title": "Resilience Measures",
+        "infrastructure": "Redundant infrastructure: failovers & multi-data centers",
+        "disasterRecovery": "Tested disaster recovery planning",
+        "monitoring": "24/7 system monitoring for performance & availability"
+      },
+      "securityProtection": {
+        "title": "Security & Protection",
+        "ddos": "DDoS protection and attack mitigation",
+        "loadBalancing": "Load balancing for performance stability",
+        "penetrationTesting": "Regular penetration testing and resilience audits"
+      },
+      "clientCommunication": {
+        "title": "Client Communication",
+        "notifications": "Platform alerts and emails during incidents",
+        "support": "Support team remains available to assist"
+      },
+      "commitment": {
+        "title": "Our Commitment",
+        "content": "DHS Exchange will continue improving infrastructure to meet the highest standards of resilience and uptime.",
+        "promise": "Our promise: Be Direct, Honest, and Safe — even when challenges occur."
+      }
+    }
   }
 }
