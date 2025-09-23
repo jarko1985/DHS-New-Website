@@ -231,7 +231,7 @@ const DisclosureNotes = () => {
                 >
                   {t("cta.button")}
                 </motion.button>
-              </div>
+      </div>
             </CardContent>
           </Card>
         </motion.div>
