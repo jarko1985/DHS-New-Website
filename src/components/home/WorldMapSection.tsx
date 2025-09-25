@@ -108,8 +108,8 @@ export default function WorldMapSection() {
             <motion.path
               key={i}
               d={curve(dots[from], dots[to])}
-              stroke="#117F60"
-              strokeWidth="2"
+              stroke="#117f60"
+              strokeWidth="5"
               fill="none"
               opacity="0.7"
               initial={{ pathLength: 0 }}

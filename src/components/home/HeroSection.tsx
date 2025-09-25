@@ -3,6 +3,7 @@ import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import TextType from "../custom/TextType";
 
 export default function HeroSection() {
   const [email, setEmail] = useState("");
@@ -24,6 +25,9 @@ export default function HeroSection() {
     toast.success(t("subscribe_success"));
     setEmail("");
   };
+  const handleAnimationComplete = () => {
+    console.log("All letters have animated!");
+  };
   return (
     <section className="relative flex flex-col xl:max-w-[70%] px-4 xl:px-0 mx-auto md:flex-row items-center justify-between min-h-[85vh] bg-blue-whale w-full overflow-hidden">
       <div
@@ -38,9 +42,20 @@ export default function HeroSection() {
           }  text-center`}
         >
           {t("title1_1")}
-          <span className="text-[#e47a5a]">{t("title1_3")}</span>
-          <span className="inline">{t("title1_2")}</span>
         </h1>
+        
+        <TextType
+          className="text-2xl font-semibold p-0 m-0 text-left -ml-2 mb-4"
+          text={t("title1_3")}
+          typingSpeed={200}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="|"
+          loop={true}
+          textColors={["#e47a5a"]}
+          deletingSpeed={100}
+          cursorClassName="text-[#e47a5a]"
+        />
         <div
           className={`text-white/80 text-normal mb-8 font-roboto text-center ${
             isArabic ? "md:text-right" : "md:text-left"

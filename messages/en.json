@@ -2,7 +2,7 @@
   "homepage": {
     "herosection": {
       "title1_1": "DHS",
-      "title1_3": " Direct. Honest. Safe",
+      "title1_3": " Direct | Honest | Safe",
       "title1_2": "Way to Trade",
       "crypto_with_clarity": "First in Trust. Fast in Trade.",
       "dhs_safe_honest": "This is the direct, honest, safe Dubai-based cryptocurrency exchange.",
@@ -26,6 +26,53 @@
       "select_currency": "Select Currency",
       "loading_price": "Fetching latest prices...",
       "last_updated": "Last updated at {time} UTC"
+    }
+  },
+  "aboutPage": {
+    "history": {
+      "title": "Our",
+      "title_highlight": "Journey",
+      "navigation": {
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "timeline": {
+        "event1": {
+          "date": "Jan 2015",
+          "title": "Lift-Off",
+          "description": "In Dubai, DHS ignited its engines; launching a mission to redefine crypto trading."
+        },
+        "event2": {
+          "date": "May 2016",
+          "title": "Securing Orbit",
+          "description": "With HexTrust, Chainalysis, and Sumsub as shields, DHS entered stable orbit; fortified with institutional-grade security and compliance."
+        },
+        "event3": {
+          "date": "Sep 2017",
+          "title": "Expanding Horizons",
+          "description": "Beyond Dubai, DHS charted new orbits across MENA, connecting traders seamlessly across borders."
+        },
+        "event4": {
+          "date": "Feb 2019",
+          "title": "International Space Mission",
+          "description": "DHS opened its first overseas base in London; the launchpad for a truly global orbit."
+        },
+        "event5": {
+          "date": "Nov 2020",
+          "title": "Crew Expansion",
+          "description": "Our mission team grew to 100+ specialists across three continents; a diverse crew ready for the cosmic journey ahead."
+        },
+        "event6": {
+          "date": "Jun 2022",
+          "title": "New Fuel for the Mission",
+          "description": "With $25M in Series B funding secured, DHS boosted its R&D engines and accelerated the thrust toward global adoption."
+        },
+        "event7": {
+          "date": "Present",
+          "title": "Expedition in Motion",
+          "description": "Today, DHS serves 500+ clients across 5 countries, powered by a 150+ strong crew;  navigating the financial galaxy with A-Grade precision."
+        }
+      }
     }
   },
   "LanguageSwitcher": {
@@ -131,7 +178,7 @@
       "terms_required": "You must accept the Terms & Conditions to continue"
     },
     "terms": {
-      "accept": "I accept McCoin's",
+      "accept": "I accept DHS's",
       "terms_link": "Terms & Conditions",
       "and": "and",
       "privacy_link": "Privacy Policy",
@@ -161,9 +208,9 @@
     "forgotPassword1_1": "Forgot Password?",
     "forgotPassword1_2": "Reset it",
     "forgotPassword1_3": "here",
-    "button": "Login to McCoin",
+    "button": "Login to DHS",
     "noAccount": "",
-    "registerNow": "Create your McCoin account and start trading smarter.",
+    "registerNow": "Create your DHS account and start trading smarter.",
     "login_success": "Login successful!",
     "login_failed": "Login failed. Please try again.",
     "invalid_credentials": "Invalid email or password. Please check your credentials and try again.",
@@ -209,7 +256,7 @@
     "sending": "Sending...",
     "backToLogin": "Back to Login",
     "rememberPassword": "Remembered it?",
-    "signIn": "Login to McCoin",
+    "signIn": "Login to DHS",
     "emailSent": "Password reset email sent successfully!",
     "emailNotFound": "Email address not found",
     "errorSending": "Failed to send reset email",
@@ -659,7 +706,7 @@
     "section9_note": "In the event of any failure, interruption or delay in the performance of our obligations resulting from acts, events or circumstances not reasonably within our or any Associate's control, neither we nor any Associate shall be liable or have any responsibility for any Loss whatsoever thereby incurred or suffered by you, and we shall not be obliged to take or refrain from taking any action in such circumstances.",
     "section10_title": "X. No investment advice",
     "section10_desc": "Information provided by DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE does not constitute investment advice, financial advice, trading advice, or any other type of advice whatsoever and is presented rather as general market commentary. We shall not provide any investment advice in relation to a transaction in the form of personal recommendations or advise on the merits of buying, selling, or otherwise dealing in particular instruments and/or investments or executing particular transactions, any tax, legal or other economic consequences or any other rights or obligations attaching to such instruments, investments or transactions.",
-    "section10_note": "Therefore, you must rely solely on your own judgment in deciding to enter into or close a transaction and we make no assessment of the suitability of such actions for you. We give no warranty as to the performance or profitability of any transaction or investment that you may effect through us. We will not be held responsible for any investment decisions made based on the information provided by MCCOIN.",
+    "section10_note": "Therefore, you must rely solely on your own judgment in deciding to enter into or close a transaction and we make no assessment of the suitability of such actions for you. We give no warranty as to the performance or profitability of any transaction or investment that you may effect through us. We will not be held responsible for any investment decisions made based on the information provided by DHS.",
     "section11_title": "XI. You are not acting as intermediary",
     "section11_desc": "We will deal with you on the basis that you act as principal and not as agent acting on behalf of or for the benefit of a principal. Furthermore, your failure to inform us that another person or any software and/or algorithm is operating your account on your behalf may result in us terminating the agreement, voiding any transactions, undertaking or closing any open transactions.",
     "section12_title": "XII. Charges, fees and taxes",
@@ -673,16 +720,16 @@
     "section14_a": "a. you have received a copy of this Risk Disclosure Statement and read and understood the nature and consequences of the risk factors described herein and have had an opportunity to raise questions and to discuss those risks with any advisors as you have deemed to be necessary or desirable;",
     "section14_b": "b. the risk factors cannot disclose all the risks and other significant aspects of the Transactions to be entered into with us and thus cannot be taken as a comprehensive or exhaustive list of all possible risks;",
     "section14_c": "c. you are acting on your own account and have reviewed carefully your specific financial needs and investment objectives before entering into any Transaction, and you have made your own independent decision to enter into any Transaction and as to the legality, suitability and appropriateness of any Transaction based upon your own judgment and upon advice from such advisers as you have deemed necessary or desirable;",
-    "section14_d": "d. you confirm that neither MCCOIN, nor any Associate of MCCOIN, is acting as a fiduciary for or an adviser to you in respect of any Transaction;",
+    "section14_d": "d. you confirm that neither DHS, nor any Associate of DHS, is acting as a fiduciary for or an adviser to you in respect of any Transaction;",
     "section14_e": "e. you are not relying on any communication (written or oral) from DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE or from any Associate of DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE as investment advice or as a recommendation to enter into any Transaction and you understand that the information and explanations of the terms of any Transaction as contained in any Confirmation shall not be considered to be investment advice or a recommendation to enter into such Transaction;",
     "section14_f": "f. you understand the tax implications of any Transactions, particularly as regards to Transactions involving Digital Assets, in your jurisdiction including, without limitation, income tax, corporation tax, capital gains tax or any sales tax or value added tax and any other tax framework in place within your country of residence for tax purposes;",
     "section14_g": "g. DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE assumes no responsibility for your portfolio or for any investment or Transaction which you have entered into, and any opinions, projections, estimates, forecasts and/or targets expressed in any communication (written or oral) from DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE should not be construed as or relied upon in any manner as investment, legal, tax or other advice, are provided for informational purposes only, and are subject to change without notice;",
     "section14_h": "h. in the event of any inconsistency between the English version of this document and any translation, the English version will prevail and that if you are in any doubt as to the meaning of the English language version or the accuracy of any translation, you should seek independent advice before entering into any Transaction;",
-    "section14_i": "i. this Risk Disclosure Statement may be varied, amended or supplemented from time to time and by using the Services after any changes to the Risk Disclosure Statement is varied, amended or supplemented, your agreement to such variations, amendments or supplementation is deemed to have been given to MCCOIN;",
+    "section14_i": "i. this Risk Disclosure Statement may be varied, amended or supplemented from time to time and by using the Services after any changes to the Risk Disclosure Statement is varied, amended or supplemented, your agreement to such variations, amendments or supplementation is deemed to have been given to DHS;",
     "section14_j": "j. no communication (written or oral) received from DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE or from any Associate of DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE shall be deemed to be an assurance or guarantee as to the expected results of any Transaction;",
     "section14_k": "k. you are a professional investor, market counterparty or equivalent definition as set out under the applicable law in your country of residence/registration and you are eligible, in accordance with the applicable law, to request such information and/or be offered/avail of one or more of the products/services indicated herein;",
     "section14_l": "l. you have approached DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE on your own exclusive initiative and that this approach does not come about as a result of any direct or indirect contact, solicitation, intervention, marketing and/or pre-marketing, arranging, advice, offering or placement efforts nor as result of any form of general solicitation or advertising such as media advertising or public seminars by or on behalf of DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE and its Associate;",
-    "section14_m": "m. to the extent you have already received any of the information, documentation above and/or any other communication concerning MCCOIN, this information, documentation, including this form and/or communication was sent to the undersigned at and after your request and otherwise only upon your own initiative;",
+    "section14_m": "m. to the extent you have already received any of the information, documentation above and/or any other communication concerning DHS, this information, documentation, including this form and/or communication was sent to the undersigned at and after your request and otherwise only upon your own initiative;",
     "section14_n": "n. the decision to avail yourself of our services/products is/will be based solely on your own due diligence and review of information and materials received/to be received at your request; and",
     "section14_o": "o. if any of the above become untrue or inaccurate, you will promptly inform us in writing, acknowledging that this may cause DIRECT HONEST SAFE INTERNATIONAL EXCHANGE FZE to stop or otherwise refrain from providing you with its services/products."
   },

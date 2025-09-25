@@ -107,6 +107,11 @@
   .ramp-text { background-image: linear-gradient(90deg, #b22f26, #e47a5a, #b22f26); -webkit-background-clip: text; background-clip: text; color: transparent; }
 }
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
