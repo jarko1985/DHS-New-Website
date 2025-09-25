@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        sans: ["ABCFavoritMono", "Roboto", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
+        mono: ["ABCFavoritMono", "monospace"],
       },
       colors: {
         'blue-whale': 'var(--color-blue-whale)',

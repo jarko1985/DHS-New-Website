@@ -7,7 +7,6 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { CookieConsent } from "@/components/cookies/CookieConsent";
 import { ClientProviders } from './client-providers'
-import { Providers } from "./providers";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/shared/Header";
 
@@ -37,6 +36,7 @@ export const metadata: Metadata = {
     images: ["https://dhs-vert.vercel.app/images/dhs_logo.png"],
   },
 };
+
 
 export default async function RootLayout({
   children,
