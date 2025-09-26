@@ -60,7 +60,7 @@ export const footerMenuColumns: MenuColumn[] = [
   {
     title: "security",
     items: [
-      { label: "data_protection", link: "/data-protection" },
+      { label: "data_protection", link: "/security-protection" },
       { label: "system_status", link: "/system-status" },
     ],
   },

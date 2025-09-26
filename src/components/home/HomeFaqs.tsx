@@ -229,7 +229,7 @@ export default function HomeFaqs() {
 
   return (
     <section className="py-16 px-6 bg-[var(--color-blue-whale)]">
-      <div className="max-w-4xl mx-auto">
+      <div className="xl:max-w-[70%] mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 ramp-text">

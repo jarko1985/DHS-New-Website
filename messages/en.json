@@ -1302,5 +1302,102 @@
         "promise": "Our promise: Be Direct, Honest, and Safe — even when challenges occur."
       }
     }
+  },
+  "securityProtection": {
+    "hero": {
+      "badge": "Direct • Honest • Safe",
+      "title": "Data Protection & Cybersecurity",
+      "description": "At DHS Exchange, protecting client data and assets is a top priority. We follow a Direct, Honest, Safe approach, ensuring confidentiality, integrity, and resilience of information in compliance with the Dubai Virtual Assets Regulatory Authority (VARA) and the UAE's Federal Decree Law No. 2 of 2019 (DPL).",
+      "badges": {
+        "vara_compliant": "VARA Compliant",
+        "uae_dpl": "UAE DPL Aligned",
+        "monitored": "24/7 Monitored"
+      },
+      "icons": {
+        "protection": "Protection",
+        "encryption": "Encryption",
+        "monitoring": "Monitoring"
+      }
+    },
+    "dataProtectionPrinciples": {
+      "title": "Data Protection Principles",
+      "subtitle": "DHS Exchange applies the following principles to all personal and transactional data",
+      "dataMinimization": {
+        "title": "Data Minimization",
+        "description": "We collect only what is necessary to operate and comply with regulatory obligations."
+      },
+      "consent": {
+        "title": "Consent",
+        "description": "Clients must provide informed consent before data is stored or processed."
+      },
+      "purposeLimitation": {
+        "title": "Purpose Limitation",
+        "description": "Data is used strictly for regulatory, operational, and security purposes."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Clients are informed about what data is collected, how it is used, and retention periods."
+      }
+    },
+    "dataSecurityMeasures": {
+      "title": "Data Security Measures",
+      "subtitle": "Comprehensive protection for all client information",
+      "points": {
+        "encryption": "Encryption: Sensitive information is encrypted both in transit and at rest.",
+        "backups": "Backups: Critical data is securely backed up and tested regularly for recovery.",
+        "accessControl": "Access Control: Internal access to data is strictly limited on a need-to-know basis.",
+        "vendorCompliance": "Vendor Compliance: All third-party providers are evaluated for regulatory and security compliance."
+      }
+    },
+    "dataRetention": {
+      "title": "Data Retention & Storage Limitation",
+      "subtitle": "Compliance with UAE and VARA regulations",
+      "points": {
+        "lawDuration": "Data is retained only for the duration required by law (AML/CTF obligations, VARA rules).",
+        "federalDecree": "Retention follows Federal Decree Law No. 2 of 2019 (DPL): limited to specific purposes and disclosed to clients.",
+        "categories": "Different categories of data (identity, financial, transactional) follow separate retention policies."
+      }
+    },
+    "cybersecurityFramework": {
+      "title": "Cybersecurity Framework",
+      "monitoring": {
+        "title": "24/7 Monitoring",
+        "description": "Systems are monitored continuously for fraud and anomalies."
+      },
+      "incidentResponse": {
+        "title": "Incident Response",
+        "description": "DHS maintains protocols for immediate detection, escalation, and response to breaches."
+      },
+      "resilienceTesting": {
+        "title": "Resilience Testing",
+        "description": "Regular penetration tests and audits are performed by independent experts."
+      },
+      "assetSegregation": {
+        "title": "Asset Segregation",
+        "description": "Client assets are stored with Hextrust in segregated custodial accounts."
+      }
+    },
+    "clientRights": {
+      "title": "Client Rights",
+      "subtitle": "Your data, your rights",
+      "points": {
+        "requestInfo": "Clients may request information on their stored data.",
+        "corrections": "Clients have the right to request corrections or, where legally possible, deletion of their personal data.",
+        "noSharing": "DHS Exchange ensures that no client data is shared with unauthorized third parties."
+      }
+    },
+    "transparencyCommitment": {
+      "title": "Transparency Commitment",
+      "subtitle": "Open and honest communication",
+      "points": {
+        "regularUpdates": "Privacy notices and data protection policies are updated regularly.",
+        "advanceDisclosure": "Any material changes to our cybersecurity or data protection practices will be disclosed to clients in advance."
+      },
+      "notification": "Regular policy updates and notifications"
+    },
+    "privacyPolicyBanner": {
+      "text": "To view and download DHS latest Privacy Policy click here:",
+      "downloadButton": "Download"
+    }
   }
 }

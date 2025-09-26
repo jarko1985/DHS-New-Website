@@ -5,6 +5,8 @@ import HeroSection from "@/components/home/HeroSection";
 import WorldMapSection from "@/components/home/WorldMapSection";
 import CalculatorSection from "@/components/home/CalculatorSection";
 import HomeFaqs from "@/components/home/HomeFaqs";
+import StartNow from "@/components/home/StartNow";
+import WhyDhs from "@/components/home/WhyDhs";
 
 export default function Home() {
   return (
@@ -12,8 +14,10 @@ export default function Home() {
       <HeroSection />
       <Screener />
       <WorldMapSection />
+      <WhyDhs />
       <HomeFaqs />
       <CalculatorSection />
+      <StartNow />
     </main>
   );
 }
