@@ -45,7 +45,7 @@ export default function HeroSection() {
         </h1>
         
         <TextType
-          className="text-2xl font-semibold p-0 m-0 text-left -ml-2 mb-4"
+          className="text-2xl font-semibold p-0 m-0 text-center md:text-left -ml-2 mb-4"
           text={t("title1_3")}
           typingSpeed={200}
           pauseDuration={1500}

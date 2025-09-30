@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { footerMenuColumns } from "@/data/menuColumns";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -53,15 +54,7 @@ export default function Footer() {
               </form>
             </div>
           </div>
-          <div className="relative md:w-[400px] h-full flex justify-center items-center">
-          <Image 
-            src="/images/banner_img.png" 
-            alt="Footer Divider" 
-            width={400} 
-            height={200} 
-            className="object-cover mt-8" 
-          />
-          </div>
+  <SocialLinks />
         </div> 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 justify-items-center my-4">
             {footerMenuColumns.map((col, idx) => (
