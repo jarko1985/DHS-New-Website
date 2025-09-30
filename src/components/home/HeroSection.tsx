@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import TextType from "../custom/TextType";
+import Cubes from "../custom/Cubes";
+import Beams from "../custom/Beams";
 
 export default function HeroSection() {
   const [email, setEmail] = useState("");
@@ -29,7 +31,24 @@ export default function HeroSection() {
     console.log("All letters have animated!");
   };
   return (
+    <>
+    
+    <section className="absolute w-full min-h-[85vh] overflow-hidden">
+    <div style={{ width: '100%', height: '100vh', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1, opacity: 0.3 }}>
+  <Beams
+    beamWidth={1.1}
+    beamHeight={19}
+    beamNumber={20}
+    lightColor="#ffffff"
+    speed={6}
+    noiseIntensity={0}
+    scale={0.2}
+    rotation={125}
+  />
+</div>
+    </section>
     <section className="relative flex flex-col xl:max-w-[70%] px-4 xl:px-0 mx-auto md:flex-row items-center justify-between min-h-[85vh] bg-blue-whale w-full overflow-hidden">
+    
       <div
         data-aos="fade-right"
         className="md:flex-1 flex flex-col md:justify-center md:items-start z-10 mt-6 md:mt-0"
@@ -124,5 +143,6 @@ export default function HeroSection() {
         </svg>
       </div>
     </section>
+    </>
   );
 }

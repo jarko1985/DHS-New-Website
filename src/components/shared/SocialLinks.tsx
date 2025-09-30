@@ -51,29 +51,46 @@ const socials: Social[] = [
 
 export default function SocialLinks() {
   return (
-    <ul className="flex justify-center items-center gap-8 md:gap-12 mb-7 md:mb-0">
+    <ul className="flex justify-center items-center gap-4 md:gap-6">
       {socials.map((social) => {
         const Icon = social.icon;
         return (
-          <li key={social.name} className="list-none">
+          <li 
+            key={social.name} 
+            className="list-none cursor-pointer group"
+            onMouseEnter={(e) => {
+              const icon = e.currentTarget.querySelector('svg');
+              if (icon) {
+                icon.style.stroke = social.color;
+                icon.style.color = social.color;
+                icon.style.fill = 'none';
+              }
+            }}
+            onMouseLeave={(e) => {
+              const icon = e.currentTarget.querySelector('svg');
+              if (icon) {
+                icon.style.stroke = 'rgba(255, 255, 255, 0.8)';
+                icon.style.color = 'rgba(255, 255, 255, 0.8)';
+                icon.style.fill = 'none';
+              }
+            }}
+          >
             <a
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block w-8 h-8 md:w-12 md:h-12 text-center transition-transform duration-500 transform [transform:perspective(1000px)_rotate(-30deg)_skew(25deg)_translate(0,0)] hover:[transform:perspective(1000px)_rotate(-30deg)_skew(25deg)_translate(10px,-10px)] md:hover:[transform:perspective(1000px)_rotate(-30deg)_skew(25deg)_translate(15px,-15px)] shadow-lg hover:shadow-2xl"
-              style={{ backgroundColor: social.color }}
+              className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 hover:bg-white/20"
             >
-              {/* left shadow */}
-              <span
-                className="absolute top-[10px] left-[-20px] h-full w-5 [transform:rotate(0deg)_skewY(-45deg)] transition-all duration-500"
-                style={{ backgroundColor: darken(social.color, 0.1) }}
+              <Icon 
+                className="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" 
+                style={{
+                  stroke: 'rgba(255, 255, 255, 0.8)',
+                  strokeWidth: '1.5',
+                  fill: 'none',
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  transition: 'stroke 0.3s ease, color 0.3s ease'
+                }}
               />
-              {/* bottom shadow */}
-              <span
-                className="absolute bottom-[-20px] left-[-10px] h-5 w-full [transform:rotate(0deg)_skewX(-45deg)] transition-all duration-500"
-                style={{ backgroundColor: lighten(social.color, 0.1) }}
-              />
-              <Icon className="w-4 h-4 md:w-6 md:h-6 text-[#262626] leading-[32px] md:leading-[48px] inline-block transition-colors duration-500 group-hover:text-white mx-auto my-2 md:my-3" />
             </a>
           </li>
         );
