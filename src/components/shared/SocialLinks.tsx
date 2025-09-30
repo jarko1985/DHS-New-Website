@@ -81,8 +81,8 @@ export default function SocialLinks() {
               rel="noopener noreferrer"
               className="relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110 hover:bg-white/20"
             >
-              <Icon 
-                className="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" 
+              <div 
+                className="w-5 h-5 md:w-6 md:h-6 transition-all duration-300"
                 style={{
                   stroke: 'rgba(255, 255, 255, 0.8)',
                   strokeWidth: '1.5',
@@ -90,7 +90,9 @@ export default function SocialLinks() {
                   color: 'rgba(255, 255, 255, 0.8)',
                   transition: 'stroke 0.3s ease, color 0.3s ease'
                 }}
-              />
+              >
+                {React.createElement(Icon, {})}
+              </div>
             </a>
           </li>
         );
