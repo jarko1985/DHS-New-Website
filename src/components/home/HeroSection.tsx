@@ -43,7 +43,7 @@ export default function HeroSection() {
     speed={6}
     noiseIntensity={0}
     scale={0.2}
-    rotation={125}
+    rotation={135}
   />
 </div>
     </section>
