@@ -26,6 +26,27 @@
       "select_currency": "Select Currency",
       "loading_price": "Fetching latest prices...",
       "last_updated": "Last updated at {time} UTC"
+    },
+    "PricesTable": {
+      "title": "Cryptocurrency Prices",
+      "search_placeholder": "Search...",
+      "columns": {
+        "rank": "#",
+        "name": "Name",
+        "price": "Price",
+        "percent_1h": "1h %",
+        "percent_24h": "24h %",
+        "percent_7d": "7d %",
+        "market_cap": "Market Cap",
+        "volume_24h": "Volume",
+        "circulating_supply": "Circulating Supply",
+        "last_7_days": "Last 7 Days"
+      },
+      "pagination": {
+        "prev": "Previous",
+        "next": "Next",
+        "page_info": "Page {currentPage} of {totalPages}"
+      }
     }
   },
   "aboutPage": {

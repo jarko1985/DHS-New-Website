@@ -26,6 +26,27 @@
       "select_currency": "اختر العملة",
       "loading_price": "جاري تحميل السعر…",
       "last_updated": "آخر تحديث في {time} بتوقيت UTC"
+    },
+    "PricesTable": {
+      "title": "أسعار العملات الرقمية",
+      "search_placeholder": "بحث...",
+      "columns": {
+        "rank": "#",
+        "name": "الاسم",
+        "price": "السعر",
+        "percent_1h": "1س %",
+        "percent_24h": "24س %",
+        "percent_7d": "7أ %",
+        "market_cap": "القيمة السوقية",
+        "volume_24h": "الحجم",
+        "circulating_supply": "المعروض المتداول",
+        "last_7_days": "آخر 7 أيام"
+      },
+      "pagination": {
+        "prev": "السابق",
+        "next": "التالي",
+        "page_info": "صفحة {currentPage} من {totalPages}"
+      }
     }
   },
   "LanguageSwitcher": {

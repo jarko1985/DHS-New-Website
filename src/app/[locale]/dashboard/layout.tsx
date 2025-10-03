@@ -8,7 +8,7 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
     <div className="min-h-screen bg-[var(--color-blue-whale)] text-[var(--color-mercury)]">
       <div className="flex lg:flex-row flex-col">
         <Sidebar />
-        <main className="flex-1 p-4 lg:p-6">
+        <main className="flex-1 p-4 lg:p-4">
           {children}
         </main>
       </div>
