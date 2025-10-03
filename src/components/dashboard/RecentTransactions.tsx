@@ -19,11 +19,14 @@ export default function RecentTransactions() {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className="rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5"
+      className="h-screen rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 flex flex-col"
     >
-      <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4">Recent Transaction</h3>
+      <div className="px-4 py-4 flex-shrink-0">
+        <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4">Recent Transaction</h3>
+      </div>
 
-      <ul className="space-y-3">
+      <div className="flex-1 overflow-y-auto px-4 pb-4">
+        <ul className="space-y-3">
         {txs.map((t, i) => (
           <li
             key={i}
@@ -39,7 +42,8 @@ export default function RecentTransactions() {
             <span className="font-semibold text-[var(--color-mercury)]">{t.amount}</span>
           </li>
         ))}
-      </ul>
+        </ul>
+      </div>
     </motion.div>
   );
 }

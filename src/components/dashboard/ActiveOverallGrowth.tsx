@@ -28,12 +28,13 @@ export default function ActiveOverallGrowth() {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className="rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70"
+      className="h-screen rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 flex flex-col"
     >
-      <div className="px-4 py-4">
+      <div className="px-4 py-4 flex-shrink-0">
         <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4">Active Overall Growth</h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+      </div>
+      <div className="flex-1 overflow-x-auto px-4 pb-4">
+        <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-[var(--color-mercury)]/60 border-b border-[var(--color-negative)]/60">
                 {["Type", "Asset", "Date", "IP Address", "Status List", "Amount"].map((h) => (
@@ -77,7 +78,6 @@ export default function ActiveOverallGrowth() {
             </tbody>
           </table>
         </div>
-      </div>
     </motion.div>
   );
 }

@@ -18,19 +18,19 @@ export default function TotalBalance() {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className="h-full rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5 flex flex-col"
+      className="rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5 h-full flex flex-col"
     >
-      <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4 flex-shrink-0">Total Balance</h3>
+      <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4">Total Balance</h3>
       
-      <div className="flex-1 flex items-center justify-center relative min-h-0">
-        <div className="w-40 h-40">
+      <div className="flex-1 flex items-center justify-center relative">
+        <div className="w-48 h-48">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={chartData}
                 dataKey="value"
-                innerRadius={50}
-                outerRadius={75}
+                innerRadius={60}
+                outerRadius={90}
                 startAngle={90}
                 endAngle={-270}
                 stroke={ring}
@@ -46,14 +46,14 @@ export default function TotalBalance() {
         {/* center label */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <div className="text-2xl font-bold text-[var(--color-mercury)]">{percent}%</div>
+            <div className="text-3xl font-bold text-[var(--color-mercury)]">{percent}%</div>
           </div>
         </div>
       </div>
 
-      <div className="text-center space-y-3 mt-4 flex-shrink-0">
+      <div className="text-center space-y-3 mt-4">
         <div>
-          <p className="text-xl font-bold tracking-tight text-[var(--color-mercury)]">0.3475948</p>
+          <p className="text-2xl font-bold tracking-tight text-[var(--color-mercury)]">0.3475948</p>
           <p className="text-sm text-[var(--color-mercury)]/70">11,032.24 USD</p>
         </div>
         <div>

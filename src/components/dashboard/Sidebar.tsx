@@ -87,19 +87,11 @@ export default function Sidebar() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <AnimatePresence initial={false}>
-                {!collapsed && (
-                  <motion.div
-                    key="brand"
-                    className="flex items-center gap-1"
-                    initial={{ opacity: 0, x: -6 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -6 }}
-                  >
-                    <span className="text-white font-semibold tracking-wide text-xs">Direct Honest Safe</span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {!collapsed && (
+                <div className="flex items-center gap-1">
+                  <span className="text-white font-semibold tracking-wide text-xs">Direct Honest Safe</span>
+                </div>
+              )}
             </div>
             <button
               aria-label="Toggle sidebar"
@@ -127,9 +119,9 @@ export default function Sidebar() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "group relative flex items-center gap-3 rounded-xl px-3 py-2.5 my-1 transition-all duration-200",
-                      "text-white/80 hover:text-white",
-                      "hover:bg-[var(--color-negative)]/30 border border-white/30",
+                      "group relative flex items-center gap-3 rounded-xl px-3 py-4 my-3 transition-all duration-200",
+                      "text-white/80 hover:text-elf-green",
+                      "hover:bg-[var(--color-negative)]/30 border border-white/30 hover:border-[var(--color-elf-green)]",
                       active && [
                         "bg-[var(--color-negative)]/40",
                         "border border-[var(--color-elf-green)]",
@@ -137,7 +129,7 @@ export default function Sidebar() {
                       ]
                     )}
                   >
-                    <Icon className={cn("shrink-0 w-5 h-5", active ? "text-white" : "text-white/80")} />
+                    <Icon className={cn("shrink-0 w-5 h-5 group-hover:text-elf-green", active ? "text-white" : "text-white/80")} />
                     <AnimatePresence initial={false}>
                       {!collapsed && (
                         <motion.span
