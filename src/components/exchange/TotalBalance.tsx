@@ -22,7 +22,7 @@ export default function TotalBalance() {
     >
       <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4 flex-shrink-0">Total Balance</h3>
       
-      <div className="flex-1 flex items-center justify-center relative min-h-0">
+      <div className="flex-1 flex items-center justify-center relative">
         <div className="w-40 h-40">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>

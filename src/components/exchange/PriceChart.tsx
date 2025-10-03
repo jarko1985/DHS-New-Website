@@ -150,7 +150,6 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
       },
       timeScale: {
         borderColor: 'rgba(255,255,255,0.1)',
-        textColor: '#94a3b8',
         timeVisible: true,
         secondsVisible: false,
         rightOffset: 0,
@@ -383,7 +382,7 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
       {/* Chart container */}
       <div
         ref={chartContainerRef}
-        className="flex-1 min-h-0 rounded-lg"
+        className="flex-1 rounded-lg"
         style={{ height: isFullscreen ? 'calc(100vh - 200px)' : height }}
       />
     </motion.div>
