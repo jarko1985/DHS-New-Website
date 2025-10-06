@@ -111,8 +111,22 @@
   --color-positive: #4b4f51;
   --color-warning: #6f7273;
   --color-ramp: linear-gradient(90deg, #b22f26, #e47a5a, #b22f26);
-  .ramp-bg { background-image: linear-gradient(90deg, #b22f26, #e47a5a, #b22f26); }
-  .ramp-text { background-image: linear-gradient(90deg, #b22f26, #e47a5a, #b22f26); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  
+  /* RGB values for rgba() usage */
+  --color-blue-rgb: 15, 20, 21;
+  --color-elf-green-rgb: 17, 127, 96;
+  --color-mercury-rgb: 226, 222, 220;
+}
+
+.ramp-bg { 
+  background-image: linear-gradient(90deg, #b22f26, #e47a5a, #b22f26); 
+}
+
+.ramp-text { 
+  background-image: linear-gradient(90deg, #b22f26, #e47a5a, #b22f26); 
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent; 
 }
 
 /* Smooth scrolling for the entire page */
@@ -229,4 +243,72 @@ html {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* Enhanced Settings Components Styles */
+.form-field {
+  @apply space-y-3;
+}
+
+.form-input {
+  background-color: rgba(var(--color-blue-rgb), 0.4);
+  color: var(--color-mercury);
+  @apply border border-white/10 placeholder:opacity-80
+         focus-visible:ring-[var(--color-elf-green)] focus-visible:ring-2 focus-visible:border-[var(--color-elf-green)]
+         transition-all duration-200 px-4 py-3 rounded-xl;
+}
+
+.form-input::placeholder {
+  color: var(--color-mercury);
+}
+
+.form-label {
+  color: var(--color-mercury);
+  @apply font-medium text-sm mb-2 block;
+}
+
+.form-description {
+  color: var(--color-mercury);
+  opacity: 0.7;
+  @apply text-xs mt-1;
+}
+
+.btn-primary {
+  background-color: var(--color-elf-green);
+  @apply hover:opacity-90 text-white font-medium px-6 py-3 
+         rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl;
+}
+
+.btn-secondary {
+  background-color: #e47a5a;
+  @apply hover:opacity-90 text-white font-medium px-6 py-3 
+         rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl;
+}
+
+.btn-outline {
+  color: var(--color-mercury);
+  @apply border border-white/20 bg-transparent hover:bg-white/5 
+         hover:border-white/30 font-medium px-6 py-3 rounded-xl transition-all duration-200;
+}
+
+.tab-chip {
+  background-color: rgba(var(--color-blue-rgb), 0.5);
+  color: var(--color-mercury);
+  @apply rounded-lg border border-white/5 px-4 py-3
+         transition-all duration-200 hover:shadow-lg hover:shadow-black/20 hover:bg-white/5
+         data-[state=active]:bg-[var(--color-elf-green)] data-[state=active]:text-blue-whale 
+         data-[state=active]:border-[var(--color-elf-green)] data-[state=active]:shadow-lg;
+}
+
+.settings-card {
+  background-color: rgba(var(--color-blue-rgb), 0.4);
+  @apply border border-white/10 rounded-2xl p-6 shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur;
+}
+
+.settings-section {
+  @apply space-y-6;
+}
+
+.settings-grid {
+  @apply grid gap-6 md:grid-cols-2;
 }
