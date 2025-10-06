@@ -36,4 +36,16 @@ export const formatTxDate = (iso: string) => {
     }
     return true;
   };
+
+export function timeAgo(iso: string) {
+  const sec = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+  const mins = Math.floor(sec / 60);
+  const hrs = Math.floor(mins / 60);
+  const days = Math.floor(hrs / 24);
+  if (days > 0) return `${days} day${days === 1 ? "" : "s"} ago`;
+  if (hrs > 0) return `${hrs} hour${hrs === 1 ? "" : "s"} ago`;
+  if (mins > 0) return `${mins} min${mins === 1 ? "" : "s"} ago`;
+  return "just now";
+}
+
   

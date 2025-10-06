@@ -66,7 +66,7 @@ export default function Sidebar() {
         animate={{ width }}
         transition={{ type: "spring", stiffness: 220, damping: 26 }}
         className={cn(
-          "h-screen sticky top-0 z-30 border-r",
+          "h-screen sticky top-0 z-30",
           "bg-[var(--color-blue-whale)]/95 border-[var(--color-negative)]/60",
           "shadow-[0_0_40px_-10px_rgba(17,127,96,0.35)]"
         )}
