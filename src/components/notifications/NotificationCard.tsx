@@ -19,12 +19,11 @@ type Props = {
 };
 
 const typeColors: Record<NotificationItem["type"], string> = {
-  commented: "text-[var(--color-mercury)]",
-  posted: "text-[var(--color-orange)]",
-  liked: "text-[var(--color-elf-green)]",
-  mentioned: "text-[var(--color-mercury)]",
-  followed: "text-[var(--color-mercury)]",
-  added: "text-[var(--color-mercury)]",
+  system: "text-[var(--color-mercury)]",
+  market: "text-[var(--color-orange)]",
+  compliance: "text-[var(--color-elf-green)]",
+  announcements: "text-[var(--color-mercury)]",
+  security: "text-red-400",
 };
 
 export const NotificationCard: FC<Props> = memo(({ item }) => {
@@ -60,12 +59,11 @@ export const NotificationCard: FC<Props> = memo(({ item }) => {
             <span className={cn("opacity-90", typeColors[item.type])}>
               {
                 {
-                  commented: "commented on your post",
-                  posted: "posted a new update",
-                  liked: "liked your post",
-                  mentioned: "mentioned you",
-                  followed: "started following you",
-                  added: "added you to a list",
+                  system: "system notification",
+                  market: "market update",
+                  compliance: "compliance notification",
+                  announcements: "announcement",
+                  security: "security alert",
                 }[item.type]
               }
             </span>

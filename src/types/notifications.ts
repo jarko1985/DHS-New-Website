@@ -1,11 +1,10 @@
 // src/lib/notifications.ts
 export type NotificationType =
-  | "commented"
-  | "posted"
-  | "liked"
-  | "mentioned"
-  | "followed"
-  | "added";
+  | "system"
+  | "market"
+  | "compliance"
+  | "announcements"
+  | "security";
 
 export type NotificationItem = {
   id: string;
@@ -42,16 +41,15 @@ const names = [
 ];
 
 const actions: NotificationType[] = [
-  "commented",
-  "posted",
-  "liked",
-  "mentioned",
-  "followed",
-  "added",
+  "system",
+  "market",
+  "compliance",
+  "announcements",
+  "security",
 ];
 
 const lorem =
-  "Maecenas quam nunc, sagittis non condimentum at, rutrum sit amet eros. Fusce rutrum, lectus in blandit sagittis, mi tortor ullamcorper mi.";
+  "Platform maintenance scheduled for tonight. Expected downtime: 2 hours. All trading pairs will be temporarily unavailable.";
 
 const now = Date.now();
 const daysAgo = (d: number) => new Date(now - d * 24 * 60 * 60 * 1000).toISOString();
@@ -65,19 +63,18 @@ export const notificationsSeed: NotificationItem[] = Array.from({ length: 20 }).
     const when = daysAgo((i % 9) + 1);
 
     const actionText: Record<NotificationType, string> = {
-      commented: "commented on your post",
-      posted: "posted a new update",
-      liked: "liked your post",
-      mentioned: "mentioned you",
-      followed: "started following you",
-      added: "added you to a list",
+      system: "System maintenance notification",
+      market: "Market update - BTC/USDT",
+      compliance: "Compliance verification required",
+      announcements: "New feature announcement",
+      security: "Security alert - Login from new device",
     };
 
     return {
       id: `ntf-${i + 1}`,
-      user: { name: n, avatarUrl: avatar },
+      user: { name: "DHS Platform", avatarUrl: avatar },
       type: t,
-      description: lorem,
+      description: actionText[t],
       createdAt: when,
     };
   }

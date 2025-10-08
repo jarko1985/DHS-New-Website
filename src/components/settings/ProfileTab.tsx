@@ -78,10 +78,12 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
       className="settings-section"
     >
       {/* Personal Information Section */}
-      <div className="space-y-2 mb-6">
-        <h3 className="text-lg font-semibold text-white">Personal Information</h3>
-        <p className="form-description">Update your personal details and contact information.</p>
-      </div>
+      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
+        <div className="space-y-2 mb-6">
+          <h3 className="text-lg font-semibold text-white">Personal Information</h3>
+          <p className="form-description">Update your personal details and contact information.</p>
+        </div>
+        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
 
       <div className="settings-grid">
         <div className="form-field">
@@ -123,12 +125,15 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
           />
         </div>
       </div>
+      </div>
 
       {/* Location Information Section */}
-      <div className="space-y-2 mb-6">
-        <h3 className="text-lg font-semibold text-white">Location Information</h3>
-        <p className="form-description">Your address and location details.</p>
-      </div>
+      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
+        <div className="space-y-2 mb-6">
+          <h3 className="text-lg font-semibold text-white">Location Information</h3>
+          <p className="form-description">Your address and location details.</p>
+        </div>
+        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
 
       <div className="settings-grid">
         <div className="form-field">
@@ -169,12 +174,15 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
           />
         </div>
       </div>
+      </div>
 
       {/* Account Settings Section */}
-      <div className="space-y-2 mb-6">
-        <h3 className="text-lg font-semibold text-white">Account Settings</h3>
-        <p className="form-description">Manage your account preferences and settings.</p>
-      </div>
+      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
+        <div className="space-y-2 mb-6">
+          <h3 className="text-lg font-semibold text-white">Account Settings</h3>
+          <p className="form-description">Manage your account preferences and settings.</p>
+        </div>
+        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
 
       <div className="form-field">
         <Label className="form-label">Deposit Assets</Label>
@@ -201,12 +209,15 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
         />
         <p className="form-description">Optional: Share a brief description about yourself.</p>
       </div>
+      </div>
 
       {/* Notification Preferences Section */}
-      <div className="space-y-2 mb-6">
-        <h3 className="text-lg font-semibold text-white">Notification Preferences</h3>
-        <p className="form-description">Choose which notifications you'd like to receive.</p>
-      </div>
+      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
+        <div className="space-y-2 mb-6">
+          <h3 className="text-lg font-semibold text-white">Notification Preferences</h3>
+          <p className="form-description">Choose which notifications you'd like to receive.</p>
+        </div>
+        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
 
       <div className="form-field">
         <div className="flex flex-wrap gap-6 rounded-xl border border-white/10 bg-white/5 p-6">
@@ -228,9 +239,10 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
         </div>
         <p className="form-description">Select the types of notifications you want to receive via email.</p>
       </div>
+      </div>
 
       {/* Actions Section */}
-      <div className="flex flex-col gap-4 sm:flex-row pt-6 border-t border-white/10">
+      <div className="flex flex-col gap-4 sm:flex-row pt-6 border-t border-[#39FF14]/20">
         <Button
           onClick={form.handleSubmit(onSubmit)}
           className="btn-primary"

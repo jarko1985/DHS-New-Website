@@ -21,12 +21,11 @@ type Props = {
 
 const typeChips: (NotificationType | "all")[] = [
   "all",
-  "commented",
-  "posted",
-  "liked",
-  "mentioned",
-  "followed",
-  "added",
+  "system",
+  "market",
+  "compliance",
+  "announcements",
+  "security",
 ];
 
 export const NotificationsFilterBar: FC<Props> = ({
@@ -50,7 +49,7 @@ export const NotificationsFilterBar: FC<Props> = ({
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <Filter className="h-4 w-4 text-[var(--color-mercury)]/90" />
-            <h2 className="text-white text-lg font-semibold">Notifications</h2>
+            <h2 className="text-white text-lg font-semibold">Platform Updates</h2>
           </div>
 
           <div className="flex items-center gap-2">
@@ -128,13 +127,13 @@ export const NotificationsFilterBar: FC<Props> = ({
             })}
           </div>
 
-          <div className="relative">
+          <div className="relative xl:min-w-[450px]">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--color-mercury)]" />
             <Input
               value={search}
               onChange={(e) => onSearch(e.target.value)}
-              placeholder="Search by name or text..."
-              className="pl-9 bg-[var(--color-blue)]/60 border-white/10 text-[var(--color-blue-whale)] placeholder:text-[var(--color-mercury)]/80"
+              placeholder="Search updates, maintenance notes, or trading pairs…"
+              className="pl-9 bg-[var(--color-blue)]/60 placeholder:text-xs border-white/10 text-white placeholder:text-[var(--color-mercury)]/80"
             />
           </div>
         </div>
