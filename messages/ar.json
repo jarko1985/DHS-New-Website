@@ -320,6 +320,64 @@
     "title": "اتصل بنا",
     "description": "يرجى ملء المعلومات أدناه، سيتواصل معك فريق خدمة العملاء في أقرب وقت ممكن"
   },
+  "MarketExplorer": {
+    "blocksRow": {
+      "title": "أحدث كتل البيتكوين",
+      "feeRate": "معدل الرسوم",
+      "transactions": "المعاملات",
+      "blockReward": "مكافأة الكتلة",
+      "mined": "تم التعدين",
+      "minAgo": "دقيقة مضت",
+      "bitcoinBlock": "كتلة البيتكوين",
+      "loadMoreBlocks": "تحميل المزيد من الكتل",
+      "loading": "جاري التحميل...",
+      "viewDetails": "عرض التفاصيل"
+    },
+    "blocksTable": {
+      "title": "كتل البيتكوين",
+      "searchPlaceholder": "البحث بالمعرف أو الارتفاع أو عدد المعاملات",
+      "showing": "عرض",
+      "columns": {
+        "id": "المعرف",
+        "height": "الارتفاع",
+        "transactions": "#المعاملات",
+        "nonce": "النونس",
+        "bits": "البتات",
+        "medianTime": "الوقت المتوسط",
+        "size": "الحجم"
+      },
+      "pagination": {
+        "previous": "السابق",
+        "next": "التالي",
+        "page": "الصفحة"
+      }
+    },
+    "blockDetails": {
+      "backToExplorer": "مستكشف السوق",
+      "blockTitle": "الكتلة رقم",
+      "detailsTitle": "تفاصيل الكتلة",
+      "transactionsTitle": "المعاملات",
+      "transactionColumns": {
+        "txId": "معرف المعاملة",
+        "vout": "المخرجات",
+        "size": "الحجم",
+        "weight": "الوزن",
+        "status": "الحالة",
+        "fee": "الرسوم"
+      },
+      "transactionStatus": {
+        "confirmed": "مؤكدة",
+        "pending": "قيد الانتظار"
+      },
+      "pagination": {
+        "first": "الأولى",
+        "previous": "السابق",
+        "next": "التالي",
+        "last": "الأخيرة",
+        "pageInfo": "الصفحة {current} من {total}"
+      }
+    }
+  },
   "conflictOfInterest": {
     "hero_title": "دليل تضارب المصالح",
     "hero_desc": "وضع السياسات والإجراءات لتحديد وإدارة تضارب المصالح",

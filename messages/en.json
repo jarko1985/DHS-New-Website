@@ -375,6 +375,72 @@
     "title": "Contact Us",
     "description": "Please fill in the below information, Our Customer service team will contact you at the earliest"
   },
+  "MarketExplorer": {
+    "blocksRow": {
+      "title": "Market Explorer",
+      "subtitle": "Discover the Depths of Crypto",
+      "description1": "Go beyond the surface. With McCoin’s Market Explorer, analyze individual coins and tokens in detail, compare performance across timeframes, and unlock deeper insights that empower smarter trading.",
+      "description2": "Filter, sort, and navigate the crypto universe with agility. Whether you’re learning as a beginner or optimizing strategies as a pro, Market Explorer equips you with the tools to trade with confidence.",
+      "feeRate": "Fee Rate",
+      "transactions": "Transactions",
+      "blockReward": "Block Reward",
+      "mined": "Mined",
+      "minAgo": "min ago",
+      "bitcoinBlock": "Bitcoin Block",
+      "loadMoreBlocks": "Load More Blocks",
+      "loading": "Loading...",
+      "viewDetails": "View Details"
+    },
+    "blocksTable": {
+      "title": "Bitcoin Blocks",
+      "searchPlaceholder": "Search by ID, height or tx count",
+      "showing": "Showing",
+      "columns": {
+        "id": "ID",
+        "height": "Height",
+        "transactions": "#Transactions",
+        "nonce": "Nonce",
+        "bits": "Bits",
+        "medianTime": "Median Time",
+        "size": "Size"
+      },
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page"
+      }
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "content1": "The content on this page is provided for informational purposes only and does not constitute financial, investment, or trading advice. Markets are dynamic and cryptocurrency trading carries significant risk, which may not be suitable for all investors.",
+      "content2": "At McCoin, we encourage continuous learning and responsible decision-making. Please conduct your own research and consult a licensed financial advisor before making any investment choices. "
+    },
+    "blockDetails": {
+      "backToExplorer": "Market Explorer",
+      "blockTitle": "Block #",
+      "detailsTitle": "Block Details",
+      "transactionsTitle": "Transactions",
+      "transactionColumns": {
+        "txId": "Tx ID",
+        "vout": "Vout",
+        "size": "Size",
+        "weight": "Weight",
+        "status": "Status",
+        "fee": "Fee"
+      },
+      "transactionStatus": {
+        "confirmed": "Confirmed",
+        "pending": "Pending"
+      },
+      "pagination": {
+        "first": "First",
+        "previous": "Previous",
+        "next": "Next",
+        "last": "Last",
+        "pageInfo": "Page {current} of {total}"
+      }
+    }
+  },
   "conflictOfInterest": {
     "hero_title": "Conflict of Interest Manual",
     "hero_desc": "Policies and procedures for identifying, disclosing, and managing conflicts of interest",

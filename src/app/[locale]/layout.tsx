@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://dhs-vert.vercel.app/images/dhs_logo.png",
-        width: 1200,
-        height: 630,
+        width: 900,
+        height: 450,
         alt: "DHS Logo",
       },
     ],

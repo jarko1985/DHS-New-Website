@@ -313,3 +313,10 @@ html {
 .settings-grid {
   @apply grid gap-6 md:grid-cols-2;
 }
+.perspective-1000 { perspective: 1000px; }
+.preserve-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; }
+.custom-scroll::-webkit-scrollbar { height: 10px; }
+.custom-scroll::-webkit-scrollbar-track { background: transparent; }
+.custom-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 8px; }
+.custom-scroll:hover::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); }
