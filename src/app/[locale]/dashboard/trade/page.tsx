@@ -15,37 +15,27 @@ export default function ExchangePage() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}
-        className="space-y-4 lg:space-y-6 flex flex-col"
+        className="space-y-3 sm:space-y-4 lg:space-y-6 p-3 sm:p-4 lg:p-6"
       >
         {/* Top header row */}
-        <div className="flex-shrink-0">
-          <ExchangeHeader />
-        </div>
+        <ExchangeHeader />
 
         {/* Main content area */}
-        <div className="flex-1 grid grid-cols-1 xl:grid-cols-12 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-6">
           {/* Left side: Chart */}
-          <div className="xl:col-span-8 flex flex-col">
-            <div className="flex-1">
-              <PriceChart />
-            </div>
+          <div className="lg:col-span-8">
+            <PriceChart />
           </div>
           
           {/* Right side: Balance and Trade Form */}
-          <div className="xl:col-span-4 flex flex-col gap-4 lg:gap-6">
-            <div className="flex-1">
-              <TotalBalance />
-            </div>
-            <div className="flex-1">
-              <TradeForm />
-            </div>
+          <div className="lg:col-span-4 space-y-3 sm:space-y-4 lg:space-y-6">
+            <TotalBalance />
+            <TradeForm />
           </div>
         </div>
 
         {/* Bottom row: Market trades */}
-        <div className="flex-shrink-0">
-          <MarketTrades />
-        </div>
+        <MarketTrades />
       </motion.div>
     </TradingProvider>
   );

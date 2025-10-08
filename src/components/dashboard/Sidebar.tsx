@@ -45,8 +45,19 @@ const NAV_ITEMS: Item[] = [
 
 export default function Sidebar() {
   const pathname = usePathname();
-  // Persist collapsed state
   const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  // Check screen size and set mobile state
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   useEffect(() => {
     const saved = localStorage.getItem("dash_collapsed");
@@ -54,10 +65,15 @@ export default function Sidebar() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("dash_collapsed", collapsed ? "1" : "0");
-  }, [collapsed]);
+    // Only save to localStorage if not on mobile
+    if (!isMobile) {
+      localStorage.setItem("dash_collapsed", collapsed ? "1" : "0");
+    }
+  }, [collapsed, isMobile]);
 
-  const width = collapsed ? 76 : 256;
+  // Force collapsed on mobile, use state on desktop
+  const isCollapsed = isMobile ? true : collapsed;
+  const width = isCollapsed ? 76 : 256;
 
   return (
     <TooltipProvider delayDuration={0}>
@@ -66,7 +82,7 @@ export default function Sidebar() {
         animate={{ width }}
         transition={{ type: "spring", stiffness: 220, damping: 26 }}
         className={cn(
-          "h-screen sticky top-0 z-30",
+          "h-screen sticky top-0 z-30 ",
           "bg-[var(--color-blue-whale)]/95 border-[var(--color-negative)]/60",
           "shadow-[0_0_40px_-10px_rgba(17,127,96,0.35)]"
         )}
@@ -76,7 +92,7 @@ export default function Sidebar() {
           <div className="flex items-center gap-3 px-4 py-4">
             <div className={cn(
               "flex items-center gap-3",
-              collapsed && "justify-center w-full"
+              isCollapsed && "justify-center w-full"
             )}>
               <div className="w-8 h-8 rounded-lg overflow-hidden">
                 <Image 
@@ -87,7 +103,7 @@ export default function Sidebar() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              {!collapsed && (
+              {!isCollapsed && (
                 <div className="flex items-center gap-1">
                   <span className="text-white font-semibold tracking-wide text-xs">Direct Honest Safe</span>
                 </div>
@@ -95,14 +111,15 @@ export default function Sidebar() {
             </div>
             <button
               aria-label="Toggle sidebar"
-              onClick={() => setCollapsed((c) => !c)}
+              onClick={() => !isMobile && setCollapsed((c) => !c)}
               className={cn(
                 "rounded-lg transition",
                 "hover:bg-[var(--color-negative)]/60 text-[var(--color-mercury)]",
-                collapsed ? "-ml-2" : "ml-auto"
+                isCollapsed ? "-ml-2" : "ml-auto",
+                isMobile && "opacity-50 cursor-not-allowed"
               )}
             >
-              {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+              {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
             </button>
           </div>
 
@@ -118,40 +135,41 @@ export default function Sidebar() {
                 const link = (
                   <Link
                     href={item.href}
-                    className={cn(
-                      "group relative flex items-center gap-3 rounded-xl px-3 py-4 my-3 transition-all duration-200",
-                      "text-white/80 hover:text-elf-green",
-                      "hover:bg-[var(--color-negative)]/30 border border-white/30 hover:border-[var(--color-elf-green)]",
-                      active && [
-                        "bg-[var(--color-negative)]/40",
-                        "border border-[var(--color-elf-green)]",
-                        "text-white"
-                      ]
-                    )}
-                  >
-                    <Icon className={cn("shrink-0 w-5 h-5 group-hover:text-elf-green", active ? "text-white" : "text-white/80")} />
-                    <AnimatePresence initial={false}>
-                      {!collapsed && (
-                        <motion.span
-                          key={item.label}
-                          initial={{ opacity: 0, x: -4 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: -4 }}
-                          className="truncate text-sm font-medium"
-                        >
-                          {item.label}
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
+                     className={cn(
+                       "group relative flex items-center gap-3 rounded-xl px-3 py-4 my-3 transition-all duration-200",
+                       "text-white/80 hover:text-elf-green",
+                       "hover:bg-[var(--color-negative)]/30 border border-white/30 hover:border-[var(--color-elf-green)]",
+                       isCollapsed && "justify-center",
+                       active && [
+                         "bg-[var(--color-negative)]/40",
+                         "border border-[var(--color-elf-green)]",
+                         "text-white"
+                       ]
+                     )}
+                   >
+                     <Icon className={cn("shrink-0 w-5 h-5 group-hover:text-elf-green", active ? "text-white" : "text-white/80")} />
+                     <AnimatePresence initial={false}>
+                       {!isCollapsed && (
+                         <motion.span
+                           key={item.label}
+                           initial={{ opacity: 0, x: -4 }}
+                           animate={{ opacity: 1, x: 0 }}
+                           exit={{ opacity: 0, x: -4 }}
+                           className="truncate text-sm font-medium"
+                         >
+                           {item.label}
+                         </motion.span>
+                       )}
+                     </AnimatePresence>
 
-                    {/* Dropdown arrow for specific items */}
-                    {!collapsed && (item.label === "Utilities" || item.label === "Authentication") && (
-                      <ChevronRight className="ml-auto w-4 h-4 text-white/60" />
-                    )}
-                  </Link>
-                );
+                     {/* Dropdown arrow for specific items */}
+                     {!isCollapsed && (item.label === "Utilities" || item.label === "Authentication") && (
+                       <ChevronRight className="ml-auto w-4 h-4 text-white/60" />
+                     )}
+                   </Link>
+                 );
 
-                return collapsed ? (
+                 return isCollapsed ? (
                   <Tooltip key={item.href}>
                     <TooltipTrigger asChild>{link}</TooltipTrigger>
                     <TooltipContent side="right" className="border-0 bg-[var(--color-negative)] text-[var(--color-mercury)]">
@@ -169,27 +187,27 @@ export default function Sidebar() {
 
           {/* Language Selector */}
           <div className="p-3">
-            <div className={cn(
-              "flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200",
-              "bg-[var(--color-elf-green)] hover:bg-[var(--color-elf-green)]/90",
-              "text-white font-medium text-sm",
-              collapsed && "justify-center"
-            )}>
-              <span className="text-sm">EN</span>
-              <AnimatePresence initial={false}>
-                {!collapsed && (
-                  <motion.span
-                    key="language"
-                    initial={{ opacity: 0, x: -4 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -4 }}
-                    className="truncate"
-                  >
-                    English (US)
-                  </motion.span>
-                )}
-              </AnimatePresence>
-              {!collapsed && <ChevronRight className="ml-auto w-4 h-4 text-white/80" />}
+             <div className={cn(
+               "flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all duration-200",
+               "bg-[var(--color-elf-green)] hover:bg-[var(--color-elf-green)]/90",
+               "text-white font-medium text-sm",
+               isCollapsed && "justify-center"
+             )}>
+               <span className="text-sm">EN</span>
+               <AnimatePresence initial={false}>
+                 {!isCollapsed && (
+                   <motion.span
+                     key="language"
+                     initial={{ opacity: 0, x: -4 }}
+                     animate={{ opacity: 1, x: 0 }}
+                     exit={{ opacity: 0, x: -4 }}
+                     className="truncate"
+                   >
+                     English (US)
+                   </motion.span>
+                 )}
+               </AnimatePresence>
+               {!isCollapsed && <ChevronRight className="ml-auto w-4 h-4 text-white/80" />}
             </div>
           </div>
 

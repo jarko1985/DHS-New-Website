@@ -14,13 +14,13 @@ export default function ExchangePage() {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className="space-y-4 lg:space-y-6"
+      className="space-y-3 sm:space-y-4 lg:space-y-6 p-3 sm:p-4 lg:p-6"
     >
       {/* Row 1: Upper bar */}
       <UpperBar />
 
       {/* Row 2: Four KPI cards with sparklines */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
         <StatCard 
           title="Bitcoin" 
           amount="$47,515.00" 
@@ -64,21 +64,21 @@ export default function ExchangePage() {
       </div>
 
       {/* Row 3: Monthly growth (big line) + Total balance (donut) */}
-      <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 lg:gap-6">
-        <div className="xl:col-span-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-6">
+        <div className="lg:col-span-8">
           <MonthlyOverallGrowth />
         </div>
-        <div className="xl:col-span-4">
+        <div className="lg:col-span-4">
           <TotalBalance />
         </div>
       </div>
 
       {/* Row 4: Active Overall Growth (table) + Recent Transactions (list) */}
-      <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 lg:gap-6">
-        <div className="xl:col-span-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-6">
+        <div className="lg:col-span-8">
           <ActiveOverallGrowth />
         </div>
-        <div className="xl:col-span-4">
+        <div className="lg:col-span-4">
           <RecentTransactions />
         </div>
       </div>

@@ -127,7 +127,7 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
     if (!chartContainerRef.current) return;
 
     const chart = createChart(chartContainerRef.current, {
-      width: chartContainerRef.current.clientWidth,
+      width: chartContainerRef.current.offsetWidth,
       height: isFullscreen ? window.innerHeight - 100 : height,
       layout: {
         background: { color: '#0f172a' },
@@ -144,8 +144,8 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
         borderColor: 'rgba(255,255,255,0.1)',
         textColor: '#94a3b8',
         scaleMargins: {
-          top: 0.1,
-          bottom: 0.1,
+          top: 0.02,
+          bottom: 0.02,
         },
       },
       timeScale: {
@@ -153,8 +153,8 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
         timeVisible: true,
         secondsVisible: false,
         rightOffset: 0,
-        barSpacing: 8,
-        minBarSpacing: 0.5,
+        barSpacing: 16,
+        minBarSpacing: 2,
         fixLeftEdge: true,
         fixRightEdge: true,
       },
@@ -224,14 +224,21 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
       });
     }
 
-    // Handle resize
+    // Handle resize with debouncing
+    let resizeTimeout: NodeJS.Timeout;
     const handleResize = () => {
-      if (chartContainerRef.current && chartRef.current) {
-        chart.applyOptions({
-          width: chartContainerRef.current.clientWidth,
-          height: isFullscreen ? window.innerHeight - 100 : height,
-        });
-      }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (chartContainerRef.current && chartRef.current) {
+          const containerWidth = chartContainerRef.current.offsetWidth;
+          const containerHeight = isFullscreen ? window.innerHeight - 100 : height;
+          
+          chart.applyOptions({
+            width: containerWidth,
+            height: containerHeight,
+          });
+        }
+      }, 100);
     };
 
     window.addEventListener('resize', handleResize);
@@ -328,40 +335,44 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`h-full rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5 flex flex-col ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}
+      className={`h-full rounded-xl sm:rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-3 sm:p-4 lg:p-5 flex flex-col w-full min-w-0 ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}
     >
-      <div className="flex items-center justify-between mb-4 flex-shrink-0">
-        <div className="flex gap-2">
+      <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 flex-shrink-0">
+        {/* Row 1: Chart Type Buttons */}
+        <div className="flex gap-1 sm:gap-2">
           <button 
             onClick={() => handleChartTypeChange('price')}
-            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-all duration-200 ${
+            className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 text-xs sm:text-sm rounded-md sm:rounded-lg font-medium transition-all duration-200 ${
               chartType === 'price' 
                 ? 'bg-[var(--color-elf-green)] text-white shadow-[0_0_12px_rgba(17,127,96,0.4)]' 
                 : 'bg-[var(--color-negative)]/50 text-[var(--color-mercury)]/70 hover:bg-[var(--color-negative)]/70'
             }`}
           >
-            Price Chart
+            <span className="hidden xs:inline">Price Chart</span>
+            <span className="xs:hidden">Price</span>
           </button>
           <button 
             onClick={() => handleChartTypeChange('deep')}
-            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-all duration-200 ${
+            className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 text-xs sm:text-sm rounded-md sm:rounded-lg font-medium transition-all duration-200 ${
               chartType === 'deep' 
                 ? 'bg-[var(--color-elf-green)] text-white shadow-[0_0_12px_rgba(17,127,96,0.4)]' 
                 : 'bg-[var(--color-negative)]/50 text-[var(--color-mercury)]/70 hover:bg-[var(--color-negative)]/70'
             }`}
           >
-            Deep Chart
+            <span className="hidden xs:inline">Deep Chart</span>
+            <span className="xs:hidden">Deep</span>
           </button>
         </div>
         
-        <div className="flex items-center space-x-4">
+        {/* Row 2: Timeframe selector and Fullscreen toggle */}
+        <div className="flex items-center justify-between gap-2">
           {/* Timeframe selector */}
-          <div className="flex space-x-2 text-sm">
+          <div className="flex space-x-0.5 sm:space-x-1 md:space-x-2 text-xs sm:text-sm overflow-x-auto">
             {timeframes.map(({ key, label }) => (
               <button
                 key={key}
                 onClick={() => setTimeframe(key)}
-                className={`px-2 py-1 rounded transition-colors ${
+                className={`px-1 sm:px-1.5 md:px-2 py-0.5 sm:py-1 rounded transition-colors whitespace-nowrap ${
                   state.chartTimeframe === key
                     ? 'bg-[var(--color-elf-green)] text-white'
                     : 'text-[var(--color-mercury)]/60 hover:text-[var(--color-mercury)] hover:bg-[var(--color-negative)]/30'
@@ -373,8 +384,9 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
           </div>
 
           {/* Fullscreen toggle */}
-          <button onClick={toggleFullscreen} className="text-[var(--color-mercury)]/60 hover:text-[var(--color-mercury)] p-1">
-            {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+          <button onClick={toggleFullscreen} className="text-[var(--color-mercury)]/60 hover:text-[var(--color-mercury)] p-0.5 sm:p-1 text-xs sm:text-sm whitespace-nowrap">
+            <span className="hidden sm:inline">{isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}</span>
+            <span className="sm:hidden">{isFullscreen ? 'Exit' : 'Full'}</span>
           </button>
         </div>
       </div>
@@ -382,7 +394,7 @@ const TradingChart: React.FC<TradingChartProps> = ({ height = 400 }) => {
       {/* Chart container */}
       <div
         ref={chartContainerRef}
-        className="flex-1 rounded-lg"
+        className="flex-1 rounded-lg w-full min-w-0"
         style={{ height: isFullscreen ? 'calc(100vh - 200px)' : height }}
       />
     </motion.div>

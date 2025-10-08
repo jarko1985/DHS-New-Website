@@ -28,17 +28,17 @@ export default function ActiveOverallGrowth() {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className="h-screen rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 flex flex-col"
+      className="h-[400px] sm:h-[500px] lg:h-screen rounded-xl sm:rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 flex flex-col"
     >
-      <div className="px-4 py-4 flex-shrink-0">
-        <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4">Active Overall Growth</h3>
+      <div className="px-3 sm:px-4 py-3 sm:py-4 flex-shrink-0">
+        <h3 className="text-base sm:text-lg font-semibold text-[var(--color-mercury)] mb-3 sm:mb-4">Active Overall Growth</h3>
       </div>
-      <div className="flex-1 overflow-x-auto px-4 pb-4">
-        <table className="w-full text-sm">
+      <div className="flex-1 overflow-x-auto px-3 sm:px-4 pb-3 sm:pb-4">
+        <table className="w-full text-xs sm:text-sm min-w-[600px]">
             <thead>
               <tr className="text-left text-[var(--color-mercury)]/60 border-b border-[var(--color-negative)]/60">
                 {["Type", "Asset", "Date", "IP Address", "Status List", "Amount"].map((h) => (
-                  <th key={h} className="py-3 pr-4 font-medium">{h}</th>
+                  <th key={h} className="py-2 sm:py-3 pr-2 sm:pr-4 font-medium whitespace-nowrap">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -48,19 +48,19 @@ export default function ActiveOverallGrowth() {
                   key={i}
                   className="border-b border-[var(--color-negative)]/40 hover:bg-[var(--color-negative)]/30 transition-colors duration-200"
                 >
-                  <td className="py-4 pr-4 text-[var(--color-mercury)]/85">{r.type}</td>
-                  <td className="py-4 pr-4">
-                    <div className="flex items-center gap-3">
+                  <td className="py-3 sm:py-4 pr-2 sm:pr-4 text-[var(--color-mercury)]/85">{r.type}</td>
+                  <td className="py-3 sm:py-4 pr-2 sm:pr-4">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <CryptoIcon symbol={r.symbol} size="sm" />
-                      <span className="text-[var(--color-mercury)]/85">{r.asset}</span>
+                      <span className="text-[var(--color-mercury)]/85 whitespace-nowrap">{r.asset}</span>
                     </div>
                   </td>
-                  <td className="py-4 pr-4 text-[var(--color-mercury)]/70">{r.date}</td>
-                  <td className="py-4 pr-4 text-[var(--color-mercury)]/70">{r.ip}</td>
-                  <td className="py-4 pr-4">
+                  <td className="py-3 sm:py-4 pr-2 sm:pr-4 text-[var(--color-mercury)]/70 whitespace-nowrap">{r.date}</td>
+                  <td className="py-3 sm:py-4 pr-2 sm:pr-4 text-[var(--color-mercury)]/70 whitespace-nowrap">{r.ip}</td>
+                  <td className="py-3 sm:py-4 pr-2 sm:pr-4">
                     <span
                       className={cn(
-                        "px-2.5 py-1 text-xs rounded-full font-medium",
+                        "px-2 sm:px-2.5 py-1 text-xs rounded-full font-medium whitespace-nowrap",
                         r.status === "Success" &&
                           "bg-[var(--color-elf-green)]/20 text-[var(--color-elf-green)] border border-[var(--color-elf-green)]/30",
                         r.status === "Pending" &&
@@ -72,7 +72,7 @@ export default function ActiveOverallGrowth() {
                       {r.status}
                     </span>
                   </td>
-                  <td className="py-4 pr-4 text-[var(--color-mercury)]/85 font-medium">{r.amount}</td>
+                  <td className="py-3 sm:py-4 pr-2 sm:pr-4 text-[var(--color-mercury)]/85 font-medium whitespace-nowrap">{r.amount}</td>
                 </tr>
               ))}
             </tbody>

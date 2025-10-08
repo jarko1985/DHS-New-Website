@@ -27,22 +27,24 @@ export default function StatCard({ title, amount, symbol, tone, data = defaultDa
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       className={cn(
-        "rounded-2xl border",
+        "rounded-xl sm:rounded-2xl border",
         "bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70",
         "shadow-[0_10px_30px_-14px_rgba(0,0,0,0.45)] overflow-hidden",
         "hover:shadow-[0_15px_35px_-12px_rgba(0,0,0,0.6)] transition-all duration-300"
       )}
     >
-      <div className="px-4 pt-4">
+      <div className="px-3 sm:px-4 pt-3 sm:pt-4">
         <div className="flex items-center justify-between">
-          <div>
-            <p className="text-xs text-[var(--color-mercury)]/70 mb-1">{title}</p>
-            <p className="text-lg font-semibold text-[var(--color-mercury)]">{amount}</p>
+          <div className="min-w-0 flex-1">
+            <p className="text-xs sm:text-sm text-[var(--color-mercury)]/70 mb-1 truncate">{title}</p>
+            <p className="text-sm sm:text-base lg:text-lg font-semibold text-[var(--color-mercury)] truncate">{amount}</p>
           </div>
-          <CryptoIcon symbol={symbol} size="md" />
+          <div className="ml-2 flex-shrink-0">
+            <CryptoIcon symbol={symbol} size="sm" />
+          </div>
         </div>
       </div>
-      <div className="h-16 px-3 pb-3">
+      <div className="h-12 sm:h-14 lg:h-16 px-2 sm:px-3 pb-2 sm:pb-3">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>
@@ -56,7 +58,7 @@ export default function StatCard({ title, amount, symbol, tone, data = defaultDa
               stroke={stroke}
               fillOpacity={1}
               fill={`url(#grad-${symbol}-${tone})`}
-              strokeWidth={2}
+              strokeWidth={1.5}
               type="monotone"
               isAnimationActive
             />

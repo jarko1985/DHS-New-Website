@@ -76,17 +76,17 @@ export default function MonthlyOverallGrowth() {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className="rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5"
+      className="rounded-xl sm:rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-3 sm:p-4 lg:p-5"
     >
-      <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-[var(--color-mercury)]">{getTitle()}</h3>
+      <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+        <h3 className="text-base sm:text-lg font-semibold text-[var(--color-mercury)]">{getTitle()}</h3>
         <div className="flex gap-1">
           {["Week", "Month", "Year"].map((t) => (
             <button
               key={t}
               onClick={() => setSelectedTimeframe(t)}
               className={cn(
-                "text-xs rounded-lg px-3 py-1.5 transition-all duration-200",
+                "text-xs rounded-lg px-2 sm:px-3 py-1.5 transition-all duration-200",
                 selectedTimeframe === t
                   ? "bg-[var(--color-elf-green)] text-white shadow-[0_0_12px_rgba(17,127,96,0.4)]" 
                   : "bg-[var(--color-negative)]/50 hover:bg-[var(--color-negative)]/70 text-[var(--color-mercury)]/80"
@@ -97,9 +97,9 @@ export default function MonthlyOverallGrowth() {
           ))}
         </div>
       </div>
-      <div className="h-[320px]">
+      <div className="h-[200px] sm:h-[250px] lg:h-[320px]">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={data} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+          <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="growthFill" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor={fillColor} stopOpacity={0.4} />
@@ -107,13 +107,19 @@ export default function MonthlyOverallGrowth() {
               </linearGradient>
             </defs>
             <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.05)" />
-            <XAxis dataKey="m" tick={{ fill: "rgba(226,222,220,0.60)", fontSize: 12 }} axisLine={false} tickLine={false} />
+            <XAxis 
+              dataKey="m" 
+              tick={{ fill: "rgba(226,222,220,0.60)", fontSize: 10 }} 
+              axisLine={false} 
+              tickLine={false}
+              interval="preserveStartEnd"
+            />
             <YAxis
-              tick={{ fill: "rgba(226,222,220,0.60)", fontSize: 12 }}
+              tick={{ fill: "rgba(226,222,220,0.60)", fontSize: 10 }}
               axisLine={false}
               tickLine={false}
               tickFormatter={(v) => `${v}k`}
-              width={32}
+              width={28}
             />
             <Tooltip
               cursor={{ stroke: "rgba(255,255,255,0.06)", strokeWidth: 24 }}
@@ -121,6 +127,7 @@ export default function MonthlyOverallGrowth() {
                 background: "rgba(13,22,53,0.95)",
                 border: "1px solid rgba(39,44,45,0.7)",
                 color: "var(--color-mercury)",
+                fontSize: "12px",
               }}
             />
             {/* Filled area chart */}
@@ -129,16 +136,16 @@ export default function MonthlyOverallGrowth() {
               dataKey="b"
               stroke={fillColor}
               fill="url(#growthFill)"
-              strokeWidth={3}
-              dot={{ fill: fillColor, strokeWidth: 2, r: 4 }}
+              strokeWidth={2}
+              dot={{ fill: fillColor, strokeWidth: 1, r: 3 }}
             />
             {/* Secondary line */}
             <Line 
               type="monotone" 
               dataKey="a" 
               stroke={lineColor} 
-              strokeWidth={2} 
-              dot={{ fill: lineColor, strokeWidth: 2, r: 3 }}
+              strokeWidth={1.5} 
+              dot={{ fill: lineColor, strokeWidth: 1, r: 2 }}
             />
           </AreaChart>
         </ResponsiveContainer>
