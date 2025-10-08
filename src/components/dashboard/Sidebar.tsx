@@ -32,9 +32,9 @@ type Item = {
 
 const NAV_ITEMS: Item[] = [
   { label: "Dashboard",     href: "/dashboard",                icon: LayoutDashboard },
-  { label: "Exchange",      href: "/dashboard/exchange",       icon: Repeat },
+  { label: "Trade",         href: "/dashboard/trade",          icon: Repeat },
   { label: "Prices",        href: "/dashboard/prices",         icon: BadgeDollarSign },
-  { label: "Wallets",       href: "/dashboard/wallets",        icon: Wallet },
+  { label: "Assets",       href: "/dashboard/assets",          icon: Wallet },
   { label: "Promotions",    href: "/dashboard/promotions",     icon: Megaphone },
   { label: "Activities",    href: "/dashboard/activities",     icon: Activity },
   { label: "Notifications", href: "/dashboard/notifications",  icon: Bell },
