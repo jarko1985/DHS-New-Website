@@ -17,13 +17,13 @@ export default function TwoFactorTab() {
       className="settings-section"
     >
       {/* Header Section */}
-      <div className="space-y-2 mb-8">
-        <h3 className="text-lg font-semibold text-white">Two-Factor Authentication</h3>
-        <p className="form-description">Add an extra layer of security to your account with two-factor authentication.</p>
+      <div className="space-y-1.5 sm:space-y-2 mb-6 sm:mb-7 md:mb-8">
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">Two-Factor Authentication</h3>
+        <p className="form-description text-xs sm:text-sm">Add an extra layer of security to your account with two-factor authentication.</p>
       </div>
 
       {/* 2FA Status Card */}
-      <div className="rounded-xl border border-white/10 bg-white/5 p-6 mb-6">
+      <div className="rounded-lg sm:rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5 md:p-6 mb-4 sm:mb-5 md:mb-6">
         <div className="flex items-center justify-between">
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
@@ -52,9 +52,9 @@ export default function TwoFactorTab() {
 
       {/* Setup Instructions */}
       {!enabled && (
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6 mb-6">
-          <h4 className="text-base font-medium text-white mb-4">How to Set Up 2FA:</h4>
-          <ol className="space-y-3 text-sm text-[var(--color-mercury)]/80">
+        <div className="rounded-lg sm:rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5 md:p-6 mb-4 sm:mb-5 md:mb-6">
+          <h4 className="text-sm sm:text-base font-medium text-white mb-3 sm:mb-4">How to Set Up 2FA:</h4>
+          <ol className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-[var(--color-mercury)]/80">
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 h-6 w-6 rounded-full bg-[var(--color-elf-green)] text-white text-xs flex items-center justify-center font-medium">1</span>
               <span className='text-white'>Download an authenticator app like Google Authenticator or Authy on your mobile device.</span>
@@ -73,26 +73,26 @@ export default function TwoFactorTab() {
 
       {/* Backup Codes */}
       {enabled && (
-        <div className="rounded-xl border border-white/10 bg-white/5 p-6 mb-6">
-          <h4 className="text-base font-medium text-white mb-3">Backup Codes</h4>
-          <p className="text-sm text-white mb-4">
+        <div className="rounded-lg sm:rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5 md:p-6 mb-4 sm:mb-5 md:mb-6">
+          <h4 className="text-sm sm:text-base font-medium text-white mb-2.5 sm:mb-3">Backup Codes</h4>
+          <p className="text-xs sm:text-sm text-white mb-3 sm:mb-4">
             Save these backup codes in a secure location. You can use them to access your account if you lose your authenticator device.
           </p>
-          <Button variant="outline" className="btn-outline">
+          <Button variant="outline" className="btn-outline text-sm sm:text-base">
             View Backup Codes
           </Button>
         </div>
       )}
 
       {/* Actions */}
-      <div className="flex flex-col gap-4 sm:flex-row pt-6 border-t border-white/10">
-        <Button className="btn-primary">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 pt-4 sm:pt-5 md:pt-6 border-t border-white/10">
+        <Button className="btn-primary w-full sm:w-auto text-sm sm:text-base">
           {enabled ? 'Update 2FA Settings' : 'Enable 2FA'}
         </Button>
         <Button 
           type="button"
           variant="secondary"
-          className="btn-secondary"
+          className="btn-secondary w-full sm:w-auto text-sm sm:text-base"
         >
           Cancel
         </Button>

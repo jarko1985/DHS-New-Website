@@ -7,7 +7,7 @@ export default function TradeForm() {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className="h-full rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5 flex flex-col"
+      className="rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5 flex flex-col"
     >
       <div className="flex gap-2 mb-4 flex-shrink-0">
         <button className="flex-1 rounded-lg bg-[var(--color-elf-green)] text-white px-3 py-2 text-sm font-medium shadow-[0_0_12px_rgba(17,127,96,0.4)]">

@@ -73,7 +73,7 @@ export const NotificationsList: FC<Props> = ({ initial }) => {
   };
 
   return (
-    <div className="space-y-4 sm:space-y-6">
+    <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
       <NotificationsFilterBar
         search={search}
         onSearch={onSearch}
@@ -84,8 +84,8 @@ export const NotificationsList: FC<Props> = ({ initial }) => {
         onClear={clearAll}
       />
 
-      <div className="rounded-2xl border border-white/5 bg-[var(--color-blue)]/40 p-2 sm:p-3">
-        <div className="space-y-2 sm:space-y-3">
+      <div className="rounded-xl sm:rounded-2xl border border-white/5 bg-[var(--color-blue)]/40 p-2 sm:p-3 md:p-4">
+        <div className="space-y-2 sm:space-y-2.5 md:space-y-3">
           <AnimatePresence mode="popLayout">
             {pageSlice.map((item) => (
               <NotificationCard key={item.id} item={item} />
@@ -93,7 +93,7 @@ export const NotificationsList: FC<Props> = ({ initial }) => {
           </AnimatePresence>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-3 sm:mt-4 md:mt-5 pt-3 sm:pt-4 border-t border-white/5">
           <PaginationControls
             page={safePage}
             pageSize={pageSize}

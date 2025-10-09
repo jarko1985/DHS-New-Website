@@ -40,73 +40,79 @@ export const NotificationsFilterBar: FC<Props> = ({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-white/5 bg-[var(--color-blue)]/50 p-3 sm:p-4",
+        "rounded-xl sm:rounded-2xl border border-white/5 bg-[var(--color-blue)]/50 p-3 sm:p-4",
         "shadow-sm backdrop-blur-sm"
       )}
     >
       <div className="flex flex-col gap-3 sm:gap-4">
         {/* Top row: Title + quick time range */}
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <Filter className="h-4 w-4 text-[var(--color-mercury)]/90" />
-            <h2 className="text-white text-lg font-semibold">Platform Updates</h2>
+            <Filter className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--color-mercury)]/90 shrink-0" />
+            <h2 className="text-white text-base sm:text-lg md:text-xl font-semibold">Platform Updates</h2>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full sm:w-auto">
             <Button
               size="sm"
               variant={timeRange === "all" ? "default" : "secondary"}
               className={cn(
+                "h-8 text-xs sm:text-sm px-2.5 sm:px-3",
                 timeRange === "all"
                   ? "ramp-bg text-white border-0"
                   : "bg-white/5 text-[var(--color-mercury)] hover:bg-white/10"
               )}
               onClick={() => onTimeRange("all")}
             >
-              All Time
+              <span className="hidden sm:inline">All Time</span>
+              <span className="sm:hidden">All</span>
             </Button>
             <Button
               size="sm"
               variant={timeRange === "month" ? "default" : "secondary"}
               className={cn(
+                "h-8 text-xs sm:text-sm px-2.5 sm:px-3",
                 timeRange === "month"
                   ? "ramp-bg text-white border-0"
                   : "bg-white/5 text-[var(--color-mercury)] hover:bg-white/10"
               )}
               onClick={() => onTimeRange("month")}
             >
-              This Month
+              <span className="hidden sm:inline">This Month</span>
+              <span className="sm:hidden">Month</span>
             </Button>
             <Button
               size="sm"
               variant={timeRange === "week" ? "default" : "secondary"}
               className={cn(
+                "h-8 text-xs sm:text-sm px-2.5 sm:px-3",
                 timeRange === "week"
                   ? "ramp-bg text-white border-0"
                   : "bg-white/5 text-[var(--color-mercury)] hover:bg-white/10"
               )}
               onClick={() => onTimeRange("week")}
             >
-              This Week
+              <span className="hidden sm:inline">This Week</span>
+              <span className="sm:hidden">Week</span>
             </Button>
 
             {search || typeFilter !== "all" || timeRange !== "all" ? (
               <Button
                 size="sm"
                 variant="ghost"
-                className="text-[var(--color-mercury)] hover:text-white"
+                className="text-[var(--color-mercury)] hover:text-white h-8 text-xs sm:text-sm px-2.5 sm:px-3"
                 onClick={onClear}
               >
-                <X className="h-4 w-4 mr-1" />
-                Clear
+                <X className="h-3.5 w-3.5 sm:h-4 sm:w-4 sm:mr-1" />
+                <span className="hidden sm:inline">Clear</span>
               </Button>
             ) : null}
           </div>
         </div>
 
         {/* Second row: chips + search */}
-        <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-col gap-3">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
             {typeChips.map((chip) => {
               const active = chip === typeFilter;
               return (
@@ -114,7 +120,7 @@ export const NotificationsFilterBar: FC<Props> = ({
                   key={chip}
                   onClick={() => onTypeFilter(chip)}
                   className={cn(
-                    "text-xs sm:text-sm px-3 py-1.5 rounded-full border transition",
+                    "text-xs sm:text-sm px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border transition whitespace-nowrap",
                     "hover:scale-[1.02] active:scale-[0.98]",
                     active
                       ? "ramp-bg text-white border-0 shadow"
@@ -127,13 +133,13 @@ export const NotificationsFilterBar: FC<Props> = ({
             })}
           </div>
 
-          <div className="relative xl:min-w-[450px]">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[var(--color-mercury)]" />
+          <div className="relative w-full xl:max-w-[450px]">
+            <Search className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--color-mercury)]" />
             <Input
               value={search}
               onChange={(e) => onSearch(e.target.value)}
               placeholder="Search updates, maintenance notes, or trading pairs…"
-              className="pl-9 bg-[var(--color-blue)]/60 placeholder:text-xs border-white/10 text-white placeholder:text-[var(--color-mercury)]/80"
+              className="pl-8 sm:pl-9 bg-[var(--color-blue)]/60 placeholder:text-xs sm:placeholder:text-sm border-white/10 text-white placeholder:text-[var(--color-mercury)]/80 h-9 sm:h-10 text-sm"
             />
           </div>
         </div>

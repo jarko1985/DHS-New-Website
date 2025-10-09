@@ -95,12 +95,6 @@ const cardVariants = {
 export default function WhyDhs() {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-blue-whale via-blue to-blue-whale py-16 md:py-24">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-elf-green rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-[#b22f26] to-[#e47a5a] rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
-
       <div className="relative z-10 xl:max-w-[70%] mx-auto px-4 xl:px-0">
         {/* Header Section */}
         <motion.div 

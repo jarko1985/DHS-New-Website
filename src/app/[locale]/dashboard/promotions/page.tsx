@@ -99,17 +99,17 @@ export default function PromotionsPage() {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="min-h-[calc(100vh-64px)] w-full bg-[var(--color-blue-whale)] px-4 text-[var(--color-mercury)] md:px-6"
+      className="min-h-[calc(100vh-64px)] w-full bg-[var(--color-blue-whale)] px-3 py-4 sm:px-4 sm:py-5 md:px-6 md:py-6 text-[var(--color-mercury)]"
     >
-      <div className="">
-        <header className="mb-4 flex items-center justify-between gap-3">
-          <h1 className="text-lg font-semibold text-white">Latest Promotions</h1>
-          <div className="w-full max-w-xs">
+      <div className="space-y-4 sm:space-y-5 md:space-y-6">
+        <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+          <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">Latest Promotions</h1>
+          <div className="w-full sm:w-auto sm:max-w-xs">
             <Input
               placeholder="Search promotions..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="border-white/10 bg-white/5 text-white placeholder:text-white/50"
+              className="border-white/10 bg-white/5 text-white placeholder:text-white/50 text-sm sm:text-base h-9 sm:h-10"
               aria-label="Search promotions"
             />
           </div>

@@ -432,7 +432,7 @@ export default function Header() {
       <div
         ref={triggerRef}
         onClick={() => setIsMenuOpen((prev) => !prev)}
-        className={`fixed cursor-pointer z-[50] w-12 h-12 rounded-full top-5 ${
+        className={`absolute cursor-pointer z-[50] w-12 h-12 rounded-full top-2 ${
           isArabic ? "left-4" : "right-4"
         } bg-[#e47a5a] flex justify-center items-center hover:scale-110 transition-transform duration-200 md:hidden group`}
       >

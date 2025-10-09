@@ -22,9 +22,9 @@ export default function ChangePasswordTab() {
       className="settings-section"
     >
       {/* Header Section */}
-      <div className="space-y-2 mb-8">
-        <h3 className="text-lg font-semibold text-white">Change Password</h3>
-        <p className="form-description">Update your password to keep your account secure. Use a strong password with at least 8 characters.</p>
+      <div className="space-y-1.5 sm:space-y-2 mb-6 sm:mb-7 md:mb-8">
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">Change Password</h3>
+        <p className="form-description text-xs sm:text-sm">Update your password to keep your account secure. Use a strong password with at least 8 characters.</p>
       </div>
 
       {/* Current Password */}
@@ -85,9 +85,9 @@ export default function ChangePasswordTab() {
       </div>
 
       {/* Password Requirements */}
-      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-        <h4 className="text-sm font-medium text-white mb-3">Password Requirements:</h4>
-        <ul className="space-y-2 text-sm text-[var(--color-mercury)]/80">
+      <div className="rounded-lg sm:rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+        <h4 className="text-xs sm:text-sm font-medium text-white mb-2.5 sm:mb-3">Password Requirements:</h4>
+        <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-[var(--color-mercury)]/80">
           <li className="flex items-center gap-2 text-white">
             <div className="h-1.5 w-1.5 rounded-full bg-[var(--color-elf-green)]"></div>
             At least 8 characters long
@@ -108,14 +108,14 @@ export default function ChangePasswordTab() {
       </div>
 
       {/* Actions */}
-      <div className="flex flex-col gap-4 sm:flex-row pt-6 border-t border-white/10">
-        <Button className="btn-primary">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 pt-4 sm:pt-5 md:pt-6 border-t border-white/10">
+        <Button className="btn-primary w-full sm:w-auto text-sm sm:text-base">
           Update Password
         </Button>
         <Button 
           type="button"
           variant="secondary"
-          className="btn-secondary"
+          className="btn-secondary w-full sm:w-auto text-sm sm:text-base"
         >
           Cancel
         </Button>

@@ -37,7 +37,7 @@ export const WalletProgressCard: React.FC = () => {
       transition={{ duration: 0.35, delay: 0.08 }}
       className="group h-full"
     >
-      <Card className="relative overflow-hidden border-0 bg-white/[0.02] p-6 text-[var(--color-mercury)] shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur rounded-xl h-full flex flex-col">
+      <Card className="relative overflow-hidden border-0 bg-white/[0.02] p-4 sm:p-5 lg:p-6 text-[var(--color-mercury)] shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur rounded-xl h-full flex flex-col">
         {/* Background decorations */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Soft gradient lines */}
@@ -49,21 +49,21 @@ export const WalletProgressCard: React.FC = () => {
           <div className="absolute -bottom-16 -left-16 w-40 h-40 rounded-full bg-[#39FF14]/5 blur-3xl" />
         </div>
 
-        <CardHeader className="pb-4 relative z-10">
-          <CardTitle className="text-lg font-semibold text-white">
+        <CardHeader className="pb-3 sm:pb-4 relative z-10">
+          <CardTitle className="text-center md:text-left text-base sm:text-lg lg:text-xl font-semibold text-white">
             Portfolio Allocation
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="space-y-6 relative z-10 flex-1 flex flex-col justify-between">
+        <CardContent className="space-y-4 sm:space-y-5 lg:space-y-6 relative z-10 flex-1 flex flex-col justify-between">
           {BARS.map((bar, idx) => (
-            <div key={bar.id} className="space-y-3">
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-[var(--color-mercury)]/90">{bar.label}</span>
+            <div key={bar.id} className="space-y-2 sm:space-y-2.5 lg:space-y-3">
+              <div className="flex items-center justify-between text-xs sm:text-sm">
+                <span className="text-[var(--color-mercury)]/90 truncate pr-2">{bar.label}</span>
                 {bar.subtitle ? (
                   <span
                     className={cn(
-                      "font-medium",
+                      "font-medium shrink-0",
                       bar.tone === "orange"
                         ? "text-[#e47a5a]"
                         : "text-[var(--color-elf-green)]"
@@ -76,7 +76,7 @@ export const WalletProgressCard: React.FC = () => {
 
               {/* Enhanced animated progress fill */}
               <div className="relative">
-                <div className="h-3 w-full rounded-full bg-[var(--color-negative)]/50 overflow-hidden">
+                <div className="h-2.5 sm:h-3 w-full rounded-full bg-[var(--color-negative)]/50 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${animatedValues[idx]}%` }}
@@ -106,7 +106,7 @@ export const WalletProgressCard: React.FC = () => {
                         repeat: Infinity,
                         repeatDelay: 3
                       }}
-                      className="absolute top-0 h-full w-8 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                      className="absolute top-0 h-full w-6 sm:w-8 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                     />
                   </motion.div>
                 </div>
@@ -116,13 +116,13 @@ export const WalletProgressCard: React.FC = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.8 + (idx * 0.1), duration: 0.3 }}
-                  className="absolute top-0 right-0 text-xs font-semibold text-white/90 pr-1"
+                  className="absolute top-0 right-0 text-[10px] sm:text-xs font-semibold text-white/90 pr-0.5 sm:pr-1"
                 >
                   {animatedValues[idx].toFixed(0)}%
                 </motion.div>
               </div>
 
-              <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center justify-between text-[10px] sm:text-xs">
                 <span className="text-[var(--color-mercury)]/60">0%</span>
                 <span
                   className={cn(

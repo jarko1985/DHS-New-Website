@@ -16,7 +16,7 @@ export default function PromotionsGrid({ items }: { items: Promotion[] }) {
           transition: { staggerChildren: 0.06 },
         },
       }}
-      className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     >
       {items.map((p) => (
         <PromotionCard key={p.id} data={p} />

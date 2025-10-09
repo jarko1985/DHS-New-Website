@@ -11,10 +11,10 @@ export default function AssetsPage() {
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25 }}
-      className="w-full min-w-0 overflow-x-hidden p-3 sm:p-4 lg:p-6 space-y-4 sm:space-y-6 min-h-[calc(100vh-2rem)]"
+      className="w-full min-w-0 overflow-x-hidden px-3 py-4 sm:px-4 sm:py-5 lg:px-6 lg:py-6 space-y-4 sm:space-y-5 lg:space-y-6 min-h-[calc(100vh-2rem)]"
     >
       {/* Row 1: Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
         <BalanceCard />
         <WalletProgressCard />
       </div>

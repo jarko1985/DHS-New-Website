@@ -78,12 +78,12 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
       className="settings-section"
     >
       {/* Personal Information Section */}
-      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
-        <div className="space-y-2 mb-6">
-          <h3 className="text-lg font-semibold text-white">Personal Information</h3>
-          <p className="form-description">Update your personal details and contact information.</p>
+      <div className="rounded-lg sm:rounded-xl bg-white/[0.02] p-4 sm:p-5 md:p-6 border border-[#39FF14]/10 shadow-sm mb-4 sm:mb-5 md:mb-6">
+        <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5 md:mb-6">
+          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">Personal Information</h3>
+          <p className="form-description text-xs sm:text-sm">Update your personal details and contact information.</p>
         </div>
-        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
+        <div className="h-px w-full bg-[#39FF14]/20 mb-4 sm:mb-5 md:mb-6" />
 
       <div className="settings-grid">
         <div className="form-field">
@@ -128,12 +128,12 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
       </div>
 
       {/* Location Information Section */}
-      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
-        <div className="space-y-2 mb-6">
-          <h3 className="text-lg font-semibold text-white">Location Information</h3>
-          <p className="form-description">Your address and location details.</p>
+      <div className="rounded-lg sm:rounded-xl bg-white/[0.02] p-4 sm:p-5 md:p-6 border border-[#39FF14]/10 shadow-sm mb-4 sm:mb-5 md:mb-6">
+        <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5 md:mb-6">
+          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">Location Information</h3>
+          <p className="form-description text-xs sm:text-sm">Your address and location details.</p>
         </div>
-        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
+        <div className="h-px w-full bg-[#39FF14]/20 mb-4 sm:mb-5 md:mb-6" />
 
       <div className="settings-grid">
         <div className="form-field">
@@ -177,12 +177,12 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
       </div>
 
       {/* Account Settings Section */}
-      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
-        <div className="space-y-2 mb-6">
-          <h3 className="text-lg font-semibold text-white">Account Settings</h3>
-          <p className="form-description">Manage your account preferences and settings.</p>
+      <div className="rounded-lg sm:rounded-xl bg-white/[0.02] p-4 sm:p-5 md:p-6 border border-[#39FF14]/10 shadow-sm mb-4 sm:mb-5 md:mb-6">
+        <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5 md:mb-6">
+          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">Account Settings</h3>
+          <p className="form-description text-xs sm:text-sm">Manage your account preferences and settings.</p>
         </div>
-        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
+        <div className="h-px w-full bg-[#39FF14]/20 mb-4 sm:mb-5 md:mb-6" />
 
       <div className="form-field">
         <Label className="form-label">Deposit Assets</Label>
@@ -212,17 +212,17 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
       </div>
 
       {/* Notification Preferences Section */}
-      <div className="rounded-xl bg-white/[0.02] p-6 border border-[#39FF14]/10 shadow-sm mb-6">
-        <div className="space-y-2 mb-6">
-          <h3 className="text-lg font-semibold text-white">Notification Preferences</h3>
-          <p className="form-description">Choose which notifications you'd like to receive.</p>
+      <div className="rounded-lg sm:rounded-xl bg-white/[0.02] p-4 sm:p-5 md:p-6 border border-[#39FF14]/10 shadow-sm mb-4 sm:mb-5 md:mb-6">
+        <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5 md:mb-6">
+          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white">Notification Preferences</h3>
+          <p className="form-description text-xs sm:text-sm">Choose which notifications you'd like to receive.</p>
         </div>
-        <div className="h-px w-full bg-[#39FF14]/20 mb-6" />
+        <div className="h-px w-full bg-[#39FF14]/20 mb-4 sm:mb-5 md:mb-6" />
 
       <div className="form-field">
-        <div className="flex flex-wrap gap-6 rounded-xl border border-white/10 bg-white/5 p-6">
+        <div className="flex flex-wrap gap-4 sm:gap-5 md:gap-6 rounded-lg sm:rounded-xl border border-white/10 bg-white/5 p-4 sm:p-5 md:p-6">
           {(['promotions', 'exchange', 'withdrawals'] as const).map((k) => (
-            <label key={k} className="flex items-center gap-3 cursor-pointer group">
+            <label key={k} className="flex items-center gap-2.5 sm:gap-3 cursor-pointer group">
               <Checkbox
                 checked={form.watch(`depositTags.${k}`)}
                 onCheckedChange={(checked) =>
@@ -231,21 +231,21 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
                 className="data-[state=checked]:bg-[var(--color-elf-green)] data-[state=checked]:border-[var(--color-elf-green)] 
                           border-white/20 group-hover:border-[var(--color-elf-green)]/50 transition-colors"
               />
-              <span className="capitalize text-sm text-[var(--color-mercury)] font-medium group-hover:text-white transition-colors">
+              <span className="capitalize text-xs sm:text-sm text-[var(--color-mercury)] font-medium group-hover:text-white transition-colors">
                 {k}
               </span>
             </label>
           ))}
         </div>
-        <p className="form-description">Select the types of notifications you want to receive via email.</p>
+        <p className="form-description text-xs sm:text-sm">Select the types of notifications you want to receive via email.</p>
       </div>
       </div>
 
       {/* Actions Section */}
-      <div className="flex flex-col gap-4 sm:flex-row pt-6 border-t border-[#39FF14]/20">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 pt-4 sm:pt-5 md:pt-6 border-t border-[#39FF14]/20">
         <Button
           onClick={form.handleSubmit(onSubmit)}
-          className="btn-primary"
+          className="btn-primary w-full sm:w-auto text-sm sm:text-base"
         >
           Save & Update Profile
         </Button>
@@ -253,7 +253,7 @@ export default function ProfileTab({ user }: { user: UserProfile }) {
           type="button"
           variant="secondary"
           onClick={() => form.reset()}
-          className="btn-secondary"
+          className="btn-secondary w-full sm:w-auto text-sm sm:text-base"
         >
           Cancel Changes
         </Button>

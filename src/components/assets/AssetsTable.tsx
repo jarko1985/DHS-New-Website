@@ -39,6 +39,15 @@ function formatUSD(n: number) {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
+function formatCompactUSD(n: number) {
+  if (n >= 1000000) {
+    return `$${(n / 1000000).toFixed(2)}M`;
+  } else if (n >= 1000) {
+    return `$${(n / 1000).toFixed(2)}K`;
+  }
+  return formatUSD(n);
+}
+
 export const AssetsTable: React.FC = () => {
   return (
     <motion.div
@@ -48,45 +57,45 @@ export const AssetsTable: React.FC = () => {
       className="settings-section"
     >
       {/* Header Section */}
-      <div className="space-y-2 mb-6">
-        <h3 className="text-lg font-semibold text-white">Asset Balances</h3>
-        <p className="form-description">Overview of balances, orders, and 24H changes.</p>
+      <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
+        <h3 className="text-center md:text-left text-base sm:text-lg lg:text-xl font-semibold text-white">Asset Balances</h3>
+        <p className="text-center md:text-left form-description text-xs sm:text-sm">Overview of balances, orders, and 24H changes.</p>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-[var(--color-elf-green)]/20 flex items-center justify-center">
-              <div className="h-3 w-3 rounded-full bg-[var(--color-elf-green)]"></div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+        <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-2.5 sm:gap-3">
+            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-[var(--color-elf-green)]/20 flex items-center justify-center shrink-0">
+              <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[var(--color-elf-green)]"></div>
             </div>
-            <div>
-              <p className="text-sm text-white">Total Balance</p>
-              <p className="text-lg font-semibold text-white">${rows.reduce((acc, r) => acc + r.total, 0).toLocaleString()}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-[#e47a5a]/20 flex items-center justify-center">
-              <div className="h-3 w-3 rounded-full bg-[#e47a5a]"></div>
-            </div>
-            <div>
-              <p className="text-sm text-white">On Orders</p>
-              <p className="text-lg font-semibold text-white">${rows.reduce((acc, r) => acc + r.onOrders, 0).toLocaleString()}</p>
+            <div className="min-w-0 flex-1 text-center md:text-left">
+              <p className="text-xs sm:text-sm text-white/80 mb-0.5">Total Balance</p>
+              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">${rows.reduce((acc, r) => acc + r.total, 0).toLocaleString()}</p>
             </div>
           </div>
         </div>
 
-        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
-              <span className="text-white text-sm font-bold">A</span>
+        <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-2.5 sm:gap-3">
+            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-[#e47a5a]/20 flex items-center justify-center shrink-0">
+              <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#e47a5a]"></div>
             </div>
-            <div>
-              <p className="text-sm text-white">Available</p>
-              <p className="text-lg font-semibold text-white">${rows.reduce((acc, r) => acc + r.available, 0).toLocaleString()}</p>
+            <div className="min-w-0 flex-1 text-center md:text-left">
+              <p className="text-xs sm:text-sm text-white/80 mb-0.5">On Orders</p>
+              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">${rows.reduce((acc, r) => acc + r.onOrders, 0).toLocaleString()}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4 sm:col-span-2 lg:col-span-1">
+          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-2.5 sm:gap-3">
+            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+              <span className="text-white text-xs sm:text-sm font-bold">A</span>
+            </div>
+            <div className="min-w-0 flex-1 text-center md:text-left">
+              <p className="text-xs sm:text-sm text-white/80 mb-0.5">Available</p>
+              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">${rows.reduce((acc, r) => acc + r.available, 0).toLocaleString()}</p>
             </div>
           </div>
         </div>
@@ -105,95 +114,101 @@ export const AssetsTable: React.FC = () => {
           <div className="absolute -bottom-16 -left-16 w-40 h-40 rounded-full bg-[#39FF14]/5 blur-3xl" />
         </div>
 
-        <div className="w-full overflow-x-auto relative z-10">
-          <Table className="min-w-[720px]">
-            <TableHeader className="bg-[var(--color-blue)]/60">
-              <TableRow className="hover:bg-transparent border-b border-white/10">
-                <TableHead className="text-[var(--color-mercury)] font-medium py-4">Asset</TableHead>
-                <TableHead className="text-[var(--color-mercury)] font-medium py-4">On Orders</TableHead>
-                <TableHead className="text-[var(--color-mercury)] font-medium py-4">Available Balance</TableHead>
-                <TableHead className="text-[var(--color-mercury)] font-medium py-4">Total Balance</TableHead>
-                <TableHead className="text-[var(--color-mercury)] font-medium py-4 text-right">24H Market</TableHead>
-              </TableRow>
-            </TableHeader>
+        <div className="w-full overflow-x-auto relative z-10 -mx-2 sm:mx-0">
+          <div className="min-w-full inline-block align-middle px-2 sm:px-0">
+            <Table className="min-w-[640px] sm:min-w-[720px]">
+              <TableHeader className="bg-[var(--color-blue)]/60">
+                <TableRow className="hover:bg-transparent border-b border-white/10">
+                  <TableHead className="text-[var(--color-mercury)] font-medium py-3 sm:py-4 text-xs sm:text-sm">Asset</TableHead>
+                  <TableHead className="text-[var(--color-mercury)] font-medium py-3 sm:py-4 text-xs sm:text-sm">On Orders</TableHead>
+                  <TableHead className="text-[var(--color-mercury)] font-medium py-3 sm:py-4 text-xs sm:text-sm hidden md:table-cell">Available Balance</TableHead>
+                  <TableHead className="text-[var(--color-mercury)] font-medium py-3 sm:py-4 text-xs sm:text-sm">Total Balance</TableHead>
+                  <TableHead className="text-[var(--color-mercury)] font-medium py-3 sm:py-4 text-xs sm:text-sm text-right">24H</TableHead>
+                </TableRow>
+              </TableHeader>
 
-            <TableBody>
-              {rows.map((r, i) => {
-                const isPos = r.change24h >= 0;
-                return (
-                  <TableRow
-                    key={`${r.symbol}-${i}`}
-                    className="bg-transparent hover:bg-white/[0.03] data-[state=selected]:bg-white/[0.03] border-b border-white/5"
-                  >
-                    {/* Asset */}
-                    <TableCell className="text-[var(--color-mercury)] py-4">
-                      <div className="flex items-center gap-3">
-                        <div className="h-8 w-8 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
-                          <img
-                            src={r.image}
-                            alt={`${r.name} icon`}
-                            className="w-6 h-6 object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-
-                        <div className="min-w-0">
-                          <div className="text-[var(--color-mercury)] font-semibold">
-                            {r.name}
+              <TableBody>
+                {rows.map((r, i) => {
+                  const isPos = r.change24h >= 0;
+                  return (
+                    <TableRow
+                      key={`${r.symbol}-${i}`}
+                      className="bg-transparent hover:bg-white/[0.03] data-[state=selected]:bg-white/[0.03] border-b border-white/5"
+                    >
+                      {/* Asset */}
+                      <TableCell className="text-[var(--color-mercury)] py-3 sm:py-4">
+                        <div className="flex items-center gap-2 sm:gap-3">
+                          <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden shrink-0">
+                            <img
+                              src={r.image}
+                              alt={`${r.name} icon`}
+                              className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                              loading="lazy"
+                            />
                           </div>
-                          <div className="text-xs text-[var(--color-mercury)]/60">
-                            {r.symbol}
+
+                          <div className="min-w-0">
+                            <div className="text-[var(--color-mercury)] font-semibold text-xs sm:text-sm truncate">
+                              {r.name}
+                            </div>
+                            <div className="text-[10px] sm:text-xs text-[var(--color-mercury)]/60">
+                              {r.symbol}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </TableCell>
+                      </TableCell>
 
-                    {/* On Orders */}
-                    <TableCell className="text-[var(--color-mercury)] py-4">
-                      <div className="text-[var(--color-mercury)]">{formatUSD(r.onOrders)}</div>
-                    </TableCell>
+                      {/* On Orders */}
+                      <TableCell className="text-[var(--color-mercury)] py-3 sm:py-4">
+                        <div className="text-[var(--color-mercury)] text-xs sm:text-sm">
+                          <span className="hidden sm:inline">{formatUSD(r.onOrders)}</span>
+                          <span className="sm:hidden">{formatCompactUSD(r.onOrders)}</span>
+                        </div>
+                      </TableCell>
 
-                    {/* Available */}
-                    <TableCell className="text-[var(--color-mercury)] py-4">
-                      <div className="text-[var(--color-mercury)]">{formatUSD(r.available)}</div>
-                    </TableCell>
+                      {/* Available - Hidden on mobile */}
+                      <TableCell className="text-[var(--color-mercury)] py-3 sm:py-4 hidden md:table-cell">
+                        <div className="text-[var(--color-mercury)] text-xs sm:text-sm">{formatUSD(r.available)}</div>
+                      </TableCell>
 
-                    {/* Total */}
-                    <TableCell className="text-[var(--color-mercury)] py-4">
-                      <div className="text-[var(--color-mercury)] font-semibold">
-                        {formatUSD(r.total)}
-                      </div>
-                    </TableCell>
+                      {/* Total */}
+                      <TableCell className="text-[var(--color-mercury)] py-3 sm:py-4">
+                        <div className="text-[var(--color-mercury)] font-semibold text-xs sm:text-sm">
+                          <span className="hidden sm:inline">{formatUSD(r.total)}</span>
+                          <span className="sm:hidden">{formatCompactUSD(r.total)}</span>
+                        </div>
+                      </TableCell>
 
-                    {/* 24H */}
-                    <TableCell className="text-[var(--color-mercury)] py-4 text-right">
-                      <span
-                        className={cn(
-                          "text-sm font-semibold",
-                          isPos ? "text-[var(--color-elf-green)]" : "text-[#e47a5a]"
-                        )}
-                      >
-                        {isPos ? "+" : ""}
-                        {r.change24h.toFixed(2)}%
-                      </span>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
+                      {/* 24H */}
+                      <TableCell className="text-[var(--color-mercury)] py-3 sm:py-4 text-right">
+                        <span
+                          className={cn(
+                            "text-xs sm:text-sm font-semibold whitespace-nowrap",
+                            isPos ? "text-[var(--color-elf-green)]" : "text-[#e47a5a]"
+                          )}
+                        >
+                          {isPos ? "+" : ""}
+                          {r.change24h.toFixed(2)}%
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </div>
         </div>
       </div>
 
       {/* Actions */}
-      <div className="flex flex-col gap-4 sm:flex-row pt-6 border-t border-white/10">
-        <Button className="btn-primary">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 pt-4 sm:pt-6 border-t border-white/10">
+        <Button className="btn-primary w-full sm:w-auto text-sm sm:text-base">
           Refresh Balances
         </Button>
         <Button
           type="button"
           variant="secondary"
-          className="btn-secondary"
+          className="btn-secondary w-full sm:w-auto text-sm sm:text-base"
         >
           Export Data
         </Button>

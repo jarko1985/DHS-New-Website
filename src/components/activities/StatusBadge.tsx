@@ -32,13 +32,14 @@ export function StatusBadge({ status }: { status: TxStatus }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
+        "inline-flex items-center gap-1 sm:gap-1.5 rounded-full px-2 sm:px-2.5 py-0.5 sm:py-1 text-[10px] sm:text-xs font-medium whitespace-nowrap",
         cfg.bg,
         cfg.text
       )}
     >
-      {cfg.icon}
-      {cfg.label}
+      <span className="py-1 shrink-0">{cfg.icon}</span>
+      <span className="sm:inline">{cfg.label}</span>
+      {/* <span className="sm:hidden">{cfg.label.substring(0, 4)}</span> */}
     </span>
   );
 }

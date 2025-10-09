@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="pt-12 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
             {/* Logo Section */}
-            <div className="w-full flex flex-col gap-2">
+            <div className="w-full md:items-start items-center flex flex-col gap-2">
               <div className="relative w-32 mb-6">
                 <Image
                   src="/images/dhs_logo_transparent_bg.png"

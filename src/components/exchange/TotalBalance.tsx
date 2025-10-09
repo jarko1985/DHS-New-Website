@@ -18,7 +18,7 @@ export default function TotalBalance() {
     <motion.div
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
-      className="h-full rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5 flex flex-col"
+      className="rounded-2xl border bg-[var(--color-blue)]/55 border-[var(--color-negative)]/70 p-4 lg:p-5 flex flex-col"
     >
       <h3 className="text-lg font-semibold text-[var(--color-mercury)] mb-4 flex-shrink-0">Total Balance</h3>
       

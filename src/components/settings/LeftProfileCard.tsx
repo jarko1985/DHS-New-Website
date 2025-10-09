@@ -29,7 +29,7 @@ export default function LeftProfileCard({ user }: Props) {
       <Link
         href={href}
         aria-label={label}
-        className="group inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[var(--color-mercury)] transition hover:-translate-y-0.5 hover:border-[var(--color-elf-green)] hover:bg-[var(--color-elf-green)] hover:text-white"
+        className="group inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[var(--color-mercury)] transition hover:-translate-y-0.5 hover:border-[var(--color-elf-green)] hover:bg-[var(--color-elf-green)] hover:text-white"
       >
         {children}
       </Link>
@@ -41,7 +41,7 @@ export default function LeftProfileCard({ user }: Props) {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.35 }}
     >
-      <Card className="sticky top-4 border-0 bg-[var(--color-blue)]/40 p-6 text-[var(--color-mercury)] shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur overflow-hidden">
+      <Card className="lg:sticky lg:top-4 border-0 bg-[var(--color-blue)]/40 p-4 sm:p-5 md:p-6 text-[var(--color-mercury)] shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur overflow-hidden rounded-xl sm:rounded-2xl">
         {/* DHS Visual Elements - Background decorations */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Soft gradient lines */}
@@ -53,19 +53,19 @@ export default function LeftProfileCard({ user }: Props) {
           <div className="absolute -bottom-16 -left-16 w-40 h-40 rounded-full bg-[#39FF14]/5 blur-3xl" />
         </div>
 
-        <div className="flex flex-col items-center gap-4 relative z-10">
+        <div className="flex flex-col items-center gap-3 sm:gap-4 relative z-10">
           <div className="relative">
-            <Avatar className="h-28 w-28 ring-2 ring-white/10 transition hover:ring-[var(--color-elf-green)]">
+            <Avatar className="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 ring-2 ring-white/10 transition hover:ring-[var(--color-elf-green)]">
               <AvatarImage src={user.avatarUrl} alt={user.fullName} />
-              <AvatarFallback className="bg-[var(--color-blue)] text-xl">
+              <AvatarFallback className="bg-[var(--color-blue)] text-base sm:text-lg md:text-xl">
                 {initials}
               </AvatarFallback>
             </Avatar>
           </div>
 
           <div className="text-center">
-            <h2 className="text-lg font-semibold text-white">{user.fullName}</h2>
-            <p className="mt-0.5 text-sm text-[var(--color-mercury)]/70">
+            <h2 className="text-base sm:text-lg md:text-xl font-semibold text-white">{user.fullName}</h2>
+            <p className="mt-0.5 text-xs sm:text-sm text-[var(--color-mercury)]/70">
               {user.bio}
             </p>
           </div>
@@ -73,32 +73,32 @@ export default function LeftProfileCard({ user }: Props) {
           {user.about && (
             <>
               <div className="h-px w-full bg-white/10" />
-              <p className="text-xs leading-relaxed text-[var(--color-mercury)]/80">
+              <p className="text-xs sm:text-sm leading-relaxed text-[var(--color-mercury)]/80 text-center">
                 {user.about}
               </p>
             </>
           )}
 
           <div className="h-px w-full bg-white/10" />
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3">
             <IconLink href={user.socials.facebook} label="Facebook">
-              <Facebook className="h-4 w-4" />
+              <Facebook className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </IconLink>
             <IconLink href={user.socials.twitter} label="Twitter">
-              <Twitter className="h-4 w-4" />
+              <Twitter className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </IconLink>
             <IconLink href={user.socials.instagram} label="Instagram">
-              <Instagram className="h-4 w-4" />
+              <Instagram className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </IconLink>
             <IconLink href={user.socials.linkedin} label="LinkedIn">
-              <Linkedin className="h-4 w-4" />
+              <Linkedin className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </IconLink>
           </div>
 
           {/* Trust and Transparency Section */}
           <div className="h-px w-full bg-[#39FF14]/20" />
-          <div className="rounded-lg bg-[#39FF14]/5 border border-[#39FF14]/10 p-4 text-center">
-            <p className="text-xs leading-relaxed text-[var(--color-mercury)]/90">
+          <div className="rounded-lg bg-[#39FF14]/5 border border-[#39FF14]/10 p-3 sm:p-4 text-center">
+            <p className="text-xs sm:text-sm leading-relaxed text-[var(--color-mercury)]/90">
               🔒 Your personal information is encrypted and securely stored in compliance with{' '}
               <span className="font-semibold text-[#39FF14]">VARA</span> and{' '}
               <span className="font-semibold text-[#39FF14]">AML</span> standards.

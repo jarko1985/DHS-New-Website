@@ -40,21 +40,21 @@ export const NotificationCard: FC<Props> = memo(({ item }) => {
       exit={{ opacity: 0, y: -6 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
       className={cn(
-        "group rounded-xl border border-white/5 bg-[var(--color-blue)]/40",
+        "group rounded-lg sm:rounded-xl border border-white/5 bg-[var(--color-blue)]/40",
         "hover:bg-[var(--color-blue)]/60 shadow-sm hover:shadow-lg hover:shadow-black/30",
-        "p-3 sm:p-4 flex items-start gap-3 sm:gap-4"
+        "p-2.5 sm:p-3 md:p-4 flex items-start gap-2.5 sm:gap-3 md:gap-4"
       )}
     >
-      <Avatar className="h-11 w-11 ring-2 ring-white/10 group-hover:ring-[var(--color-elf-green)]/40 transition">
+      <Avatar className="h-9 w-9 sm:h-10 sm:w-10 md:h-11 md:w-11 ring-2 ring-white/10 group-hover:ring-[var(--color-elf-green)]/40 transition shrink-0">
         <AvatarImage src={item.user.avatarUrl} alt={item.user.name} />
-        <AvatarFallback className="bg-[var(--color-negative)] text-[var(--color-mercury)]">
+        <AvatarFallback className="bg-[var(--color-negative)] text-[var(--color-mercury)] text-xs sm:text-sm">
           {initials}
         </AvatarFallback>
       </Avatar>
 
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
-          <p className="text-sm sm:text-base leading-tight text-white">
+          <p className="text-xs sm:text-sm md:text-base leading-tight text-white">
             <span className="font-semibold ramp-text">{item.user.name}</span>{" "}
             <span className={cn("opacity-90", typeColors[item.type])}>
               {
@@ -68,23 +68,23 @@ export const NotificationCard: FC<Props> = memo(({ item }) => {
               }
             </span>
           </p>
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="text-xs text-[var(--color-warning)]">{timeAgo(item.createdAt)}</span>
+          <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 shrink-0">
+            <span className="text-[10px] sm:text-xs text-[var(--color-warning)] whitespace-nowrap">{timeAgo(item.createdAt)}</span>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="rounded-md p-1.5 hover:bg-white/5">
-                <MoreHorizontal className="h-4 w-4 text-[var(--color-mercury)]" />
+              <DropdownMenuTrigger className="rounded-md p-1 sm:p-1.5 hover:bg-white/5">
+                <MoreHorizontal className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--color-mercury)]" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-44">
-                <DropdownMenuItem>Mark as read</DropdownMenuItem>
-                <DropdownMenuItem>Mute user</DropdownMenuItem>
-                <DropdownMenuItem className="text-red-500">Delete</DropdownMenuItem>
+              <DropdownMenuContent align="end" className="w-40 sm:w-44">
+                <DropdownMenuItem className="text-xs sm:text-sm">Mark as read</DropdownMenuItem>
+                <DropdownMenuItem className="text-xs sm:text-sm">Mute user</DropdownMenuItem>
+                <DropdownMenuItem className="text-red-500 text-xs sm:text-sm">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
         </div>
 
-        <p className="mt-1.5 text-sm text-[var(--color-mercury)]/90">
+        <p className="mt-1 sm:mt-1.5 text-xs sm:text-sm text-[var(--color-mercury)]/90">
           {item.description}
         </p>
       </div>

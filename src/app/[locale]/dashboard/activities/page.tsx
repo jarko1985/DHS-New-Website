@@ -137,8 +137,8 @@ export default function ActivitiesPage() {
   }, [kind, range]);
 
   return (
-    <main className="min-h-screen bg-[var(--color-blue-whale)] px-4 py-6 md:px-8">
-      <section className="w-full space-y-4">
+    <main className="min-h-screen bg-[var(--color-blue-whale)] px-3 py-4 sm:px-4 sm:py-5 md:px-6 md:py-6 lg:px-8">
+      <section className="w-full space-y-4 sm:space-y-5 md:space-y-6">
         <FiltersBar
           activeKind={kind}
           onKindChange={setKind}

@@ -30,30 +30,30 @@ export const PaginationControls: FC<Props> = ({
   );
 
   return (
-    <div className="flex items-center justify-between gap-3">
-      <div className="text-sm text-[var(--color-mercury)]">
+    <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+      <div className="text-xs sm:text-sm text-[var(--color-mercury)] order-2 sm:order-1">
         Page <span className="font-semibold text-white">{page}</span> of{" "}
         <span className="font-semibold text-white">{totalPages}</span>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 order-1 sm:order-2 w-full sm:w-auto justify-center">
         <Button
           size="sm"
           variant="secondary"
-          className="bg-white/5 text-[var(--color-mercury)] hover:bg-white/10"
+          className="bg-white/5 text-[var(--color-mercury)] hover:bg-white/10 h-8 sm:h-9 px-2.5 sm:px-3 text-xs sm:text-sm"
           onClick={() => onPageChange(Math.max(1, page - 1))}
           disabled={page === 1}
         >
           Prev
         </Button>
 
-        <div className="hidden sm:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-1">
           {pages.map((p) => (
             <button
               key={p}
               onClick={() => onPageChange(p)}
               className={cn(
-                "px-3 py-1.5 rounded-lg border text-sm transition",
+                "px-2.5 sm:px-3 py-1.5 rounded-lg border text-xs sm:text-sm transition",
                 p === page
                   ? "ramp-bg text-white border-0 shadow"
                   : "bg-white/5 text-[var(--color-mercury)] border-white/10 hover:bg-white/10"
@@ -67,7 +67,7 @@ export const PaginationControls: FC<Props> = ({
         <Button
           size="sm"
           variant="secondary"
-          className="bg-white/5 text-[var(--color-text-white)] hover:bg-white/10"
+          className="bg-white/5 text-[var(--color-mercury)] hover:bg-white/10 h-8 sm:h-9 px-2.5 sm:px-3 text-xs sm:text-sm"
           onClick={() => onPageChange(Math.min(totalPages, page + 1))}
           disabled={page === totalPages}
         >
@@ -77,10 +77,10 @@ export const PaginationControls: FC<Props> = ({
         <select
           value={String(pageSize)}
           onChange={(e) => onPageSizeChange(Number(e.target.value))}
-          className="ml-2 bg-[var(--color-blue)]/60 border border-white/10 rounded-lg px-2 py-1 text-sm text-[var(--color-blue-whale)]"
+          className="ml-1 sm:ml-2 bg-blue-whale border border-white/10 rounded-lg px-1.5 sm:px-2 py-1 text-xs sm:text-sm text-white"
         >
           {[5, 10, 15, 20].map((s) => (
-            <option key={s} value={s}>
+            <option key={s} value={s} className="bg-[var(--color-blue-whale)]">
               {s}/page
             </option>
           ))}
