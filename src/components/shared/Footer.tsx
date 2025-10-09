@@ -11,7 +11,7 @@ export default function Footer() {
   const isArabic = locale === "ar";
   
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 w-full relative overflow-hidden">
+    <footer className="bg-gradient-to-br border-t border-white/10 from-slate-900 via-blue-900 to-slate-800 w-full relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')]"></div>
@@ -22,14 +22,14 @@ export default function Footer() {
         <div className="pt-12 pb-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
             {/* Logo Section */}
-            <div className="lg:col-span-1 flex flex-col items-center lg:items-start">
-              <div className="relative w-32 h-20 mb-6">
+            <div className="w-full flex flex-col gap-2">
+              <div className="relative w-32 mb-6">
                 <Image
-                  src="/images/dhs_logo.png"
+                  src="/images/dhs_logo_transparent_bg.png"
                   alt="DHS Logo"
                   width={128}
                   height={80}
-                  className="object-contain filter brightness-0 invert"
+                  className="object-contain"
                 />
               </div>
               <p className="text-white/80 text-sm leading-relaxed text-center lg:text-left max-w-xs">

@@ -13,7 +13,7 @@ export const footerMenuColumns: MenuColumn[] = [
     title: "DHS",
     items: [
       { label: "homepage", link: "/" },
-      { label: "exchange", link: "/exchange" },
+      { label: "trade", link: "/dashboard/trade" },
       { label: "about-us", link: "/about" },
     ],
   },
@@ -22,7 +22,7 @@ export const footerMenuColumns: MenuColumn[] = [
     items: [
       { label: "signup", link: "/signup" },
       { label: "signin", link: "/login" },
-      { label: "trading", link: "/trading" },
+      { label: "prices", link: "/prices" },
     ],
   },
   {

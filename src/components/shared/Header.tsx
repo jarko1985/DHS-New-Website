@@ -275,14 +275,14 @@ export default function Header() {
   return (
     <>
       <header className="bg-blue-whale">
-        <div className="relative xl:max-w-[70%] mx-auto flex items-center justify-between px-4 xl:px-0 py-4 z-40">
+        <div className="relative xl:max-w-[70%] mx-auto flex items-center justify-between px-4 xl:px-0 py-2 z-40">
           {/* Logo */}
           <Link
             href="/"
-            className="relative md:min-w-[150px] md:h-[60px] min-w-[100px] h-[50px]"
+            className="relative md:min-w-[150px] md:h-[100px] min-w-[100px] h-[50px]"
           >
             <Image
-              src="/images/dhs_logo.png"
+              src="/images/dhs_logo_transparent_bg.png"
               alt="Logo"
               fill
               className="object-contain"
