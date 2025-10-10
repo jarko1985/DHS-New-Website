@@ -7,8 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { TbCoinBitcoinFilled } from "react-icons/tb";
 import { SiBitcoinsv } from "react-icons/si";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 export const BalanceCard: React.FC = () => {
+  const { formatPrice } = useCurrency();
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -36,7 +38,7 @@ export const BalanceCard: React.FC = () => {
           </div>
 
           <div className="text-sm sm:text-base lg:text-lg font-medium text-[var(--color-elf-green)] mb-4 sm:mb-5 lg:mb-6">
-            11,032.24 USD
+            {formatPrice(11032.24)}
           </div>
 
           <div className="h-px w-full bg-[#39FF14]/20 mb-4 sm:mb-5 lg:mb-6" />

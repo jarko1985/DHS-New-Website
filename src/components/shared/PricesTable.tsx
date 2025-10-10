@@ -9,6 +9,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { useCurrency } from '@/context/PriceConversionContext';
 
 interface Coin {
   id: string;
@@ -35,6 +36,7 @@ export default function PricesTable() {
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [currentPage, setCurrentPage] = useState(1);
   const coinsPerPage = 10;
+  const { convertPrice, currency } = useCurrency();
 
   useEffect(() => {
     fetch(`/api/prices_table`)
@@ -55,8 +57,12 @@ export default function PricesTable() {
     });
   };
 
-  const format = (num: number, decimals = 2) =>
-    Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(num);
+  const format = (num: number, decimals = 2) => {
+    const converted = convertPrice(num);
+    return Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(converted);
+  };
+
+  const currencySymbol = currency === 'USD' ? '$' : 'AED ';
 
   const filteredCoins = coins.filter(coin => {
     if (!search) return true;
@@ -199,7 +205,7 @@ export default function PricesTable() {
                       </td>
                       <td className="py-2 sm:py-3 lg:py-4 px-2 sm:px-3 lg:px-4">
                         <span className="font-medium text-[#e2dedc] text-xs sm:text-sm">
-                          ${format(coin.price)}
+                          {currency === 'USD' ? `${currencySymbol}${format(coin.price)}` : `${format(coin.price)} ${currencySymbol}`}
                         </span>
                       </td>
                       <td className="py-2 sm:py-3 lg:py-4 px-2 sm:px-3 lg:px-4">
@@ -216,12 +222,12 @@ export default function PricesTable() {
                       </td>
                       <td className="py-2 sm:py-3 lg:py-4 px-2 sm:px-3 lg:px-4 hidden sm:table-cell">
                         <span className="text-[#e2dedc] text-xs sm:text-sm">
-                          ${format(coin.market_cap, 0)}
+                          {currency === 'USD' ? `${currencySymbol}${format(coin.market_cap, 0)}` : `${format(coin.market_cap, 0)} ${currencySymbol}`}
                         </span>
                       </td>
                       <td className="py-2 sm:py-3 lg:py-4 px-2 sm:px-3 lg:px-4 hidden md:table-cell">
                         <span className="text-[#e2dedc] text-xs sm:text-sm">
-                          ${format(coin.volume_24h, 0)}
+                          {currency === 'USD' ? `${currencySymbol}${format(coin.volume_24h, 0)}` : `${format(coin.volume_24h, 0)} ${currencySymbol}`}
                         </span>
                       </td>
                       <td className="py-2 sm:py-3 lg:py-4 px-2 sm:px-3 lg:px-4">

@@ -11,12 +11,11 @@ import {
 } from "@/components/ui/accordion";
 import { footerMenuColumns } from "@/data/menuColumns";
 import LanguageSwitcher from "./LanguageSwitcher";
+import CurrencySwitcher from "./CurrencySwitcher";
 import UserAvatar from "./UserAvatar";
 import { useLocale, useTranslations } from "next-intl";
 
-const navLinks = [
-  { name: "home", href: "/" },
-];
+const navLinks = [{ name: "home", href: "/" }];
 
 interface MegaMenuItem {
   id: string;
@@ -306,7 +305,9 @@ export default function Header() {
 
               {/* Dynamic Mega Menus */}
               {megaMenuSections.map((section) => {
-                const { firstColumn, secondColumn } = splitIntoColumns(section.items);
+                const { firstColumn, secondColumn } = splitIntoColumns(
+                  section.items
+                );
                 const isActive = activeMegaMenuId === section.id;
                 const currentState = megaMenuStates[section.id];
 
@@ -324,7 +325,9 @@ export default function Header() {
                       aria-haspopup="true"
                       aria-expanded={isActive}
                       className="transition-colors duration-200 hover:text-elf-green"
-                      onClick={() => setActiveMegaMenuId(isActive ? null : section.id)}
+                      onClick={() =>
+                        setActiveMegaMenuId(isActive ? null : section.id)
+                      }
                       onKeyDown={(e) => {
                         if (e.key === "Enter" || e.key === " ") {
                           e.preventDefault();
@@ -380,9 +383,14 @@ export default function Header() {
                                   <li
                                     key={item.id}
                                     className="group"
-                                    onMouseEnter={() => handleMenuItemHover(section.id, item)}
+                                    onMouseEnter={() =>
+                                      handleMenuItemHover(section.id, item)
+                                    }
                                   >
-                                    <Link href={item.href} className="block rounded-md px-1 transition">
+                                    <Link
+                                      href={item.href}
+                                      className="block rounded-md px-1 transition"
+                                    >
                                       <span className="group-hover:text-[#e47a5a] group-hover:font-semibold transition-all duration-300">
                                         {item.title}
                                       </span>
@@ -399,9 +407,14 @@ export default function Header() {
                                   <li
                                     key={item.id}
                                     className="group"
-                                    onMouseEnter={() => handleMenuItemHover(section.id, item)}
+                                    onMouseEnter={() =>
+                                      handleMenuItemHover(section.id, item)
+                                    }
                                   >
-                                    <Link href={item.href} className="block rounded-md px-1 transition">
+                                    <Link
+                                      href={item.href}
+                                      className="block rounded-md px-1 transition"
+                                    >
                                       <span className="group-hover:text-[#e47a5a] group-hover:font-semibold transition-all duration-300">
                                         {item.title}
                                       </span>
@@ -420,9 +433,10 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* User Avatar + Language Switcher + Mobile Menu Button */}
+          {/* User Avatar + Currency Switcher + Language Switcher + Mobile Menu Button */}
           <div className="hidden md:flex items-center gap-3">
             <UserAvatar />
+            <CurrencySwitcher />
             <LanguageSwitcher />
           </div>
         </div>

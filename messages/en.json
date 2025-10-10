@@ -106,6 +106,12 @@
     "signup": "Sign Up",
     "login": "Login"
   },
+  "CurrencySwitcher": {
+    "usd": "USD",
+    "aed": "AED",
+    "switchToUsd": "Switch to USD",
+    "switchToAed": "Switch to AED"
+  },
   "Profile": {
     "title": "Profile",
     "subtitle": "Manage your account settings and preferences",

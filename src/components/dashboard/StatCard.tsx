@@ -4,10 +4,11 @@ import { ResponsiveContainer, AreaChart, Area } from "recharts";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import CryptoIcon from "./CryptoIcon";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 type Props = {
   title: string;
-  amount: string;
+  amount: string | number;
   symbol: string;
   tone: "green" | "orange";
   data?: { v: number }[];
@@ -21,6 +22,14 @@ const defaultData = [
 export default function StatCard({ title, amount, symbol, tone, data = defaultData }: Props) {
   const stroke = tone === "green" ? "var(--color-elf-green)" : "#e47a5a";
   const fill = tone === "green" ? "rgba(17,127,96,0.25)" : "rgba(228,122,90,0.25)";
+  const { formatPrice } = useCurrency();
+  
+  // Parse amount if it's a string like "$47,515.00"
+  const numericAmount = typeof amount === 'string' 
+    ? parseFloat(amount.replace(/[$,]/g, ''))
+    : amount;
+  
+  const displayAmount = formatPrice(numericAmount);
 
   return (
     <motion.div
@@ -37,7 +46,7 @@ export default function StatCard({ title, amount, symbol, tone, data = defaultDa
         <div className="flex items-center justify-between">
           <div className="min-w-0 flex-1">
             <p className="text-xs sm:text-sm text-[var(--color-mercury)]/70 mb-1 truncate">{title}</p>
-            <p className="text-sm sm:text-base lg:text-lg font-semibold text-[var(--color-mercury)] truncate">{amount}</p>
+            <p className="text-sm sm:text-base lg:text-lg font-semibold text-[var(--color-mercury)] truncate">{displayAmount}</p>
           </div>
           <div className="ml-2 flex-shrink-0">
             <CryptoIcon symbol={symbol} size="sm" />

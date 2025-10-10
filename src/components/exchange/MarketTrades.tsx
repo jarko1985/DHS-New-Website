@@ -1,18 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 const trades = [
-  { time: "21:00", price: "$211.68", amount: "25,973 BTC", total: "$1,686.77" },
-  { time: "6:00", price: "$360.50", amount: "39,360 BTC", total: "$4,868.53" },
-  { time: "15:00", price: "$644.62", amount: "32,973 BTC", total: "$2,836.41" },
-  { time: "14:00", price: "$228.78", amount: "65,773 BTC", total: "$3,776.55" },
-  { time: "12:00", price: "$367.71", amount: "25,973 BTC", total: "$4,363.52" },
-  { time: "4:00", price: "$306.56", amount: "35,397 BTC", total: "$3,917.47" },
-  { time: "16:00", price: "$433.82", amount: "29,413 BTC", total: "$3,219.90" },
+  { time: "21:00", price: 211.68, amount: "25,973 BTC", total: 1686.77 },
+  { time: "6:00", price: 360.50, amount: "39,360 BTC", total: 4868.53 },
+  { time: "15:00", price: 644.62, amount: "32,973 BTC", total: 2836.41 },
+  { time: "14:00", price: 228.78, amount: "65,773 BTC", total: 3776.55 },
+  { time: "12:00", price: 367.71, amount: "25,973 BTC", total: 4363.52 },
+  { time: "4:00", price: 306.56, amount: "35,397 BTC", total: 3917.47 },
+  { time: "16:00", price: 433.82, amount: "29,413 BTC", total: 3219.90 },
 ];
 
 export default function MarketTrades() {
+  const { formatPrice } = useCurrency();
   return (
     <motion.div
       initial={{ opacity: 0, y: 6 }}
@@ -37,9 +39,9 @@ export default function MarketTrades() {
                 className="border-b border-[var(--color-negative)]/40 hover:bg-[var(--color-negative)]/30 transition-colors duration-200"
               >
                 <td className="py-3 pr-4 text-[var(--color-mercury)]/85">{t.time}</td>
-                <td className="py-3 pr-4 text-[var(--color-mercury)]/85">{t.price}</td>
+                <td className="py-3 pr-4 text-[var(--color-mercury)]/85">{formatPrice(t.price)}</td>
                 <td className="py-3 pr-4 text-[var(--color-mercury)]/85">{t.amount}</td>
-                <td className="py-3 pr-4 text-[var(--color-mercury)]/85">{t.total}</td>
+                <td className="py-3 pr-4 text-[var(--color-mercury)]/85">{formatPrice(t.total)}</td>
               </tr>
             ))}
           </tbody>

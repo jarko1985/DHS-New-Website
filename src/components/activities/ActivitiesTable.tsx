@@ -13,6 +13,7 @@ import {
   ChevronRight,
   ChevronLeft,
 } from "lucide-react";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 type Props = { rows: Transaction[] };
 
@@ -43,6 +44,7 @@ const formatTransactionType = (type: Transaction["type"]) => {
 export function ActivitiesTable({ rows }: Props) {
   const [currentPage, setCurrentPage] = React.useState(1);
   const itemsPerPage = 10;
+  const { formatPrice } = useCurrency();
 
   const totalPages = Math.ceil(rows.length / itemsPerPage);
   const paginatedRows = rows.slice(
@@ -107,7 +109,7 @@ export function ActivitiesTable({ rows }: Props) {
 
                 <td className="px-3 lg:px-4 py-3 lg:py-4 text-right">
                   <div className="font-semibold text-[var(--color-mercury)] text-xs lg:text-sm">
-                    {r.amountUSDT.toFixed(6)} <span className="text-white/40">USDT</span>
+                    {formatPrice(r.amountUSDT)}
                   </div>
                 </td>
               </motion.tr>
@@ -153,7 +155,7 @@ export function ActivitiesTable({ rows }: Props) {
                   {formatTxDate(r.date)}
                 </div>
                 <div className="font-semibold text-sm text-[var(--color-mercury)]">
-                  {r.amountUSDT.toFixed(6)} <span className="text-white/40 text-xs">USDT</span>
+                  {formatPrice(r.amountUSDT)}
                 </div>
               </div>
             </div>

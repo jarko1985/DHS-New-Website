@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import CryptoIcon from "../dashboard/CryptoIcon";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 type TradingPair = {
   pair: string;
@@ -29,12 +30,19 @@ export default function ExchangeHeader() {
   const [activeIdx, setActiveIdx] = useState(0); // for keyboard nav
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const btnRef = useRef<HTMLButtonElement | null>(null);
+  const { formatPrice: currencyFormatPrice, convertPrice, currency } = useCurrency();
 
-  const formatPrice = (price: number) =>
-    price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const formatPrice = (price: number) => {
+    const converted = convertPrice(price);
+    return converted.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
 
-  const formatVolume = (volume: number) =>
-    volume >= 1_000_000 ? `${(volume / 1_000_000).toFixed(1)}M` : volume.toLocaleString();
+  const formatVolume = (volume: number) => {
+    const converted = convertPrice(volume);
+    return converted >= 1_000_000 ? `${(converted / 1_000_000).toFixed(1)}M` : converted.toLocaleString();
+  };
+  
+  const currencySymbol = currency === 'USD' ? '$' : 'AED ';
 
   // Close on click outside
   useEffect(() => {
@@ -159,7 +167,7 @@ export default function ExchangeHeader() {
                               {pair.name}
                             </p>
                           </div>
-                          <p className="text-sm text-[var(--color-mercury)]/80">${formatPrice(pair.price)}</p>
+                          <p className="text-sm text-[var(--color-mercury)]/80">{currency === 'USD' ? `${currencySymbol}${formatPrice(pair.price)}` : `${formatPrice(pair.price)} ${currencySymbol}`}</p>
                         </button>
                       </li>
                     );
@@ -174,7 +182,7 @@ export default function ExchangeHeader() {
         <div className="hidden xs:flex flex-col justify-center rounded-xl px-3 py-2 border border-[var(--color-negative)]/70 bg-[var(--color-blue-whale)]/40 min-w-[140px]">
           <p className="text-[11px] leading-4 text-[var(--color-mercury)]/70">Price</p>
           <p className="text-sm font-semibold text-[var(--color-elf-green)] truncate">
-            ${formatPrice(selectedPair.price)}
+            {currency === 'USD' ? `${currencySymbol}${formatPrice(selectedPair.price)}` : `${formatPrice(selectedPair.price)} ${currencySymbol}`}
           </p>
         </div>
       </div>
@@ -195,12 +203,12 @@ export default function ExchangeHeader() {
 
         {/* 24h High */}
         <StatTile label="24h high" valueClass="text-[var(--color-orange)]">
-          ${formatPrice(selectedPair.high24h)}
+          {currency === 'USD' ? `${currencySymbol}${formatPrice(selectedPair.high24h)}` : `${formatPrice(selectedPair.high24h)} ${currencySymbol}`}
         </StatTile>
 
         {/* 24h Low */}
         <StatTile label="24h low" valueClass="text-[var(--color-elf-green)]">
-          ${formatPrice(selectedPair.low24h)}
+          {currency === 'USD' ? `${currencySymbol}${formatPrice(selectedPair.low24h)}` : `${formatPrice(selectedPair.low24h)} ${currencySymbol}`}
         </StatTile>
 
         {/* 24h Volume */}

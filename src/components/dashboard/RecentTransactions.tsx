@@ -2,19 +2,21 @@
 
 import { motion } from "framer-motion";
 import CryptoIcon from "./CryptoIcon";
+import { useCurrency } from "@/context/PriceConversionContext";
 
-type Tx = { name: string; symbol: string; time: string; amount: string };
+type Tx = { name: string; symbol: string; time: string; amount: number };
 
 const txs: Tx[] = [
-  { name: "Bitcoin",   symbol: "BTC", time: "Today, 13:50 PM", amount: "$47,515" },
-  { name: "Ethereum",  symbol: "ETH", time: "Today, 13:50 PM", amount: "$3,401"  },
-  { name: "Litecoin",  symbol: "LTC", time: "Today, 13:50 PM", amount: "$31,401" },
-  { name: "Dogecoin",  symbol: "DOGE", time: "Today, 13:50 PM", amount: "$2,65"   },
-  { name: "Ethereum",  symbol: "ETH", time: "Today, 13:50 PM", amount: "$22,65"  },
-  { name: "Tether",    symbol: "USDT", time: "Today, 13:50 PM", amount: "$120,83" },
+  { name: "Bitcoin",   symbol: "BTC", time: "Today, 13:50 PM", amount: 47515 },
+  { name: "Ethereum",  symbol: "ETH", time: "Today, 13:50 PM", amount: 3401  },
+  { name: "Litecoin",  symbol: "LTC", time: "Today, 13:50 PM", amount: 31401 },
+  { name: "Dogecoin",  symbol: "DOGE", time: "Today, 13:50 PM", amount: 265   },
+  { name: "Ethereum",  symbol: "ETH", time: "Today, 13:50 PM", amount: 2265  },
+  { name: "Tether",    symbol: "USDT", time: "Today, 13:50 PM", amount: 12083 },
 ];
 
 export default function RecentTransactions() {
+  const { formatPrice } = useCurrency();
   return (
     <motion.div
       initial={{ opacity: 0, y: 6 }}
@@ -39,7 +41,7 @@ export default function RecentTransactions() {
                 <p className="text-xs text-[var(--color-mercury)]/60 truncate">{t.time}</p>
               </div>
             </div>
-            <span className="text-xs sm:text-sm font-semibold text-[var(--color-mercury)] ml-2 whitespace-nowrap">{t.amount}</span>
+            <span className="text-xs sm:text-sm font-semibold text-[var(--color-mercury)] ml-2 whitespace-nowrap">{formatPrice(t.amount)}</span>
           </li>
         ))}
         </ul>

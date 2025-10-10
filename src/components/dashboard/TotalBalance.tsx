@@ -2,6 +2,7 @@
 
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 const percent = 89;
 const chartData = [
@@ -10,6 +11,7 @@ const chartData = [
 ];
 
 export default function TotalBalance() {
+  const { formatPrice } = useCurrency();
   const green = "var(--color-elf-green)";
   const orange = "#e47a5a";
   const ring = "var(--color-negative)";
@@ -54,7 +56,7 @@ export default function TotalBalance() {
       <div className="text-center space-y-2 sm:space-y-3 mt-3 sm:mt-4">
         <div>
           <p className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-[var(--color-mercury)]">0.3475948</p>
-          <p className="text-xs sm:text-sm text-[var(--color-mercury)]/70">11,032.24 USD</p>
+          <p className="text-xs sm:text-sm text-[var(--color-mercury)]/70">{formatPrice(11032.24)}</p>
         </div>
         <div>
           <button className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg bg-[var(--color-elf-green)] text-white hover:bg-[var(--color-elf-green)]/90 transition-all duration-200 text-xs sm:text-sm font-medium shadow-[0_8px_20px_-10px_rgba(17,127,96,0.4)]">

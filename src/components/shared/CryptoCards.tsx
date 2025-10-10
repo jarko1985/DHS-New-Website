@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState, useId } from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
+import { useCurrency } from '@/context/PriceConversionContext';
 
 interface CryptoCard {
   id: string;
@@ -17,6 +18,7 @@ interface CryptoCard {
 export default function CryptoCards() {
   const [cards, setCards] = useState<CryptoCard[]>([]);
   const [loading, setLoading] = useState(true);
+  const { formatPrice: currencyFormatPrice } = useCurrency();
 
   useEffect(() => {
     let active = true;
@@ -39,13 +41,7 @@ export default function CryptoCards() {
     };
   }, []);
 
-  const formatPrice = (price: number) =>
-    new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(price);
+  const formatPrice = (price: number) => currencyFormatPrice(price);
 
   const getChartColor = (index: number) => (index % 2 ? '#117f60' : '#e47a5a');
 

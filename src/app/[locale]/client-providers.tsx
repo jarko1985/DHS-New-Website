@@ -2,10 +2,12 @@
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
+import { PriceConversionProvider } from '@/context/PriceConversionContext';
 
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <SessionProvider>
+      <PriceConversionProvider>
       {/* <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange> */}
         {children}
         <Toaster
@@ -59,6 +61,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
           }}
         />
       {/* </ThemeProvider> */}
+      </PriceConversionProvider>
     </SessionProvider>
   );
 }

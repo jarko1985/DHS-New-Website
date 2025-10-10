@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 type AssetRow = {
   symbol: string;
@@ -35,20 +36,28 @@ const rows: AssetRow[] = [
   { symbol: "XRP", name: "XRP", onOrders: 34012.22, available: 88045.77, total: 122057.99, change24h: 1.14, image: "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png" },
 ];
 
-function formatUSD(n: number) {
-  return n.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
-
-function formatCompactUSD(n: number) {
-  if (n >= 1000000) {
-    return `$${(n / 1000000).toFixed(2)}M`;
-  } else if (n >= 1000) {
-    return `$${(n / 1000).toFixed(2)}K`;
-  }
-  return formatUSD(n);
-}
-
 export const AssetsTable: React.FC = () => {
+  const { formatPrice, currency, convertPrice } = useCurrency();
+
+  const formatUSD = (n: number) => {
+    return formatPrice(n);
+  };
+
+  const formatCompactUSD = (n: number) => {
+    const converted = convertPrice(n);
+    const symbol = currency === "USD" ? "$" : "AED";
+    
+    if (converted >= 1000000) {
+      return currency === "USD" 
+        ? `${symbol}${(converted / 1000000).toFixed(2)}M`
+        : `${(converted / 1000000).toFixed(2)}M ${symbol}`;
+    } else if (converted >= 1000) {
+      return currency === "USD"
+        ? `${symbol}${(converted / 1000).toFixed(2)}K`
+        : `${(converted / 1000).toFixed(2)}K ${symbol}`;
+    }
+    return formatUSD(n);
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
@@ -71,7 +80,7 @@ export const AssetsTable: React.FC = () => {
             </div>
             <div className="min-w-0 flex-1 text-center md:text-left">
               <p className="text-xs sm:text-sm text-white/80 mb-0.5">Total Balance</p>
-              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">${rows.reduce((acc, r) => acc + r.total, 0).toLocaleString()}</p>
+              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">{formatPrice(rows.reduce((acc, r) => acc + r.total, 0), false)}</p>
             </div>
           </div>
         </div>
@@ -83,7 +92,7 @@ export const AssetsTable: React.FC = () => {
             </div>
             <div className="min-w-0 flex-1 text-center md:text-left">
               <p className="text-xs sm:text-sm text-white/80 mb-0.5">On Orders</p>
-              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">${rows.reduce((acc, r) => acc + r.onOrders, 0).toLocaleString()}</p>
+              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">{formatPrice(rows.reduce((acc, r) => acc + r.onOrders, 0), false)}</p>
             </div>
           </div>
         </div>
@@ -95,7 +104,7 @@ export const AssetsTable: React.FC = () => {
             </div>
             <div className="min-w-0 flex-1 text-center md:text-left">
               <p className="text-xs sm:text-sm text-white/80 mb-0.5">Available</p>
-              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">${rows.reduce((acc, r) => acc + r.available, 0).toLocaleString()}</p>
+              <p className="text-base sm:text-lg lg:text-xl font-semibold text-white truncate">{formatPrice(rows.reduce((acc, r) => acc + r.available, 0), false)}</p>
             </div>
           </div>
         </div>

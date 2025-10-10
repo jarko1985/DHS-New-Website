@@ -5,22 +5,24 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
+import { useCurrency } from "@/context/PriceConversionContext";
 
 type Bar = {
   id: string;
   label: string;
   valuePct: number; // 0-100
-  subtitle?: string; // optional right-side caption
+  subtitleAmount?: number; // USD amount
   tone?: "primary" | "orange";
 };
 
 const BARS: Bar[] = [
-  { id: "exchange", label: "Exchange Balance", valuePct: 72, subtitle: "$124,580.40", tone: "primary" },
-  { id: "funding", label: "Funding Balance", valuePct: 48, subtitle: "$83,910.22", tone: "orange" },
+  { id: "exchange", label: "Exchange Balance", valuePct: 72, subtitleAmount: 124580.40, tone: "primary" },
+  { id: "funding", label: "Funding Balance", valuePct: 48, subtitleAmount: 83910.22, tone: "orange" },
 ];
 
 export const WalletProgressCard: React.FC = () => {
   const [animatedValues, setAnimatedValues] = React.useState<number[]>(BARS.map(() => 0));
+  const { formatPrice } = useCurrency();
 
   React.useEffect(() => {
     // Animate the bars gradually after mount
@@ -60,7 +62,7 @@ export const WalletProgressCard: React.FC = () => {
             <div key={bar.id} className="space-y-2 sm:space-y-2.5 lg:space-y-3">
               <div className="flex items-center justify-between text-xs sm:text-sm">
                 <span className="text-[var(--color-mercury)]/90 truncate pr-2">{bar.label}</span>
-                {bar.subtitle ? (
+                {bar.subtitleAmount !== undefined ? (
                   <span
                     className={cn(
                       "font-medium shrink-0",
@@ -69,7 +71,7 @@ export const WalletProgressCard: React.FC = () => {
                         : "text-[var(--color-elf-green)]"
                     )}
                   >
-                    {bar.subtitle}
+                    {formatPrice(bar.subtitleAmount)}
                   </span>
                 ) : null}
               </div>
