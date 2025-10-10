@@ -77,8 +77,8 @@ export async function sendVerificationEmail(email: string, token: string) {
   const verifyUrl = `${baseUrl}/en/verify-email?token=${token}&email=${encodeURIComponent(email)}`;
 
   // Assets must be absolute URLs for email clients
-  const logoUrl = `${baseUrl}/images/mccoin_logo_light.png`;
-  const envelopeUrl = `${baseUrl}/images/email_icon.svg`; // <- add this asset or change path
+  const logoUrl = `https://www.dhs.exchange/images/dhs_logo.png`;
+  const envelopeUrl = `https://www.dhs.exchange/images/email-icon.png`; // <- add this asset or change path
 
   const newsUrl = `${baseUrl}/top-news`;
   const aboutUrl = `${baseUrl}/about`;
@@ -289,7 +289,7 @@ export async function sendPasswordResetEmail(email: string, token: string) {
     process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
   }/en/reset-password?token=${token}&email=${encodeURIComponent(email)}`;
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mc-coin-new-website.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.dhs.exchange';
 
   // Social media URLs
   const fbUrl = 'https://facebook.com/mccoin';
@@ -338,7 +338,7 @@ export async function sendPasswordResetEmail(email: string, token: string) {
                   <tr>
                     <td align="left" valign="middle">
                       <a href="${baseUrl}" target="_blank" style="display:inline-block;">
-                        <img src="${baseUrl}/images/mccoin_logo_light.png" width="96" alt="McCoin" style="display:block;height:auto;">
+                        <img src="https://www.dhs.exchange/images/dhs_logo.png" width="96" alt="McCoin" style="display:block;height:auto;">
                       </a>
                     </td>
                     <td align="right">&nbsp;</td>
@@ -350,9 +350,9 @@ export async function sendPasswordResetEmail(email: string, token: string) {
             <!-- User icon -->
             <tr>
               <td bgcolor="#DAE6EA" align="center" style="padding:28px 24px 0;">
-                <img src="${baseUrl}/images/user.svg" width="96" alt="User Icon" style="display:block;height:auto;">
+                <img src="https://www.dhs.exchange/images/user-icon.png" width="96" alt="User Icon" style="display:block;height:auto;">
                 <!-- If you only have SVG, some clients will show it, Outlook desktop won't:
-                <img src="${baseUrl}/images/user.svg" width="96" alt="User Icon" style="display:block;height:auto;">
+                <img src="https://www.dhs.exchange/images/user-icon.png" width="96" alt="User Icon" style="display:block;height:auto;">
                 -->
               </td>
             </tr>
@@ -499,7 +499,7 @@ export async function sendContactFormEmail(formData: {
             <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
               <tr>
                 <td style="background: linear-gradient(135deg, #07153B 0%, #1A0A2E 100%); padding: 30px; border-radius: 10px 10px 0 0;">
-                  <img src="https://mc-coin-new-website.vercel.app/images/logo1.png" alt="McCoin Logo" style="max-width: 150px; margin-bottom: 20px; display: block;">
+                  <img src="https://www.dhs.exchange/images/dhs_logo.png" alt="McCoin Logo" style="max-width: 150px; margin-bottom: 20px; display: block;">
                   <h1 style="color: #EC3B3B; margin-bottom: 20px; font-size: 28px; margin-top: 0;">New Contact Form Submission</h1>
                 </td>
               </tr>
@@ -572,7 +572,7 @@ export async function sendContactAcknowledgmentEmail(formData: {
   message: string;
 }) {
   const { name, email } = formData;
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mc-coin-new-website.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.dhs.exchange';
 
   // Social media URLs
   const fbUrl = 'https://facebook.com/mccoin';
@@ -621,7 +621,7 @@ export async function sendContactAcknowledgmentEmail(formData: {
                   <tr>
                     <td align="left" valign="middle">
                       <a href="${baseUrl}" target="_blank" style="display:inline-block;">
-                        <img src="${baseUrl}/images/mccoin_logo_light.png" width="120" alt="McCoin" style="display:block;height:auto;">
+                        <img src="https://www.dhs.exchange/images/dhs_logo.png" width="120" alt="McCoin" style="display:block;height:auto;">
                       </a>
                     </td>
                     <td align="right">&nbsp;</td>
@@ -633,7 +633,7 @@ export async function sendContactAcknowledgmentEmail(formData: {
             <!-- Handshake icon -->
             <tr>
               <td bgcolor="#DAE6EA" align="center" style="padding:28px 24px 0;">
-                <img src="${baseUrl}/images/handshake_icon.png" width="120" alt="Handshake" style="display:block;height:auto;">
+                <img src="https://www.dhs.exchange/images/handshake-icon.png" width="120" alt="Handshake" style="display:block;height:auto;">
               </td>
             </tr>
 
@@ -748,7 +748,7 @@ export async function sendContactAcknowledgmentEmail(formData: {
  * @param userName - Optional user name for personalization
  */
 export async function sendWelcomeEmail(email: string, userName?: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mc-coin-new-website.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.dhs.exchange';
 
   // Social media URLs
   const fbUrl = 'https://facebook.com/mccoin';
@@ -797,7 +797,7 @@ export async function sendWelcomeEmail(email: string, userName?: string) {
                   <tr>
                     <td align="left" valign="middle">
                       <a href="${baseUrl}" target="_blank" style="display:inline-block;">
-                        <img src="${baseUrl}/images/mccoin_logo_light.png" width="96" alt="McCoin" style="display:block;height:auto;">
+                        <img src="https://www.dhs.exchange/images/dhs_logo.png" width="96" alt="McCoin" style="display:block;height:auto;">
                       </a>
                     </td>
                     <td align="right">&nbsp;</td>
@@ -809,7 +809,7 @@ export async function sendWelcomeEmail(email: string, userName?: string) {
             <!-- Decorative coin -->
             <tr>
               <td bgcolor="#DAE6EA" align="center" style="padding:24px 24px 8px;">
-                <img src="${baseUrl}/images/coin.svg" width="120" alt="" style="display:block;height:auto;">
+                <img src="https://www.dhs.exchange/images/coin-icon.png" width="120" alt="" style="display:block;height:auto;">
               </td>
             </tr>
 
