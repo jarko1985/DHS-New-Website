@@ -348,3 +348,13 @@ html {
   </svg>") center / contain no-repeat;
   -webkit-mask: var(--mask);
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

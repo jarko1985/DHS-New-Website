@@ -281,7 +281,7 @@ export default function Header() {
             className="relative md:min-w-[150px] md:h-[100px] min-w-[100px] h-[50px]"
           >
             <Image
-              src="/images/dhs_logo_transparent_bg.png"
+              src="/images/dhs_logo.png"
               alt="Logo"
               fill
               className="object-contain"
