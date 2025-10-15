@@ -53,7 +53,7 @@ export const footerMenuColumns: MenuColumn[] = [
       { label: "contact_us", link: "/contact" },
       { label: "complaints_dispute", link: "/complaints-dispute" },
       { label: "faq", link: "/faq" },
-      { label: "newsletter_blog", link: "/newsletter-blog" },
+      { label: "newsletter_blog", link: "/blog" },
       { label: "support_tickets", link: "/support-tickets" },
     ],
   },
