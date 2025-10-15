@@ -29,10 +29,14 @@ export type SocialLinks = {
   
   export type DeviceLog = {
     id: string;
+    deviceId: string;
     when: string; // e.g., "Dec 2, 1:30pm"
     device: string; // e.g., "iMac Pro"
     location: string; // e.g., "United States"
     ip: string;
     active: boolean;
+    lastSeen: string;
+    firstSeen: string;
+    isCurrentDevice: boolean;
   };
   

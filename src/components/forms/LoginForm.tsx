@@ -209,12 +209,12 @@ export default function LoginPage() {
   }
   
   return (
-    <div className="min-h-screen flex md:flex-row flex-col items-center justify-center bg-[#07153B] text-white px-4">
+    <div className="min-h-screen flex md:flex-row flex-col items-center md:items-start md:pt-8 pt-4 justify-center bg-[#07153B] text-white px-3 sm:px-4">
   <motion.div
     initial={{ y: 30, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 1, ease: 'easeOut' }}
-    className="w-full max-w-md md:h-[600px] p-6 space-y-6 shadow-2xl backdrop-blur-sm"
+    className="w-full max-w-sm sm:max-w-md min-h-[450px] sm:min-h-[500px] md:h-[600px] p-4 sm:p-6 space-y-4 sm:space-y-6 shadow-2xl backdrop-blur-sm"
     style={{
         background: 'linear-gradient(90deg, #b22f26, #e47a5a, #b22f26)',
       boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.3)',
@@ -225,83 +225,81 @@ export default function LoginPage() {
     {isArabic ? (
       <Link
         href={`/${isArabic ? 'ar' : 'en'}`}
-        className="flex items-center text-sm text-[#e2dedc] hover:text-white transition-colors"
+        className="flex items-center text-xs sm:text-sm text-[#e2dedc] hover:text-white transition-colors"
         style={{
           direction: isArabic ? 'rtl' : 'ltr',
         }}
       >
-        <FaArrowRight className="ml-1 w-4 h-4" />
+        <FaArrowRight className="ml-1 w-3 h-3 sm:w-4 sm:h-4" />
         {t('back')}
       </Link>
     ) : (
       <Link
         href={`/${isArabic ? 'ar' : 'en'}`}
-        className="flex items-center text-sm text-[#e2dedc] hover:text-white transition-colors"
+        className="flex items-center text-xs sm:text-sm text-[#e2dedc] hover:text-white transition-colors"
         style={{
           direction: isArabic ? 'rtl' : 'ltr',
         }}
       >
-        <FaArrowLeft className="mr-1 w-4 h-4" />
+        <FaArrowLeft className="mr-1 w-3 h-3 sm:w-4 sm:h-4" />
         {t('back')}
       </Link>
     )}
 
     {/* Headings */}
-    <div className="space-y-2">
-      <h1 className="text-3xl font-bold text-[#0d1635]">
+    <div className="space-y-1 sm:space-y-2">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0d1635] leading-tight text-center md:text-left">
         {t('title4_1')} McC<span className="text-[#e2dedc]">o</span>in
       </h1>
-      {/* <h1 className="text-3xl font-bold text-white">{t('title6')}</h1> */}
-      <p className="text-sm text-[#e2dedc]">{t('title5')}</p>
+      <p className="text-xs sm:text-sm text-[#e2dedc] text-center md:text-left">{t('title5')}</p>
     </div>
-    <div className="relative h-[400px] w-[400px]">
-      <Image src="/images/login_pic.png" alt="logo" fill />
+    <div className="relative h-[300px] w-full sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] mx-auto">
+      <Image src="/images/login_pic.png" alt="logo" fill className="object-contain" />
     </div>
   </motion.div>
   <motion.div
     initial={{ y: 30, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 1, ease: 'easeOut' }}
-    className="w-full h-[600px] max-w-md pt-12 px-6 space-y-6 bg-[#e2dedc] shadow-xl"
+    className="w-full max-w-sm sm:max-w-md min-h-[500px] sm:h-[600px] pt-6 sm:pt-8 md:pt-12 px-4 sm:px-6 pb-6 sm:pb-8 space-y-4 sm:space-y-6 bg-[#e2dedc] shadow-xl"
   >
     <div>
-      {/* <Image src="/images/login_pic.svg" alt="logo" width={40} height={40} /> */}
-      <h2 className="text-2xl mt-2 text-[#117f60]">
+      <h2 className="text-lg sm:text-xl md:text-2xl mt-1 sm:mt-2 text-[#117f60] leading-tight text-center md:text-left">
         {t('title1')} <span className="text-[#e47a5a]">{t('title2')}</span>
       </h2>
     </div>
 
     {!show2FAInput ? (
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        <div className="flex flex-col gap-2">
-          <label className="text-[#117f60]">{t('email_label')}</label>
-          <Input className="placeholder:italic placeholder:border border-[#4b4f51]"  type="email" placeholder={t('email')} {...register('email')} />
-          {errors.email && <p className="text-[#e47a5a] text-sm">{errors.email.message}</p>}
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4 md:space-y-5">
+        <div className="flex flex-col gap-1.5 sm:gap-2">
+          <label className="text-[#117f60] text-xs sm:text-sm md:text-base text-center md:text-left">{t('email_label')}</label>
+          <Input className="placeholder:italic placeholder:text-xs sm:placeholder:text-sm md:placeholder:text-base placeholder:border border-[#4b4f51] h-10 sm:h-11 text-sm sm:text-base px-3"  type="email" placeholder={t('email')} {...register('email')} />
+          {errors.email && <p className="text-[#e47a5a] text-xs sm:text-sm">{errors.email.message}</p>}
         </div>
 
-        <div className="flex flex-col gap-2">
-          <label className="text-[#117f60]">{t('password_label')}</label>
+        <div className="flex flex-col gap-1.5 sm:gap-2">
+          <label className="text-[#117f60] text-xs sm:text-sm md:text-base text-center md:text-left">{t('password_label')}</label>
           <div className="relative">
             <Input
               type={showPassword ? 'text' : 'password'}
               placeholder={t('password')}
               {...register('password')}
-              className="placeholder:italic placeholder:border border-[#4b4f51]"
+              className="placeholder:italic placeholder:text-xs sm:placeholder:text-sm md:placeholder:text-base placeholder:border border-[#4b4f51] h-10 sm:h-11 text-sm sm:text-base px-3"
             />
             <div
               className={`absolute ${
-                isArabic ? 'left-3' : 'right-3'
-              } top-2.5 cursor-pointer text-white`}
+                isArabic ? 'left-2 sm:left-3' : 'right-2 sm:right-3'
+              } top-2 sm:top-2.5 cursor-pointer text-white`}
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? <EyeOff color="#e47a5a" size={20} /> : <Eye color="#e47a5a" size={20} />}
+              {showPassword ? <EyeOff color="#e47a5a" size={18} className="sm:w-5 sm:h-5" /> : <Eye color="#e47a5a" size={18} className="sm:w-5 sm:h-5" />}
             </div>
           </div>
-          {errors.password && <p className="text-[#e47a5a] text-sm">{errors.password.message}</p>}
+          {errors.password && <p className="text-[#e47a5a] text-xs sm:text-sm">{errors.password.message}</p>}
         </div>
 
         <div
-          className={`flex gap-x-1 ${isArabic ? 'justify-start' : 'justify-start'}`}
+          className={`flex flex-wrap gap-x-1 text-xs justify-center sm:text-sm ${isArabic ? 'md:justify-start' : 'md:justify-start'}`}
           style={{
             direction: isArabic ? 'rtl' : 'ltr',
           }}
@@ -310,53 +308,52 @@ export default function LoginPage() {
           <p className="text-[#117f60]">{t('forgotPassword1_2')}</p>
           <Link
             href={`/${isArabic ? 'ar' : 'en'}/forgot-password`}
-            className="text-[#e47a5a] text-sm underline"
+            className="text-[#e47a5a] underline"
           >
              {t('forgotPassword1_3')}
           </Link>
         </div>
         <Button
-          className="w-full bg-[#e47a5a] hover:bg-[#e47a5a] transition-all duration-200 cursor-pointer"
+          className="w-full bg-[#e47a5a] hover:bg-[#e47a5a] transition-all duration-200 cursor-pointer h-10 sm:h-11 text-sm sm:text-base"
           type="submit"
           disabled={loading}
         >
-          {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : t('button')}
+          {loading ? <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" /> : t('button')}
         </Button>
 
-        <p className="text-center text-sm text-[#DAE6EA]">
-          {/* {t('noAccount')} */}
+        <p className="text-center text-xs sm:text-sm text-[#DAE6EA]">
           <Link href={`/${isArabic ? 'ar' : 'en'}/signup`} className="text-[#e47a5a] underline">
             {t('registerNow')}
           </Link>
         </p>
       </form>
     ) : (
-      <div className="space-y-5">
-        <div className="bg-[#117f60] bg-opacity-10 border border-[#117f60] rounded-md p-4">
-          <p className="text-[#117f60] text-sm font-medium">
+      <div className="space-y-3 sm:space-y-4 md:space-y-5">
+        <div className="bg-[#117f60] bg-opacity-10 border border-[#117f60] rounded-md p-3 sm:p-4">
+          <p className="text-[#117f60] text-xs sm:text-sm font-medium">
             🔒 {twoFA('enter_code_instruction')}
           </p>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <label className="text-[#117f60] font-medium">{twoFA('verification_code_label')}</label>
+        <div className="flex flex-col gap-1.5 sm:gap-2">
+          <label className="text-[#117f60] text-xs sm:text-sm md:text-base font-medium">{twoFA('verification_code_label')}</label>
           <Input
             type="text"
             placeholder={twoFA('verification_code_placeholder')}
             value={twoFAToken}
             onChange={(e) => setTwoFAToken(e.target.value.replace(/\D/g, '').slice(0, 6))}
             maxLength={6}
-            className="text-center text-lg tracking-widest border-[#117f60] placeholder:italic text-[#0f1415] bg-[#e2dedc]"
+            className="text-center text-base sm:text-lg tracking-widest border-[#117f60] placeholder:italic placeholder:text-sm sm:placeholder:text-base text-[#0f1415] bg-[#e2dedc] h-12 sm:h-14"
           />
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-col xs:flex-row gap-2">
           <Button
             onClick={handle2FAVerification}
             disabled={loading || twoFAToken.length !== 6}
-            className="flex-1 bg-[#e47a5a] hover:bg-[#e47a5a] transition-all duration-200"
+            className="flex-1 bg-[#e47a5a] hover:bg-[#e47a5a] transition-all duration-200 h-10 sm:h-11 text-sm sm:text-base"
           >
-            {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : twoFA('verify_button')}
+            {loading ? <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" /> : twoFA('verify_button')}
           </Button>
           <Button
             onClick={() => {
@@ -365,7 +362,7 @@ export default function LoginPage() {
               setLoginCredentials({ email: '', password: '' });
             }}
             variant="outline"
-            className="flex-1 border-[#117f60] text-[#117f60] hover:bg-[#117f60] hover:bg-opacity-10"
+            className="flex-1 border-[#117f60] text-[#117f60] hover:bg-[#117f60] hover:bg-opacity-10 h-10 sm:h-11 text-sm sm:text-base"
           >
             {twoFA('back_button')}
           </Button>

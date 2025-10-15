@@ -7,7 +7,6 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { CookieConsent } from "@/components/cookies/CookieConsent";
 import { ClientProviders } from './client-providers'
-import { Toaster } from "react-hot-toast";
 import Header from "@/components/shared/Header";
 
 export const metadata: Metadata = {
@@ -58,7 +57,6 @@ export default async function RootLayout({
               <Header />
               {children}
               <CookieConsent />
-              <Toaster />
             </AOSWrapper>
             <Footer />
           </ClientProviders>

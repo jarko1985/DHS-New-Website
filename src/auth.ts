@@ -72,6 +72,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return null;
           }
 
+          // Track device session
+          try {
+            const { trackDeviceSession } = await import('@/lib/utils/device-tracker');
+            await trackDeviceSession(email);
+          } catch (deviceError) {
+            console.error('Device tracking error:', deviceError);
+            // Don't fail login if device tracking fails
+          }
+
           // If validation passed, return user object
           const user = {
             id: email,

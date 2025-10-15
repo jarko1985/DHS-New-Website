@@ -49,43 +49,38 @@ export default function SettingsPage() {
         <LeftProfileCard user={mockUser} />
 
         {/* Right column */}
-        <Card className="border-0 bg-[var(--color-blue)]/40 p-0 shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur rounded-xl sm:rounded-2xl">
-          <Tabs defaultValue="profile" className="w-full">
-            <div className="sticky flex sm:justify-start justify-center top-0 z-10 rounded-t-xl sm:rounded-t-2xl bg-[var(--color-blue)]/40 p-2.5 sm:p-3 md:p-4 backdrop-blur-sm">
-              <TabsList className="grid h-auto grid-cols-2 gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl bg-transparent p-0 md:grid-cols-4">
-                <TabsTrigger value="profile" className="tab-chip text-xs sm:text-sm">
-                  <span className="hidden sm:inline">Profile</span>
-                  <span className="sm:hidden">Profile</span>
+        <Card className="border-0 bg-[var(--color-blue)]/40 p-0 shadow-[0_8px_40px_rgba(0,0,0,0.35)] backdrop-blur rounded-xl sm:rounded-2xl overflow-hidden">
+          <Tabs defaultValue="profile" className="w-full h-full flex flex-col">
+            <div className="sticky flex sm:justify-start justify-center top-0 z-20 rounded-t-xl sm:rounded-t-2xl bg-[var(--color-blue)]/95 p-2.5 sm:p-3 md:p-4 backdrop-blur-md border-b border-white/5">
+              <TabsList className="grid h-auto w-full max-w-full grid-cols-2 gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl bg-transparent p-0 md:grid-cols-3">
+                <TabsTrigger value="profile" className="tab-chip text-[10px] xs:text-xs sm:text-sm px-2 sm:px-3 py-1.5 sm:py-2">
+                  <span className="truncate">Profile</span>
                 </TabsTrigger>
-                <TabsTrigger value="password" className="tab-chip text-xs sm:text-sm">
-                  <span className="hidden sm:inline">Change Password</span>
-                  <span className="sm:hidden">Password</span>
+                <TabsTrigger value="password" className="tab-chip text-[10px] xs:text-xs sm:text-sm px-2 sm:px-3 py-1.5 sm:py-2">
+                  <span className="hidden sm:inline truncate">Change Password</span>
+                  <span className="sm:hidden truncate">Password</span>
                 </TabsTrigger>
-                <TabsTrigger value="twofactor" className="tab-chip text-xs sm:text-sm">
-                  <span className="hidden sm:inline">Two-factor</span>
-                  <span className="sm:hidden">2FA</span>
-                </TabsTrigger>
-                <TabsTrigger value="logins" className="tab-chip text-xs sm:text-sm">
-                  <span className="hidden md:inline">Login Device History</span>
-                  <span className="md:hidden">Devices</span>
+                <TabsTrigger value="logins" className="tab-chip text-[10px] xs:text-xs sm:text-sm px-2 sm:px-3 py-1.5 sm:py-2 col-span-2 md:col-span-1">
+                  <span className="hidden md:inline truncate">Login Device History</span>
+                  <span className="md:hidden truncate">Devices</span>
                 </TabsTrigger>
               </TabsList>
             </div>
 
-            <div className="p-3 sm:p-4 md:p-5 lg:p-6">
-              <TabsContent value="profile">
+            <div className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-5 lg:p-6">
+              <TabsContent value="profile" className="mt-0">
                 <ProfileTab user={mockUser} />
               </TabsContent>
 
-              <TabsContent value="password">
+              <TabsContent value="password" className="mt-0">
                 <ChangePasswordTab />
               </TabsContent>
 
-              <TabsContent value="twofactor">
+              <TabsContent value="twofactor" className="mt-0">
                 <TwoFactorTab />
               </TabsContent>
 
-              <TabsContent value="logins">
+              <TabsContent value="logins" className="mt-0">
                 <LoginDeviceHistoryTab />
               </TabsContent>
             </div>

@@ -88,6 +88,15 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Track device session
+    try {
+      const { trackDeviceSession } = await import('@/lib/utils/device-tracker');
+      await trackDeviceSession(email.toLowerCase());
+    } catch (deviceError) {
+      console.error('Device tracking error:', deviceError);
+      // Don't fail login if device tracking fails
+    }
+
     // All checks passed
     return NextResponse.json({
       success: true,
