@@ -202,6 +202,7 @@
       "password_special": "Password must contain at least 1 special character",
       "passwords_match": "Passwords must match",
       "password_requirements_not_met": "Please ensure your password meets all requirements",
+      "2fa_required": "Two-Factor Authentication must be enabled to continue",
       "terms_required": "You must accept the Terms & Conditions to continue"
     },
     "terms": {
@@ -1492,5 +1493,31 @@
       "text": "To view and download DHS latest Privacy Policy click here:",
       "downloadButton": "Download"
     }
+  },
+  "twoFactor": {
+    "setup_title": "Set Up Two-Factor Authentication",
+    "setup_title_required": "Set Up Two-Factor Authentication (Required)",
+    "verify_title": "Verify Your Code",
+    "scan_instruction": "Scan this QR code with your authenticator app (Google Authenticator, Authy, etc.)",
+    "manual_entry_label": "Manual Entry Code",
+    "copy_button": "Copy",
+    "next_button": "Next",
+    "back_button": "Back",
+    "cancel_button": "Cancel",
+    "verify_button": "Verify",
+    "verify_complete_button": "Verify & Complete Signup",
+    "verifying": "Verifying...",
+    "generating_qr": "Generating QR code...",
+    "enter_code_instruction": "Enter the 6-digit code from your authenticator app to verify setup",
+    "verification_code_label": "Verification Code",
+    "verification_code_placeholder": "000000",
+    "mandatory_warning": "⚠️ Two-Factor Authentication is mandatory for all new accounts for enhanced security.",
+    "mandatory_error": "Two-Factor Authentication is mandatory for signup",
+    "secret_copied": "Secret copied to clipboard",
+    "setup_error": "Failed to generate 2FA secret",
+    "verify_error": "Failed to verify token",
+    "invalid_token": "Invalid verification code",
+    "enter_token_error": "Please enter the verification code",
+    "success_message": "2FA verified successfully!"
   }
 }

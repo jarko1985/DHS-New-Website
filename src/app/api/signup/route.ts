@@ -7,13 +7,24 @@ import { sendVerificationEmail } from '@/lib/mail';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, password, recaptchaToken } = await req.json();
+    const { name, email, password, recaptchaToken, twoFactorSecret, twoFactorEnabled } = await req.json();
 
     if (!name || !email || !password) {
       return NextResponse.json(
         {
           success: false,
           message: 'All fields are required',
+        },
+        { status: 400 },
+      );
+    }
+
+    // Validate 2FA is enabled (mandatory for signup)
+    if (!twoFactorEnabled || !twoFactorSecret) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Two-Factor Authentication is required for signup',
         },
         { status: 400 },
       );
@@ -69,7 +80,7 @@ export async function POST(req: NextRequest) {
     // Hash password
     const hashedPassword = await hash(password, 12);
 
-    // Create user with verification fields
+    // Create user with verification fields and 2FA enabled
     await User.create({
       name,
       firstName,
@@ -81,6 +92,8 @@ export async function POST(req: NextRequest) {
       verifyToken: hashedToken,
       verifyTokenExpires: expires,
       isVerified: false, // User needs to verify email
+      twoFactorEnabled: twoFactorEnabled,
+      twoFactorSecret: twoFactorSecret,
     });
 
     // Send verification email

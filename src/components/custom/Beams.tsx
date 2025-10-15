@@ -76,7 +76,13 @@ function extendMaterial<T extends THREE.Material = THREE.Material>(
 }
 
 const CanvasWrapper: FC<{ children: ReactNode }> = ({ children }) => (
-  <Canvas dpr={[1, 2]} frameloop="always" className="w-full h-full relative">
+  <Canvas 
+    dpr={[1, 2]} 
+    frameloop="always" 
+    className="w-full h-full relative"
+    gl={{ antialias: true, alpha: true }}
+    camera={{ position: [0, 0, 20], fov: 30 }}
+  >
     {children}
   </Canvas>
 );
@@ -254,7 +260,6 @@ const Beams: FC<BeamsProps> = ({
       </group>
       <ambientLight intensity={1} />
       <color attach="background" args={['#000000']} />
-      <PerspectiveCamera makeDefault position={[0, 0, 20]} fov={30} />
     </CanvasWrapper>
   );
 };

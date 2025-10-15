@@ -15,6 +15,8 @@ import Image from "next/image";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 import PasswordRequirements from "../custom/PasswordRequirements";
+import TwoFASignupModal from "./TwoFASignupModal";
+import { Switch } from "../ui/switch";
 
 const createSignUpSchema = (t: any) =>
   z
@@ -31,6 +33,9 @@ const createSignUpSchema = (t: any) =>
           t("validations.password_special")
         ),
       confirmPassword: z.string(),
+      enable2FA: z.boolean().refine((val) => val === true, {
+        message: t("validations.2fa_required"),
+      }),
       acceptTerms: z.boolean().refine((val) => val === true, {
         message: t("validations.terms_required"),
       }),
@@ -57,6 +62,9 @@ const SignupForm = () => {
   const [isResendDisabled, setIsResendDisabled] = useState(true);
   const [isResending, setIsResending] = useState(false);
   const [isTermsAccepted, setIsTermsAccepted] = useState(false);
+  const [is2FAEnabled, setIs2FAEnabled] = useState(true); // Mandatory, so default to true
+  const [show2FAModal, setShow2FAModal] = useState(false);
+  const [twoFASecret, setTwoFASecret] = useState('');
   const {
     register,
     handleSubmit,
@@ -64,6 +72,23 @@ const SignupForm = () => {
     setValue,
     watch,
   } = useForm({ resolver: zodResolver(createSignUpSchema(t)) });
+
+  // Initialize 2FA value in the form
+  React.useEffect(() => {
+    setValue('enable2FA', true);
+  }, [setValue]);
+
+  // Countdown timer effect
+  React.useEffect(() => {
+    if (countdown > 0 && showVerificationPending) {
+      const timer = setTimeout(() => {
+        setCountdown(countdown - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (countdown === 0) {
+      setIsResendDisabled(false);
+    }
+  }, [countdown, showVerificationPending]);
 
    const handleResendVerification = async () => {
     if (isResendDisabled || !userEmail) return;
@@ -101,24 +126,43 @@ const SignupForm = () => {
       return;
     }
 
-    // if (!recaptchaToken) {
-    //   setRecaptchaError(t('recaptcha_required') || 'Please complete the reCAPTCHA challenge.');
-    //   return;
-    // }
-    // setRecaptchaError(null);
+    // Check if 2FA is enabled (it's mandatory)
+    if (!is2FAEnabled) {
+      toast.error('Two-Factor Authentication is mandatory for signup');
+      return;
+    }
 
     try {
       setLoading(true);
+      
+      // Show 2FA setup modal first
+      setShow2FAModal(true);
+      setLoading(false);
+    } catch (err: any) {
+      console.error('Signup error:', err);
+      toast.error(err.message || t('signup_failed') || 'Signup failed. Please try again.');
+      setLoading(false);
+    }
+  };
 
-      // Create user account
+  const handle2FASuccess = async (secret: string) => {
+    setTwoFASecret(secret);
+    setShow2FAModal(false);
+    setLoading(true);
+
+    try {
+      const formData = watch();
+      
+      // Create user account with 2FA enabled
       const res = await fetch('/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          password: data.password,
-          // recaptchaToken,
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+          twoFactorSecret: secret,
+          twoFactorEnabled: true,
         }),
       });
 
@@ -131,7 +175,7 @@ const SignupForm = () => {
       if (result.success) {
         if (result.requiresVerification) {
           // Show verification pending UI instead of redirecting
-          setUserEmail(data.email);
+          setUserEmail(formData.email);
           setShowVerificationPending(true);
           setCountdown(60);
           setIsResendDisabled(true);
@@ -420,6 +464,32 @@ const SignupForm = () => {
               )}
             </div>
 
+            {/* Two-Factor Authentication Switch (Mandatory) */}
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center justify-between p-4 bg-[#117f60] bg-opacity-10 border border-[#117f60] rounded-md">
+                <div className="flex-1">
+                  <label htmlFor="enable2FA" className="text-[#117f60] font-medium cursor-pointer">
+                    Enable Two-Factor Authentication (Required)
+                  </label>
+                  <p className="text-xs text-[#117f60] opacity-80 mt-1">
+                    Protect your account with an extra layer of security
+                  </p>
+                </div>
+                <Switch
+                  id="enable2FA"
+                  checked={is2FAEnabled}
+                  onCheckedChange={(checked) => {
+                    setIs2FAEnabled(checked);
+                    setValue('enable2FA', checked);
+                  }}
+                  className="data-[state=checked]:bg-[#e47a5a]"
+                />
+              </div>
+              {errors.enable2FA && (
+                <p className="text-[#e47a5a] text-sm font-semibold">{errors.enable2FA.message}</p>
+              )}
+            </div>
+
             {/* <div className="flex flex-col gap-2">
             <div className="w-full flex justify-center">
               <ReCAPTCHA
@@ -525,6 +595,15 @@ const SignupForm = () => {
           </form>
         </motion.div>
       )}
+
+      {/* 2FA Setup Modal */}
+      <TwoFASignupModal
+        isOpen={show2FAModal}
+        onClose={() => setShow2FAModal(false)}
+        onSuccess={handle2FASuccess}
+        email={watch('email') || ''}
+        name={watch('name') || ''}
+      />
     </div>;
 };
 

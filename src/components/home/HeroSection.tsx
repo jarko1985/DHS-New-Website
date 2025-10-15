@@ -5,7 +5,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import TextType from "../custom/TextType";
 import Cubes from "../custom/Cubes";
-import Beams from "../custom/Beams";
+import BeamsWrapper from "../custom/BeamsWrapper";
 // import PriceCards from "../custom/PriceCards";
 
 export default function HeroSection() {
@@ -36,7 +36,7 @@ export default function HeroSection() {
     
     <section className="absolute w-full min-h-[85vh] overflow-hidden">
     <div style={{ width: '100%', height: '100vh', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1, opacity: 0.3 }}>
-  <Beams
+  <BeamsWrapper
     beamWidth={1.1}
     beamHeight={19}
     beamNumber={20}

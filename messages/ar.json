@@ -154,7 +154,9 @@
       "password_number": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
       "password_special": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل",
       "passwords_match": "يجب أن تتطابق كلمات المرور",
-      "password_requirements_not_met": "يرجى التأكد من أن كلمة المرور تلبي جميع المتطلبات"
+      "password_requirements_not_met": "يرجى التأكد من أن كلمة المرور تلبي جميع المتطلبات",
+      "2fa_required": "يجب تفعيل المصادقة الثنائية للمتابعة",
+      "terms_required": "يجب عليك قبول الشروط والأحكام للمتابعة"
     },
     "passwordRequirements": {
       "title": "متطلبات كلمة المرور",
@@ -1657,5 +1659,31 @@
       "text": "لعرض وتحميل أحدث سياسة خصوصية DHS اضغط هنا:",
       "downloadButton": "تحميل"
     }
+  },
+  "twoFactor": {
+    "setup_title": "إعداد المصادقة الثنائية",
+    "setup_title_required": "إعداد المصادقة الثنائية (مطلوب)",
+    "verify_title": "تحقق من الرمز الخاص بك",
+    "scan_instruction": "امسح رمز QR هذا باستخدام تطبيق المصادقة الخاص بك (Google Authenticator أو Authy أو غيرها)",
+    "manual_entry_label": "رمز الإدخال اليدوي",
+    "copy_button": "نسخ",
+    "next_button": "التالي",
+    "back_button": "رجوع",
+    "cancel_button": "إلغاء",
+    "verify_button": "تحقق",
+    "verify_complete_button": "التحقق وإكمال التسجيل",
+    "verifying": "جاري التحقق...",
+    "generating_qr": "جاري إنشاء رمز QR...",
+    "enter_code_instruction": "أدخل الرمز المكون من 6 أرقام من تطبيق المصادقة الخاص بك للتحقق من الإعداد",
+    "verification_code_label": "رمز التحقق",
+    "verification_code_placeholder": "000000",
+    "mandatory_warning": "⚠️ المصادقة الثنائية إلزامية لجميع الحسابات الجديدة لتعزيز الأمان.",
+    "mandatory_error": "المصادقة الثنائية إلزامية للتسجيل",
+    "secret_copied": "تم نسخ الرمز السري إلى الحافظة",
+    "setup_error": "فشل في إنشاء رمز المصادقة الثنائية",
+    "verify_error": "فشل في التحقق من الرمز",
+    "invalid_token": "رمز التحقق غير صالح",
+    "enter_token_error": "يرجى إدخال رمز التحقق",
+    "success_message": "تم التحقق من المصادقة الثنائية بنجاح!"
   }
 }
