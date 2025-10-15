@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "statuspage.io",
       },
+      {
+        protocol: "https",
+        hostname: "coin-images.coingecko.com",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.coingecko.com",
+      },
     ],
   },
 };

@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import TextType from "../custom/TextType";
 import Cubes from "../custom/Cubes";
 import Beams from "../custom/Beams";
+// import PriceCards from "../custom/PriceCards";
 
 export default function HeroSection() {
   const [email, setEmail] = useState("");
@@ -107,6 +108,7 @@ export default function HeroSection() {
         data-aos="fade-left"
         className="md:flex-[2] relative md:h-[650px] sm:h-[500px] h-[350px] w-full md:block"
       >
+        {/* <PriceCards /> */}
         <Image
           src="/images/home_bg.png"
           alt="Hero Background"
