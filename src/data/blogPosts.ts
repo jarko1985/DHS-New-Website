@@ -13,36 +13,36 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Bitcoin Reaches New All-Time High: What This Means for Investors",
+    title: "Why Regulatory Compliance Matters in the Crypto World — Especially in the MENA Region.",
     description: "Bitcoin has surged to unprecedented levels, breaking through previous resistance points and setting new records in the cryptocurrency market.",
-    publishDate: "15 Jan 2025",
-    category: "bitcoin",
-    image: "/images/blogs/blog1.jpg",
+    publishDate: "16 Oct 2025",
+    category: "crypto-regulations",
+    image: "/images/blogs/blog1.png",
     featured: true
   },
   {
     id: 2,
-    title: "Ethereum 2.0 Staking Rewards: A Complete Guide",
+    title: "Why We’re a Spot-Only Exchange — Understanding Real Asset Ownership and Risk.",
     description: "Learn about the latest updates to Ethereum's staking mechanism and how to maximize your rewards in the new proof-of-stake system.",
-    publishDate: "14 Jan 2025",
+    publishDate: "16 Oct 2025",
     category: "ethereum",
-    image: "/images/blogs/blog2.jpg"
+    image: "/images/blogs/blog2.png"
   },
   {
     id: 3,
-    title: "Market Analysis: Bull vs Bear Market Indicators",
+    title: "The Evolution of Self-Custody: Why Wallet Ownership Matters.",
     description: "Understanding the key technical and fundamental indicators that signal market direction in the cryptocurrency space.",
-    publishDate: "13 Jan 2025",
+    publishDate: "16 Oct 2025",
     category: "market-trends",
-    image: "/images/blogs/blog3.jpg"
+    image: "/images/blogs/blog3.png"
   },
   {
     id: 4,
-    title: "Risk Management Strategies for Crypto Trading",
+    title: "Do You Know What You're Paying For? The Importance of Fee Transparency in Crypto Trading",
     description: "Essential risk management techniques every cryptocurrency trader should implement to protect their portfolio.",
-    publishDate: "12 Jan 2025",
+    publishDate: "16 Oct 2025",
     category: "risk-management",
-    image: "/images/blogs/blog4.jpg"
+    image: "/images/blogs/blog4.png"
   },
   {
     id: 5,

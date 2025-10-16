@@ -1,0 +1,102 @@
+{
+  "navLinks": [
+    {
+      "id": "home",
+      "label": "Home",
+      "link": "/",
+      "type": "link"
+    },
+    {
+      "id": "assets",
+      "label": "Assets",
+      "link": "/dashboard/assets",
+      "type": "link"
+    },
+    {
+      "id": "spot_trading",
+      "label": "Spot Trading",
+      "link": "/dashboard/trade",
+      "type": "link"
+    }
+  ],
+  "megaMenus": [
+    {
+      "id": "resources",
+      "title": "Resources",
+      "type": "megamenu",
+      "defaultImage": "/images/dhs_logo2.png",
+      "items": [
+        {
+          "id": "risk_disclosure",
+          "label": "Risk Disclosure",
+          "link": "/risk-disclosure",
+          "image": "/images/menu-icons/risk_disclosure.png"
+        },
+        {
+          "id": "privacy_policy",
+          "label": "Privacy Policy",
+          "link": "/privacy-policy",
+          "image": "/images/menu-icons/privacy.png"
+        },
+        {
+          "id": "terms_conditions",
+          "label": "Terms & Conditions",
+          "link": "/terms-conditions",
+          "image": "/images/menu-icons/terms.png"
+        },
+        {
+          "id": "conflict_of_interest",
+          "label": "Conflict Of Interest",
+          "link": "/conflict-of-interest"
+        },
+        {
+          "id": "whistle_blowing",
+          "label": "Whistle Blowing",
+          "link": "/whistle-blowing",
+          "image": "/images/menu-icons/whistle.png"
+        },
+        {
+          "id": "complaints_handling",
+          "label": "Complaints Handling",
+          "link": "/complaints-handling",
+          "image": "/images/menu-icons/complaint.png"
+        },
+        {
+          "id": "aml_ctf_policy",
+          "label": "AML&CTF Policy",
+          "link": "/aml-ctf-policy",
+          "image": "/images/menu-icons/aml.png"
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Support",
+      "type": "megamenu",
+      "defaultImage": "/images/dhs_logo2.png",
+      "items": [
+        {
+          "id": "contact",
+          "label": "Contact",
+          "link": "/contact"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ",
+          "link": "/faq"
+        },
+        {
+          "id": "support_tickets",
+          "label": "Support Tickets",
+          "link": "/support-tickets"
+        },
+        {
+          "id": "blog",
+          "label": "Blog",
+          "link": "/blog"
+        }
+      ]
+    }
+  ]
+}
+

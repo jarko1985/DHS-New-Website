@@ -14,100 +14,32 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import CurrencySwitcher from "./CurrencySwitcher";
 import UserAvatar from "./UserAvatar";
 import { useLocale, useTranslations } from "next-intl";
+import navigationConfig from "@/data/navigationMenu.json";
 
-const navLinks = [{ name: "home", href: "/" }];
+interface NavLink {
+  id: string;
+  label: string;
+  link: string;
+  type: string;
+}
 
 interface MegaMenuItem {
   id: string;
-  title: string;
-  href: string;
+  label: string;
+  link: string;
   image?: string;
 }
 
 interface MegaMenuSection {
   id: string;
   title: string;
+  type: string;
   defaultImage: string;
   items: MegaMenuItem[];
 }
 
-const megaMenuSections: MegaMenuSection[] = [
-  {
-    id: "resources",
-    title: "Resources",
-    defaultImage: "/images/trading_preview.png",
-    items: [
-      {
-        id: "risk_disclosure",
-        title: "Risk Disclosure",
-        href: "/risk-disclosure",
-        image: "/images/menu-icons/risk_disclosure.png",
-      },
-      {
-        id: "privacy",
-        title: "Privacy Policy",
-        href: "/privacy-policy",
-        image: "/images/menu-icons/privacy.png",
-      },
-      {
-        id: "terms",
-        title: "Terms & Conditions",
-        href: "/terms-and-conditions",
-        image: "/images/menu-icons/terms.png",
-      },
-      {
-        id: "conflict",
-        title: "Conflict of Interest Policy",
-        href: "/conflict-of-interest",
-      },
-      {
-        id: "whistle",
-        title: "Whistleblowing Policy",
-        href: "/whistleblowing-policy",
-        image: "/images/menu-icons/whistle.png",
-      },
-      {
-        id: "complaint",
-        title: "Complaints Handling Policy",
-        href: "/complaint-policy",
-        image: "/images/menu-icons/complaint.png",
-      },
-      {
-        id: "aml",
-        title: "AML/CTF Policy",
-        href: "/ctf-policy",
-        image: "/images/menu-icons/aml.png",
-      },
-    ],
-  },
-  {
-    id: "support",
-    title: "Support",
-    defaultImage: "/images/trading_preview.png",
-    items: [
-      {
-        id: "contact",
-        title: "Contact",
-        href: "/contact",
-      },
-      {
-        id: "faq",
-        title: "FAQ",
-        href: "/faq",
-      },
-      {
-        id: "support_tickets",
-        title: "Support Tickets",
-        href: "/support-tickets",
-      },
-      {
-        id: "newsletter",
-        title: "Newsletter / Blog",
-        href: "/newsletter",
-      },
-    ],
-  },
-];
+const navLinks: NavLink[] = navigationConfig.navLinks;
+const megaMenuSections: MegaMenuSection[] = navigationConfig.megaMenus;
 
 export default function Header() {
   const containerRef = useRef(null);
@@ -293,12 +225,12 @@ export default function Header() {
           <nav className="hidden md:flex flex-1 justify-center">
             <ul className="relative flex items-center gap-8 text-white font-roboto text-base">
               {navLinks.map((link) => (
-                <li key={link.name}>
+                <li key={link.id}>
                   <Link
-                    href={link.href}
+                    href={link.link}
                     className="transition-colors duration-200 hover:text-elf-green"
                   >
-                    {t(link.name)}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -343,12 +275,12 @@ export default function Header() {
                       ref={(el) => {
                         megaMenuRefs.current[section.id] = el;
                       }}
-                      className={`absolute left-1/2 top-full z-40 w-[min(900px,95vw)] -translate-x-1/2 pt-3 ${
+                      className={`absolute left-1/2 top-full z-40 w-[min(600px,80vw)] -translate-x-1/2 pt-3 ${
                         isActive ? "pointer-events-auto" : "pointer-events-none"
                       }`}
                     >
                       <div
-                        className={`rounded-xl border border-white/10 bg-[#1b232e] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur transition-all duration-200 ${
+                        className={`rounded-xl border border-white/10 bg-[#1b232e] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur transition-all duration-200 min-h-[200px] ${
                           isActive
                             ? "opacity-100 translate-y-0"
                             : "opacity-0 -translate-y-1"
@@ -356,16 +288,16 @@ export default function Header() {
                         role="menu"
                         aria-label={`${section.title} Mega Menu`}
                       >
-                        <div className="grid grid-cols-12 gap-6">
+                        <div className="grid grid-cols-12 gap-6 h-full">
                           {/* Left visual */}
                           <div className="col-span-12 md:col-span-4">
-                            <div className="relative h-40 w-full overflow-hidden rounded-lg md:h-full">
+                            <div className="relative h-40 w-full overflow-hidden rounded-lg md:h-[240px]">
                               <Image
-                                src={currentState.currentPreviewSrc}
+                                src="/images/dhs_logo2.png"
                                 alt={`${section.title} visual`}
                                 fill
                                 className="object-contain transition-opacity duration-200"
-                                sizes="(min-width: 768px) 33vw, 100vw"
+                                sizes="(min-width: 768px) 20vw, 100vw"
                                 priority={false}
                               />
                             </div>
@@ -388,11 +320,11 @@ export default function Header() {
                                     }
                                   >
                                     <Link
-                                      href={item.href}
+                                      href={item.link}
                                       className="block rounded-md px-1 transition"
                                     >
                                       <span className="group-hover:text-[#e47a5a] group-hover:font-semibold transition-all duration-300">
-                                        {item.title}
+                                        {item.label}
                                       </span>
                                     </Link>
                                   </li>
@@ -412,11 +344,11 @@ export default function Header() {
                                     }
                                   >
                                     <Link
-                                      href={item.href}
+                                      href={item.link}
                                       className="block rounded-md px-1 transition"
                                     >
                                       <span className="group-hover:text-[#e47a5a] group-hover:font-semibold transition-all duration-300">
-                                        {item.title}
+                                        {item.label}
                                       </span>
                                     </Link>
                                   </li>
