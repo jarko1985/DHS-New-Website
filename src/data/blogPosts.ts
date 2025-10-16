@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: "Why Regulatory Compliance Matters in the Crypto World — Especially in the MENA Region.",
-    description: "Bitcoin has surged to unprecedented levels, breaking through previous resistance points and setting new records in the cryptocurrency market.",
+    description: "Cryptocurrency’s evolution from a niche experiment to a mainstream asset class has brought unprecedented opportunities, but also significant risks.",
     publishDate: "16 Oct 2025",
     category: "crypto-regulations",
     image: "/images/blogs/blog1.png",
@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 2,
     title: "Why We’re a Spot-Only Exchange — Understanding Real Asset Ownership and Risk.",
-    description: "Learn about the latest updates to Ethereum's staking mechanism and how to maximize your rewards in the new proof-of-stake system.",
+    description: "In crypto, spot trading works the same way: you buy or sell digital assets at the current market price, and the exchange transfers ownership to you immediately.",
     publishDate: "16 Oct 2025",
     category: "ethereum",
     image: "/images/blogs/blog2.png"
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 3,
     title: "The Evolution of Self-Custody: Why Wallet Ownership Matters.",
-    description: "Understanding the key technical and fundamental indicators that signal market direction in the cryptocurrency space.",
+    description: "Cryptocurrency adoption is surging across the Middle East and North Africa.",
     publishDate: "16 Oct 2025",
     category: "market-trends",
     image: "/images/blogs/blog3.png"
@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 4,
     title: "Do You Know What You're Paying For? The Importance of Fee Transparency in Crypto Trading",
-    description: "Essential risk management techniques every cryptocurrency trader should implement to protect their portfolio.",
+    description: "In traditional finance, transparency in fees is a matter of regulation. In crypto, it’s a matter of survival. ",
     publishDate: "16 Oct 2025",
     category: "risk-management",
     image: "/images/blogs/blog4.png"
