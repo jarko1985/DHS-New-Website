@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  transpilePackages: [
+    'react-phone-number-input',
+    'react-flags-select',
+    'react-circular-progressbar',
+    'react-webcam',
+  ],
 };
 
 const withNextIntl = createNextIntlPlugin();
