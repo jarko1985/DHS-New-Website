@@ -46,14 +46,14 @@ export default function Screener() {
           <div key={`${coin.id}-${index}`} className="ticker-item">
             <img src={coin.image} alt={coin.name} className="w-5 h-5 mr-1" />
             <strong className="mr-1 text-white ">{coin.name}</strong>
-            <span className="mr-1 text-[#DAE6EA]">{coin.price.toFixed(4)}</span>
+            <span className="mr-1 text-[#DAE6EA]">{coin.price?.toFixed(4) || "0.0000"}</span>
             <span
               className={`mr-2 ${
-                coin.price_change >= 0 ? "text-green-500" : "text-[#EC3B3B]"
+                (coin.price_change || 0) >= 0 ? "text-green-500" : "text-[#EC3B3B]"
               }`}
             >
-              {coin.price_change >= 0 ? "+" : ""}
-              {coin.price_change.toFixed(2)} ({coin.percent_change.toFixed(2)}%)
+              {(coin.price_change || 0) >= 0 ? "+" : ""}
+              {coin.price_change?.toFixed(2) || "0.00"} ({coin.percent_change?.toFixed(2) || "0.00"}%)
             </span>
             <span className="text-[#DAE6EA] px-2">|</span>
           </div>
