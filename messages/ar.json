@@ -1,10 +1,10 @@
 {
   "homepage": {
     "herosection": {
-      "title1_1": "استثمر في ",
-      "title1_3": " DHS ",
+      "title1_1": "DHS",
+      "title1_3": " مباشر | صادق | آمن",
       "title1_2": "طريقة التداول",
-      "crypto_with_clarity": "تداول العملات الرقمية بوضوح.",
+      "crypto_with_clarity": "تدرّب أولًا، وتداول بسرعة.",
       "dhs_safe_honest": "DHS هي منصتك الآمنة والصادقة في الإمارات. تداول بثقة. نمُ مع الهدف.",
       "subscribe": "اشترك",
       "email_placeholder": "example@email.com",
@@ -100,7 +100,7 @@
     "accountDeleted": "تم حذف الحساب بنجاح",
     "photoUploaded": "تم رفع الصورة بنجاح",
     "securityTitle": "إعدادات الأمان",
-    "securitySubtitle": "إدارة أمان حسابك وخصوصيتك",
+    "securitySubtitle": "إدارة أمان حسابك وخصوصيتك",  
     "twoFactorAuth": "المصادقة الثنائية",
     "twoFactorDesc": "أضف طبقة إضافية من الأمان لحسابك",
     "changePasswordDesc": "حدث كلمة المرور بانتظام لأمان أفضل",
@@ -283,14 +283,35 @@
   "Header": {
     "home": "الرئيسية",
     "contact": "اتصل بنا",
-    "sign_in": "تسجيل الدخول"
+    "sign_in": "تسجيل الدخول",
+    "navigation": {
+      "home": "الرئيسية",
+      "assets": "الأصول",
+      "spot_trading": "التداول",
+      "resources": "الموارد",
+      "support": "الدعم",
+      "contact": "اتصل بنا",
+      "risk_disclosure": "إفصاح المخاطر",
+      "privacy_policy": "سياسة الخصوصية",
+      "terms_conditions": "الشروط والأحكام",
+      "conflict_of_interest": "تضارب المصالح",
+      "whistle_blowing": "الإبلاغ عن المخالفات",
+      "complaints_handling": "معالجة الشكاوى",
+      "aml_ctf_policy": "سياسة مكافحة غسل الأموال",
+      "faq": "الأسئلة الشائعة",
+      "support_tickets": "تذاكر الدعم",
+      "blog": "المدونة",
+      "how_to": "كيفية الاستخدام"
+    }
   },
   "Footer": {
     "1-DHS": "1.DHS",
     "DHS": "DHS",
     "about-us": "من نحن",
     "exchange": "التبادل",
+    "trade": "التداول",
     "homepage": "الرئيسية",
+    "prices": "الأسعار",
     "user_account": "2.حساب المستخدم والتداول",
     "signup": "التسجيل",
     "signin": "تسجيل الدخول",

@@ -4,7 +4,7 @@
       "title1_1": "DHS",
       "title1_3": " Direct | Honest | Safe",
       "title1_2": "Way to Trade",
-      "crypto_with_clarity": "First in Trust. Fast in Trade.",
+      "crypto_with_clarity": "Train first, Trade Fast.",
       "dhs_safe_honest": "This is the direct, honest, safe Dubai-based cryptocurrency exchange.",
       "subscribe": "Stay Updated",
       "email_placeholder": "Enter your email",
@@ -339,7 +339,26 @@
   "Header": {
     "home": "Home",
     "contact": "Contact",
-    "sign_in": "Sign in"
+    "sign_in": "Sign in",
+    "navigation": {
+      "home": "Home",
+      "assets": "Assets",
+      "spot_trading": "Trade",
+      "resources": "Resources",
+      "support": "Support",
+      "contact": "Contact",
+      "risk_disclosure": "Risk Disclosure",
+      "privacy_policy": "Privacy Policy",
+      "terms_conditions": "Terms & Conditions",
+      "conflict_of_interest": "Conflict Of Interest",
+      "whistle_blowing": "Whistle Blowing",
+      "complaints_handling": "Complaints Handling",
+      "aml_ctf_policy": "AML&CTF Policy",
+      "faq": "FAQ",
+      "support_tickets": "Support Tickets",
+      "blog": "Blog",
+      "how_to": "How to"
+    }
   },
   "Footer": {
     "DHS": "DHS",

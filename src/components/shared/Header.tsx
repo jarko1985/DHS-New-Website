@@ -48,6 +48,7 @@ export default function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("Header");
+  const tNav = useTranslations("Header.navigation");
   const tFooter = useTranslations("Footer");
   const locale = useLocale();
   const isArabic = locale === "ar";
@@ -230,7 +231,7 @@ export default function Header() {
                     href={link.link}
                     className="transition-colors duration-200 hover:text-elf-green"
                   >
-                    {link.label}
+                    {tNav(link.id)}
                   </Link>
                 </li>
               ))}
@@ -267,7 +268,7 @@ export default function Header() {
                         }
                       }}
                     >
-                      {section.title}
+                      {tNav(section.id)}
                     </button>
 
                     {/* Panel */}
@@ -324,7 +325,7 @@ export default function Header() {
                                       className="block rounded-md px-1 transition"
                                     >
                                       <span className="group-hover:text-[#e47a5a] group-hover:font-semibold transition-all duration-300">
-                                        {item.label}
+                                        {tNav(item.id)}
                                       </span>
                                     </Link>
                                   </li>
@@ -348,7 +349,7 @@ export default function Header() {
                                       className="block rounded-md px-1 transition"
                                     >
                                       <span className="group-hover:text-[#e47a5a] group-hover:font-semibold transition-all duration-300">
-                                        {item.label}
+                                        {tNav(item.id)}
                                       </span>
                                     </Link>
                                   </li>

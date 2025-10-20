@@ -14,7 +14,7 @@
     },
     {
       "id": "spot_trading",
-      "label": "Spot Trading",
+      "label": "Trade",
       "link": "/dashboard/trade",
       "type": "link"
     }
@@ -94,6 +94,11 @@
           "id": "blog",
           "label": "Blog",
           "link": "/blog"
+        },
+        {
+          "id": "how_to",
+          "label": "How to",
+          "link": "/how-to"
         }
       ]
     }
