@@ -1538,5 +1538,24 @@
     "invalid_token": "Invalid verification code",
     "enter_token_error": "Please enter the verification code",
     "success_message": "2FA verified successfully!"
+  },
+  "howTo": {
+    "title": "How to Sign Up on DHS Exchange",
+    "tagline": "Direct. Honest. Safe.",
+    "subtitle": "Your first step into secure, transparent, and compliant digital asset trading.",
+    "step1_title": "Create Your DHS Account",
+    "step1_text": "Welcome aboard. Your trading journey begins with a few simple steps; designed for safety and security.\n1. Go to www.dhs.exchange/signup.\n2. Enter your Full Name, Email, and Password, then confirm it.\n3. Enable Two-Factor Authentication (required) for added protection.\n4. Accept our Terms & Conditions and Privacy Policy, then click Start Trading the Direct Way.\n5. At DHS, safety isn’t an option; it’s our standard.",
+    "step2_title": "Set Up Two-Factor (2FA)",
+    "step2_text": "Your security comes first. Before you trade, you’ll need to activate 2FA; a quick, one-time step that protects your account from unauthorized access.\n1. Scan the QR code with your authenticator app (Google Authenticator, Authy, etc.)\n2. Or enter the manual code displayed below it.\n3. Enter the 6-digit verification code shown in your app and confirm.\nOnce done, your account gains an extra layer of protection; always active, always secure.",
+    "step3_title": "Verify Your Email",
+    "step3_text": "We’ll send you a verification link to the email address you registered.\n1. Open the message and click Verify Email to confirm ownership.\n2. You’ll see the progress:\n\"Verifying Email…\"\n\"Email Verified Successfully\" → then click Continue to Login\n3. Didn’t receive the email? Just hit Resend after 60 seconds; it’s that simple.\n4. Transparency builds trust. Every account on DHS is verified and protected from day one.",
+    "step4_title": "Complete Your KYC Verification",
+    "step4_text": "DHS is licensed under Dubai’s Virtual Assets Regulatory Authority (VARA); which means every trader must verify their identity.\n1. Upload the following documents securely through your dashboard:\n- A valid ID (passport or Emirates ID)\n- Proof of address (recent utility bill or bank statement)\n- A selfie for facial verification\n2. Verification usually takes less than 24 hours. Once approved, you’ll receive full trading access.",
+    "step5_title": "Fund Your Wallet",
+    "step5_text": "After verification, you’re ready to start.\n1. Choose how you want to fund your account:\n- AED Deposits via regulated UAE banking partners.\n- Crypto Deposits from external wallets.\n2. All deposits are encrypted, tracked, and confirmed in real time; because transparency is our promise.",
+    "step6_title": "Start Trading",
+    "step6_text": "Welcome to the market.\n1. Browse Markets, choose your favourite pair (e.g. BTC/USDT), select Market or Limit order, and confirm your trade.\n2. Your crypto will appear instantly in your DHS Wallet.\n3. Simple. Secure. Seamless.\n4. ⚠️ Reminder: Trading crypto involves risk. DHS promotes responsible trading; never invest more than you can afford to lose.",
+    "step7_title": "Stay Protected",
+    "step7_text": "Your account is now active; but security doesn’t stop here.\n1. Keep 2FA always enabled.\n2. Review your account activity regularly.\n3. Never share your passwords or verification codes.\n4. At DHS, every login, trade, and transfer is monitored by our 24/7 protection system; ensuring your safety, always."
   }
 }

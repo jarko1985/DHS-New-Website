@@ -1,5 +1,6 @@
 // src/components/RoadMap.tsx
 import React from "react";
+import Image from "next/image";
 
 type RoadMapItem = {
   label: string;
@@ -15,8 +16,8 @@ type RoadMapProps = {
 
 export default function RoadMap({
   items,
-  ringColor = "#e47a5a",
-  centerColor = "#117f60",
+  ringColor = "#117f60",
+  centerColor = "#e47a5a",
 }: RoadMapProps) {
   return (
     <div className="bg-blue-whale pt-8 pb-32">
@@ -30,6 +31,7 @@ export default function RoadMap({
           const firstListIndex = lines.findIndex((l) => /^\d+\.\s+/.test(l) || /^[-•]\s+/.test(l));
           const intro = firstListIndex === -1 ? lines.join("\n") : lines.slice(0, firstListIndex).join("\n");
           const listItems = firstListIndex === -1 ? [] : lines.slice(firstListIndex).map((l) => l.replace(/^\d+\.\s+/, '').replace(/^[-•]\s+/, ''));
+          const imageSrc = `/images/how-to/step-${item.label}.png`;
 
           return (
             <div
@@ -42,12 +44,9 @@ export default function RoadMap({
                   className="relative mx-auto w-[180px] h-[180px] rounded-full flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-[1.03] group-active:scale-[0.99]"
                   style={{ backgroundColor: ringColor, boxShadow: "0 18px 40px rgba(0,0,0,0.35)" }}
                 >
-                  <div className="w-[120px] h-[120px] rounded-full bg-white shadow-[0_0_25px_rgba(255,255,255,0.65)] group-hover:shadow-[0_0_35px_rgba(255,255,255,0.8)] transition-shadow duration-300 flex items-center justify-center">
-                    <div
-                      className="w-[90px] h-[90px] rounded-full text-white font-semibold text-xl flex items-center justify-center shadow-[0_6px_18px_rgba(0,0,0,0.25)]"
-                      style={{ backgroundColor: centerColor }}
-                    >
-                      {item.label}
+                  <div className="w-[120px] h-[120px] rounded-full bg-white shadow-[0_0_25px_rgba(255,255,255,0.65)] group-hover:shadow-[0_0_35px_rgba(255,255,255,0.8)] transition-shadow duration-300 flex items-center justify-center overflow-hidden">
+                    <div className="relative w-[100px] h-[100px] rounded-full overflow-hidden ring-2 ring-white/40 shadow-[0_6px_18px_rgba(0,0,0,0.25)]">
+                      <Image src={imageSrc} alt={`Step ${item.label}`} fill className="object-cover" sizes="100px" />
                     </div>
                   </div>
                 </div>
@@ -81,21 +80,20 @@ export default function RoadMap({
                   } as React.CSSProperties
                 }
               >
-                {/* inner text disk */}
-                <span
+                {/* inner image disk */}
+                <div
                   className={[
                     "absolute inset-0 m-auto",
                     "flex items-center justify-center",
                     "w-[80px] h-[80px] md:w-[110px] md:h-[110px]",
-                    "rounded-full",
-                    "text-white text-lg md:text-[20px] font-semibold leading-6 capitalize",
+                    "rounded-full overflow-hidden ring-2 ring-white/40",
                     "shadow-[0_0_10px_5px_rgba(0,0,0,0.13)] group-hover:shadow-[0_0_16px_6px_rgba(0,0,0,0.18)]",
                     "md:[transform:rotate(-45deg)]",
                   ].join(" ")}
-                  style={{ backgroundColor: centerColor }}
+                  style={{ backgroundColor: "#fff" }}
                 >
-                  {item.label}
-                </span>
+                  <Image src={imageSrc} alt={`Step ${item.label}`} fill className="object-cover" sizes="110px" />
+                </div>
               </div>
 
               {/* Card (desktop: left/right; mobile: full width under circle) */}
@@ -107,8 +105,12 @@ export default function RoadMap({
                   "md:absolute",
                   isEven ? "md:left-0" : "md:right-0",
                   "md:w-[35%]",
-                  "backdrop-blur-sm border border-white/10 transition-all duration-300 ease-out",
-                  "hover:border-white/20 hover:shadow-[0_16px_42px_rgba(0,0,0,0.35)] hover:-translate-y-0.5",
+                  // base border + glass
+                  "backdrop-blur-sm border-2 border-[#e47a5a]/80 shadow-[0_6px_18px_rgba(0,0,0,0.25)] transition-all duration-300 ease-out",
+                  // hover intensifies border color and shadow
+                  "hover:border-[#e47a5a] hover:shadow-[0_18px_46px_rgba(0,0,0,0.4)] hover:-translate-y-0.5",
+                  // glowing ring on hover
+                  "hover:outline hover:outline-2 hover:outline-offset-2 hover:outline-[#e47a5a]/40",
                 ].join(" ")}
                 style={{ ["--ringColor" as any]: ringColor }}
               >
